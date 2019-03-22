@@ -1,0 +1,34 @@
+{
+  "name": "smg-style-guide",
+  "version": "0.1.0",
+  "dependencies": {
+    "@frctl/fractal": "^1.1.7",
+    "include-media": "^1.4.9",
+    "normalize-scss": "^7.0.1",
+    "sass-between": "^0.3.2"
+  },
+  "scripts": {
+    "start": "npm run watch",
+    "dist": "run-s build minify dist:fractal",
+    "dist:fractal": "fractal build",
+    "postinstall": "npm run dist",
+    "build": "run-p build:*",
+    "build:css": "run-s build:css:*",
+    "build:css:sass": "node-sass src -o public/css/ --include-path node_modules --source-map-root file://${PWD}/ --source-map-embed true --error-bell",
+    "build:css:prefix": "postcss --u autoprefixer -r public/css/*.css --map",
+    "minify": "run-p minify:*",
+    "minify:css": "postcss public/css/*.css -u cssnano --replace --map",
+    "watch": "npm-run-all build --parallel watch:*",
+    "watch:fractal": "fractal start --sync",
+    "watch:css": "onchange 'src/**/*.scss' -- npm run build:css"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.0",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss": "^7.0.14",
+    "postcss-cli": "^6.1.2"
+  }
+}
