@@ -1,0 +1,28 @@
+// <main> page content styles.
+.o-main {
+  @include between(padding-top, 1rem, 2rem);
+  @include between(padding-bottom, 1rem, 2rem);
+
+  & &__standfirst {
+    @include between(padding-top, 1rem, 2rem);
+    @include between(padding-bottom, 0.25rem, 0.75rem);
+    @include type-p1;
+
+    #{$text-elements} {
+      @include type-p1;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__h2 {
+    @include type-h2;
+    margin: 2em 0 1em 0;
+  }
+}

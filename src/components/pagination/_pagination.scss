@@ -1,0 +1,135 @@
+////
+/// @group pagination
+////
+
+/// Padding inside of pagination items.
+/// @type Number
+$pagination-item-padding: 0.75rem 1.25rem !default;
+
+/// If `false`, don't display page number links on mobile, only next/previous links.
+/// @type Boolean
+$pagination-mobile-items: false !default;
+
+/// Adds styles for a disabled pagination item. Apply this to an `<a>`.
+@mixin pagination-item-disabled {
+  cursor: not-allowed;
+
+  &:hover {
+    background: transparent;
+  }
+}
+
+/// n.b. two different markup styles:
+/// - foundation orginal (like collections site)
+/// - wordpress output
+/// wordpress uses c-pagination--wp as wrapper
+/// post broken into pages uses differnt structure again!
+
+.c-pagination,
+.c-pagination--wp {
+  text-align: center;
+
+  &__list {
+    margin: 0 auto;
+    padding: 0;
+    display: inline-flex;
+    font-size: 0;
+    border: 1px solid black;
+  }
+
+  // Page links
+  a,
+  button,
+  .page-numbers {
+    @include type-meta;
+    color: black;
+    display: block;
+    padding: $pagination-item-padding;
+    text-decoration: none;
+
+    &:hover {
+      background-color: grey(10);
+    }
+  }
+
+  li,
+  .page-numbers {
+    @include type-meta;
+    & + li {
+      border-left: 1px solid black;
+    }
+
+    @if $pagination-mobile-items {
+      display: inline-block;
+    } @else {
+      display: none;
+
+      &:last-child,
+      &:first-child,
+      &.current,
+      &[aria-current="page"] {
+        display: inline-block;
+      }
+
+      @include media(">=medium") {
+        display: inline-block;
+      }
+    }
+  }
+  .page-numbers + .page-numbers {
+    border-left: 1px solid black;
+  }
+
+  [aria-current="page"],
+  .current,
+  &__list > .page-link {
+    padding: $pagination-item-padding;
+    @include type-meta;
+    background: black;
+    color: white;
+    cursor: default;
+    &:hover {
+      background: black;
+    }
+  }
+
+  [aria-disabled] {
+    cursor: not-allowed;
+    color: grey(50);
+
+    &:hover {
+      background-color: inherit;
+      color: grey(50) !important;
+    }
+  }
+
+  &__ellipsis::after {
+    content: "\2026";
+    font-weight: normal;
+    padding: $pagination-item-padding;
+    display: block;
+    color: black;
+  }
+  .dots {
+    font-weight: normal;
+    &:hover {
+      background-color: inherit;
+    }
+  }
+
+  &__previous a::before,
+  &__previous.disabled::before,
+  .prev::before {
+    content: "\00ab";
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  &__next a::after,
+  &__next.disabled::after,
+  .next::after {
+    content: "\00bb";
+    display: inline-block;
+    margin-left: 0.5rem;
+  }
+}

@@ -1,0 +1,108 @@
+$base-font-family: SMGSans, Arial, sans-serif;
+$text-elements: p, li, blockquote, dl;
+
+$fonts: (
+  ('Thin', 100, normal),
+  ('ThinItalic', 100, italic),
+  ('Light', 300, normal),
+  ('LightItalic', 300, italic),
+  ('Regular', normal, normal),
+  ('RegularItalic', normal, italic),
+  ('Medium', 500, normal),
+  ('MediumItalic', 500, italic),
+  ('Bold', 700, normal),
+  ('BoldItalic', 700, italic),
+  ('Fat', 900, normal)
+);
+
+$font-path: "//smgco-images.s3.amazonaws.com/fonts"; // replace with proper CDN!!
+
+@each $f in $fonts {
+  @font-face {
+    font-family: 'SMGSans';
+    // src: url('../fonts/copy-#{nth($f,1)}-web.woff') format('woff');
+    src: url('#{$font-path}/SMGSans-#{nth($f,1)}.woff') format('woff');
+    font-weight: #{nth($f, 2)};
+    font-style: #{nth($f, 3)};
+  }
+
+}
+
+
+// base type styles
+
+@mixin type-p {
+  @include between(font-size, rem(16), rem(24));
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+@mixin type-p1 { //standfirst
+  @include between(font-size, rem(24), rem(36));
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+@mixin type-panel {
+  font-size: rem(16);
+  font-weight: 300;
+  @include media('>=small') {
+    font-size: rem(18);
+  }
+}
+
+@mixin type-label { //and other smaller p
+  @include between(font-size, rem(14), rem(18));
+  line-height: 1.25;
+  font-weight: 300;
+}
+
+@mixin type-meta { // nav elements
+  font-size: rem(18);
+  line-height: 1.2;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.015em; // North says track out the headlines?
+}
+
+@mixin type-metasmall { // other meta elements
+  font-size: 75%; // of parent, so hopefully about x-height
+  line-height: 1.2;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.015em; // North says track out the headlines?
+}
+
+@mixin type-h($case: uc) {
+  line-height: 1;
+  font-weight: bold;
+  @if $case == uc {
+    text-transform: uppercase;
+    letter-spacing: 0.015em; // track out if uppercase?
+  }
+}
+
+@mixin type-h1($case: uc) {
+  @include between(font-size, rem(40), rem(55));
+  @include type-h($case);
+}
+
+@mixin type-h2($case: uc) {
+  @include between(font-size, rem(20), rem(30));
+  @include type-h($case);
+}
+
+@mixin type-h3($case: uc) {
+  @include between(font-size, rem(16), rem(24));
+  @include type-h($case);
+}
+
+@mixin type-h4($case: uc) {
+  @include between(font-size, rem(14), rem(18));
+  @include type-h($case);
+}
+
+@mixin type-h5($case: uc) {
+  @include between(font-size, rem(14), rem(16));
+  @include type-h($case);
+}

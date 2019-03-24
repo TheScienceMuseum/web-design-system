@@ -1,0 +1,69 @@
+// Utility classes
+// single-responsibility classes,
+// Do not bind to.
+
+.u-skip-link,
+.u-visually-hidden,
+.screen-reader-text {
+  @include for-screen-readers;
+}
+
+.u-skip-link:focus {
+  visibility: visible;
+  clip: auto;
+  width: auto;
+  height: auto;
+  padding: 0.5rem;
+  background: white;
+}
+
+// relative sizing (to text) for svg icons
+.u-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: baseline; // though YMMV
+}
+
+// Generates a bunch of classes to apply gradients to things.
+// gradients can be 2 or 3 colours, but must be sequential on the colour wheel.
+$colournames: red orange yellow green teal blue purple red orange;
+$colourvars: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple
+  $c-red $c-orange;
+
+body {
+  // slight selector bump
+  @for $i from 1 through length($colournames) - 1 {
+    .u-grad-#{nth($colournames, $i)}-#{nth($colournames, $i+1)} {
+      @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i+1));
+    }
+
+    .u-grad-#{nth($colournames, $i+1)}-#{nth($colournames, $i)} {
+      @include sm-gradient(nth($colourvars, $i+1) nth($colourvars, $i));
+    }
+  }
+  @for $i from 1 through length($colournames) - 2 {
+    .u-grad-#{nth($colournames, $i)}-#{nth($colournames, $i+1)}-#{nth($colournames, $i+2)} {
+      @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i+1) nth($colourvars, $i+2));
+      color: contrasting-text-color(nth($colourvars, $i+1));
+    }
+
+    .u-grad-#{nth($colournames, $i+2)}-#{nth($colournames, $i+1)}-#{nth($colournames, $i)} {
+      @include sm-gradient(nth($colourvars, $i+2) nth($colourvars, $i+1) nth($colourvars, $i));
+      color: contrasting-text-color(nth($colourvars, $i+1));
+    }
+  }
+  .u-grad-clear {
+    background-image: none; //just for testing templates
+  }
+}
+
+.u-show-for-small-only {
+  @include media(">=small") {
+    display: none !important;
+  }
+}
+.u-hide-for-small-only {
+  @include media("<small") {
+    display: none !important;
+  }
+}

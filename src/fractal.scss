@@ -1,0 +1,31 @@
+@charset 'utf-8';
+
+// import vendor libs from node_modules (--include-path node_modules)
+// (--include-path node_modules)
+@import "include-media/dist/include-media";
+@import "normalize-scss/sass/normalize";
+@import "sass-between/dist/between";
+// @import 'smartphoto/scss/smartphoto'; // modified, see components/smartphoto
+
+// all functions, mixins, extends. Nothing in here should output any css
+@import "functions/colour";
+@import "functions/utilities";
+@import "functions/modernizr";
+
+// general settings and variables. Nothing in here should output any css
+@import "settings/normalize";
+@import "settings/colour";
+@import "settings/global";
+@import "settings/type";
+@import "settings/responsive";
+
+// The base-ics
+@import "base/tags";
+@import "base/utilities";
+
+// Then all objects, alphabetical
+// @import "objects/grid";
+// @import "objects/list";
+// @import "objects/main";
+// @import "objects/section";
+@import "objects/textstyles";

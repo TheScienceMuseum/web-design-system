@@ -1,0 +1,46 @@
+/*
+  this lifted straight from collections site:
+  collectionsonline/client/styles/components/_loading.scss
+*/
+
+@keyframes loadingrad {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 150% 50%;
+  }
+}
+
+@keyframes loadingmove {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(100%);
+  }
+}
+
+.c-loading {
+  position: relative;
+  &:after {
+    opacity: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background-image: repeating-linear-gradient(
+      135deg,
+      $c-teal,
+      $c-blue,
+      $c-purple,
+      $c-blue,
+      $c-teal
+    );
+    animation: loadingrad 2s linear infinite, loadingmove 0.707s ease-out 1;
+    background-size: 300% 100%;
+    transform-origin: 0 0;
+  }
+}

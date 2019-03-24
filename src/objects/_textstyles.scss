@@ -1,0 +1,84 @@
+// May be written by wysiwg, so not strict BEM inheritance
+// .wp-editor class added so they can be previewd in editor-styles
+.o-textstyles,
+.wp-editor {
+  .o-grid__article & > :first-child {
+    margin-top: 0; // keep top aligned with sidebar to right.
+  }
+
+  &,
+  #{$text-elements} {
+    @include type-p;
+  }
+
+  h1:not([class]) {
+    // probbaly used already in page title, not used here?
+    @include type-h1;
+    margin: 1em 0;
+  }
+
+  h2:not([class]) {
+    @include type-h2;
+    margin: 2em 0 1em 0;
+  }
+
+  h3:not([class]) {
+    @include type-h3;
+    margin: 2em 0 1em 0;
+  }
+
+  h4:not([class]) {
+    @include type-h4;
+    margin: 1em 0;
+  }
+
+  li {
+    & + li {
+      margin-top: 0.5rem;
+    }
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  a:not([class]),
+  a:not([class]):visited {
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  a[href$="pdf"]:after {
+    @include href-icon;
+    background-image: url(../assets/img/icn/icn-pdf.svg);
+  }
+
+  // a[href^=mailto]:after {
+  //    @include href-icon;
+  //    background-image: url(../assets/img/icn/mail.svg);
+  //  }
+
+  hr {
+    color: grey(10);
+    background-color: grey(10);
+    border: 0;
+    height: 0.25em;
+  }
+}
+
+// overriding wp-content css
+.wp-editor,
+body.wp-autoresize {
+  padding: 2rem !important;
+  font-family: $base-font-family;
+}

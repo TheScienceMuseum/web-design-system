@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
+    "@frctl/mandelbrot": "^1.2.0",
     "include-media": "^1.4.9",
     "normalize-scss": "^7.0.1",
     "sass-between": "^0.3.2"
@@ -30,5 +31,15 @@
     "onchange": "^5.2.0",
     "postcss": "^7.0.14",
     "postcss-cli": "^6.1.2"
-  }
+  },
+  "jshintConfig": {
+    "esversion": 6
+  },
+  "browserslist": [
+    "last 2 versions",
+    "> 2%",
+    "Edge >= 15",
+    "IE >= 10",
+    "safari >= 7"
+  ]
 }

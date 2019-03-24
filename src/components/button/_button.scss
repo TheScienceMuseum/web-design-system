@@ -1,0 +1,101 @@
+// Button component
+//
+//
+$c-button-base-selector: ".c-btn" !default;
+$c-button-padding-x: 1em !default;
+$c-button-padding-y: 0.75em !default;
+$c-button-font-size: false !default;
+$c-button-font-size-min: 1rem !default;
+$c-button-font-size-max: 1.5rem !default;
+/// basic button styles, may be applied to other (wordpress) elements too
+@mixin btn() {
+  @if $c-button-font-size {
+    font-size: $c-button-font-size;
+  } @else {
+    @include between(
+      font-size,
+      $c-button-font-size-min,
+      $c-button-font-size-max
+    );
+  }
+
+  padding-top: $c-button-padding-y;
+  padding-bottom: $c-button-padding-y;
+  padding-left: $c-button-padding-x;
+  padding-right: $c-button-padding-x;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  border: 0; // may be applied to inputs
+  color: white; //default
+  background-color: grey(80); //default
+  transition: background-color $transition-default;
+
+  @each $theme, $props in $palettes {
+    .t-btn--#{$theme} & {
+      background-color: map-get($props, base);
+      color: map-get($props, text);
+
+      &:hover,
+      &:focus {
+        background-color: map-get($props, dark);
+      }
+    }
+  }
+}
+
+@mixin button() {
+  #{$c-button-base-selector} {
+    @include btn;
+
+    &--primary {
+      padding-right: 2.5em;
+
+      &:after {
+        content: "";
+        // TODO: match  fill/stroke color to theme color
+        background-image: svg-uri(
+          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke-width="3" stroke="#fff"><path d="M21 12H4m11-6l6 6-6 6"/></g></svg>'
+        );
+        background-repeat: no-repeat;
+        position: absolute;
+        right: 1em;
+        width: 1em;
+        height: 1em;
+        background-size: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: right $transition-default;
+      }
+
+      &:hover,
+      &:focus {
+        &:after {
+          right: 0.75em;
+        }
+      }
+    }
+
+    // Variation:
+    // -disabled
+    // Grey background and not clickable - when the event is sold out
+
+    &--disabled {
+      pointer-events: none;
+      background-color: grey(50) !important;
+
+      &:after {
+        content: none;
+      }
+
+      &:hover,
+      &:focus {
+        background-color: grey(50) !important;
+      }
+    }
+  }
+}

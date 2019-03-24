@@ -1,0 +1,14 @@
+.o-section {
+  background: black;
+  color: white;
+  svg { stroke: white; }
+  font-weight: 300;
+  a { color: white; }
+
+  &--light {
+    background: grey(10);
+    color: black;
+    svg { stroke: black; }
+    a { color: black; }
+  }
+}

@@ -1,0 +1,64 @@
+@charset 'utf-8';
+
+// import vendor libs from node_modules (--include-path node_modules)
+// (--include-path node_modules)
+@import "include-media/dist/include-media";
+@import "normalize-scss/sass/normalize";
+@import "sass-between/dist/between";
+// @import 'smartphoto/scss/smartphoto'; // modified, see components/smartphoto
+
+// all functions, mixins, extends. Nothing in here should output any css
+@import "functions/colour";
+@import "functions/utilities";
+@import "functions/modernizr";
+
+// general settings and variables. Nothing in here should output any css
+@import "settings/normalize";
+@import "settings/colour";
+@import "settings/global";
+@import "settings/type";
+@import "settings/responsive";
+
+// The base-ics
+@import "base/tags";
+@import "base/utilities";
+
+// Then all objects, alphabetical
+@import "objects/grid";
+@import "objects/list";
+@import "objects/main";
+@import "objects/section";
+@import "objects/textstyles";
+// @import "objects/wordpress"; // native wp class output. move?
+
+// Then all components, alphabetical
+// @import "components/accordion";
+@import "components/button/button";
+@include button();
+// @import "components/card";
+// @import "components/carousel";
+// @import "components/category";
+// @import "components/collection";
+// @import "components/comments";
+// @import "components/filter";
+// @import "components/footersection";
+// @import "components/forms";
+// @import "components/gallery";
+// @import "components/hero";
+// @import "components/info-block";
+@import "components/loading/loading";
+// @import "components/logo-panel";
+// @import "components/masthead";
+// @import "components/mediaplayer";
+// @import "components/menu";
+@import "components/pagination/pagination";
+// @import "components/panel";
+// @import "components/post";
+// @import "components/searchmenu";
+// @import "components/searchresult";
+// @import "components/smartphoto";
+// @import "components/smg-map";
+// @import "components/tags";
+
+// reference:
+// BEMIT naming:  https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/

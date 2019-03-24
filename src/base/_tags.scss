@@ -1,0 +1,62 @@
+//  HTML tags
+//  but should be treated as immutably as objects,
+//  and after we have used normalize, there probably isn't much to do.
+
+@include normalize;
+
+// Global box-sizing method
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: rem(18);
+  font-weight: 300;
+}
+
+button {
+  border: 0;
+  appearance: none;
+}
+
+a {
+  color: $c-blue;
+
+  &:visited {
+    color: $c-purple;
+  }
+}
+
+form {
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  @include type-label;
+}
+
+#{$text-inputs},
+select {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  outline: 0;
+  padding: 0.5rem 0.75rem;
+  min-height: 3rem;
+  color: black;
+  border: 1px solid grey(60);
+  border-radius: 0;
+  &:hover,
+  &:focus {
+    border-color: black;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

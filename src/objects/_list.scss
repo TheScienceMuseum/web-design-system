@@ -1,0 +1,112 @@
+// may be applied to <ul>s or <ol>s
+.o-list {
+  &--plain {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &--inline {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  &--socials {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    li,
+    a {
+      display: inline-block;
+      line-height: 1;
+      .u-icon {
+        fill: inherit;
+        @include between(font-size, rem(30), rem(48));
+        position: relative;
+        left: -0.125em;
+      }
+    }
+  }
+}
+
+.o-dl {
+  margin: 0;
+
+  dt {
+    @include type-metasmall;
+  }
+
+  dd {
+    margin: 0;
+    padding: 0;
+  }
+
+  dd + dt,
+  & + & {
+    //seperate item pairs if in one list or many
+    margin-top: 1em;
+  }
+}
+
+.o-dl--inline {
+  dt,
+  dd {
+    @include type-metasmall;
+    display: inline-block;
+  }
+
+  dt {
+    margin-right: 0.5em;
+    font-weight: 300;
+  }
+
+  dd {
+    color: black;
+    font-weight: bold;
+  }
+
+  dd + dt,
+  & + & {
+    margin-top: 0;
+  }
+}
+
+.o-dl--tabular {
+  //needs to be applied an el that wraps .o-dl
+  display: table;
+
+  dl {
+    display: table-row;
+  }
+
+  dt,
+  dd {
+    @include type-metasmall;
+    display: table-cell;
+  }
+
+  dt {
+    padding-right: 0.5em;
+    font-weight: 300;
+  }
+
+  dd {
+    color: black;
+    font-weight: bold;
+  }
+
+  dd + dt,
+  & + & {
+    margin-top: 0;
+  }
+}
