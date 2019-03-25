@@ -35,7 +35,7 @@
 @import "components/accordion/accordion";
 @import "components/button/button";
 @include button();
-// @import "components/card";
+@import "components/card/card";
 // @import "components/carousel";
 // @import "components/category";
 // @import "components/collection";
@@ -47,7 +47,7 @@
 // @import "components/hero";
 // @import "components/info-block";
 @import "components/loading/loading";
-// @import "components/logo-panel";
+@import "components/logo-panel/logo-panel";
 // @import "components/masthead";
 // @import "components/mediaplayer";
 // @import "components/menu";

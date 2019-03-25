@@ -12,7 +12,7 @@ $base-line-height: 20px;
 
 // The length unit in which to output vertical rhythm values.
 // Supported values: px, em, rem.
-$base-unit: 'rem';
+$base-unit: "rem";
 
 // The default font family.
 $base-font-family: sans-serif !default;
@@ -26,7 +26,7 @@ $h5-font-size: 1 * $base-font-size !default;
 $h6-font-size: 1 * $base-font-size !default;
 
 // The amount lists and blockquotes are indented.
-$indent-amount: 0 !default;
+$indent-amount: 0;
 
 // The following variable controls whether normalize-scss will output
 // font-sizes, line-heights and block-level top/bottom margins that form a basic
