@@ -5,11 +5,4 @@
     <link media="all" rel="stylesheet" href="{{ path '/css/main.css' }}">
     <title>Preview Layout</title>
 </head>
-<body class="t-btn--green">
-  <div class="o-main o-container">
-    {{{ yield }}}
-  </div>
-
-  <script src="{{ path '/js/bundle.js' }}"></script>
-</body>
-</html>
+<body class="t-btn--{{#if _target.context.griditem}}{{ _target.context.griditem }}{{else}}green{{/if}}">
