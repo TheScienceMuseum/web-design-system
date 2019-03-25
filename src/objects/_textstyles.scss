@@ -52,7 +52,11 @@
 
   a:not([class]),
   a:not([class]):visited {
-    color: inherit;
+    color: $c-blue;
+
+    &:visited {
+      color: $c-purple;
+    }
     &:hover {
       text-decoration: none;
     }
