@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Sparkly Buttons",
+  title: "Buttons",
   status: "wip",
   context: {
     label: "Gizza button!"

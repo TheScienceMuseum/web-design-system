@@ -17,23 +17,45 @@
     "build:css": "run-s build:css:*",
     "build:css:sass": "node-sass src -o public/css/ --include-path node_modules --source-map-root file://${PWD}/ --source-map-embed true --error-bell",
     "build:css:prefix": "postcss --u autoprefixer -r public/css/*.css --map",
+    "build:js": "browserify src/main.js > public/js/bundle.js",
     "minify": "run-p minify:*",
     "minify:css": "postcss public/css/*.css -u cssnano --replace --map",
+    "minify:js": "uglifyjs public/js/bundle.js -o public/js/bundle.js",
     "watch": "npm-run-all build --parallel watch:*",
     "watch:fractal": "fractal start --sync",
-    "watch:css": "onchange 'src/**/*.scss' -- npm run build:css"
+    "watch:css": "onchange 'src/**/*.scss' -- npm run build:css",
+    "watch:js": "onchange 'src/**/*.js' -- npm run build:js",
+    "sassdoc": "sassdoc src --dest build/sassdoc"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.5.0",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
     "cssnano": "^4.1.10",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^5.2.0",
     "postcss": "^7.0.14",
-    "postcss-cli": "^6.1.2"
+    "postcss-cli": "^6.1.2",
+    "sassdoc": "^2.5.1",
+    "uglifyjs": "^2.4.11"
   },
   "jshintConfig": {
     "esversion": 6
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "@babel/preset-env"
+          ]
+        }
+      ]
+    ]
   },
   "browserslist": [
     "last 2 versions",

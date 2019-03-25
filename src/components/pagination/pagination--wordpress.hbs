@@ -1,0 +1,23 @@
+<div class="c-pagination">
+  <nav class="c-pagination__links" aria-label="Pagination">
+    {{#if pagination.isFirst}}
+    {{else}}
+        <a class="page-numbers" href="{{pagination.links.prev}}">Previous</a>
+    {{/if}}
+    {{#each pagination.links.pages}}
+      {{#if this}}
+        {{#if this.isCurrent}}
+          <span aria-current="page" class="page-numbers"><span class="u-visually-hidden">You're on page</span> {{this.pageNumber}}</span>
+        {{else}}
+          <a class="page-numbers" href="#{{this.pageNumber}}">{{this.pageNumber}}</a>
+        {{/if}}
+      {{else}}
+        <span class="c-pagination__ellipsis"></span>
+      {{/if}}
+    {{/each}}
+    {{#if pagination.isLast}}
+    {{else}}
+      <a class="next page-numbers" href="{{pagination.links.next}}">Next</a>
+    {{/if}}
+  </nav>
+</div>

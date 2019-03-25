@@ -1,135 +1,110 @@
 ////
-/// @group pagination
+/// Pagination comment poster?
 ////
 
-/// Padding inside of pagination items.
-/// @type Number
-$pagination-item-padding: 0.75rem 1.25rem !default;
+///
+/// Pagination component
+///
+/// @param {String} $base-selector [.c-pagination] - defines the base selector for output.
+/// @param {String} $page-selector [&__page] - defines the selector for page items
+/// @param {String} $prev-selector [&__page--prev] - defines the selector for 'prev' page item
+/// @param {String} $next-selector [&__page--next] - defines the selector for 'next page item'
+/// @param {String|List} $item-padding [0.75rem 1.25rem] - defines the padding around the page items
+/// @param {Bool} $mobile-items [false] - If false, don't display page number links on mobile, only next/previous links.
+/// @group components
+/// @access public
+/// @author Toby
 
-/// If `false`, don't display page number links on mobile, only next/previous links.
-/// @type Boolean
-$pagination-mobile-items: false !default;
+@mixin pagination(
+  $base-selector: ".c-pagination",
+  $page-selector: "&__page",
+  $prev-selector: "&__page--prev",
+  $next-selector: "&__page--next",
+  $item-padding: 0.75rem 1.25rem,
+  $mobile-items: false
+) {
+  #{$base-selector} {
+    text-align: center;
 
-/// Adds styles for a disabled pagination item. Apply this to an `<a>`.
-@mixin pagination-item-disabled {
-  cursor: not-allowed;
-
-  &:hover {
-    background: transparent;
-  }
-}
-
-/// n.b. two different markup styles:
-/// - foundation orginal (like collections site)
-/// - wordpress output
-/// wordpress uses c-pagination--wp as wrapper
-/// post broken into pages uses differnt structure again!
-
-.c-pagination,
-.c-pagination--wp {
-  text-align: center;
-
-  &__list {
-    margin: 0 auto;
-    padding: 0;
-    display: inline-flex;
-    font-size: 0;
-    border: 1px solid black;
-  }
-
-  // Page links
-  a,
-  button,
-  .page-numbers {
-    @include type-meta;
-    color: black;
-    display: block;
-    padding: $pagination-item-padding;
-    text-decoration: none;
-
-    &:hover {
-      background-color: grey(10);
+    &__links {
+      margin: 0 auto;
+      padding: 0;
+      display: inline-flex;
+      font-size: 0;
+      border: 1px solid black;
     }
-  }
 
-  li,
-  .page-numbers {
-    @include type-meta;
-    & + li {
+    // Page links
+    #{$page-selector} {
+      @include type-meta;
+      color: black;
+      display: block;
+      padding: $item-padding;
+      text-decoration: none;
+
+      &[href]:hover {
+        background-color: grey(10);
+      }
+
+      @if $mobile-items {
+        display: inline-block;
+      } @else {
+        display: none;
+
+        &:last-child,
+        &:first-child,
+        &.current,
+        &[aria-current="page"] {
+          display: inline-block;
+        }
+
+        @include media(">=medium") {
+          display: inline-block;
+        }
+      }
+    }
+
+    #{$page-selector} + #{$page-selector} {
       border-left: 1px solid black;
     }
 
-    @if $pagination-mobile-items {
-      display: inline-block;
-    } @else {
-      display: none;
-
-      &:last-child,
-      &:first-child,
-      &.current,
-      &[aria-current="page"] {
-        display: inline-block;
-      }
-
-      @include media(">=medium") {
-        display: inline-block;
-      }
-    }
-  }
-  .page-numbers + .page-numbers {
-    border-left: 1px solid black;
-  }
-
-  [aria-current="page"],
-  .current,
-  &__list > .page-link {
-    padding: $pagination-item-padding;
-    @include type-meta;
-    background: black;
-    color: white;
-    cursor: default;
-    &:hover {
+    [aria-current="page"] {
+      padding: $item-padding;
+      @include type-meta;
       background: black;
+      color: white;
+      cursor: default;
+      &:hover {
+        background: black;
+      }
     }
-  }
 
-  [aria-disabled] {
-    cursor: not-allowed;
-    color: grey(50);
+    [aria-disabled] {
+      cursor: not-allowed;
+      color: grey(50);
 
-    &:hover {
-      background-color: inherit;
-      color: grey(50) !important;
+      &:hover {
+        background-color: inherit;
+        color: grey(50) !important;
+      }
     }
-  }
 
-  &__ellipsis::after {
-    content: "\2026";
-    font-weight: normal;
-    padding: $pagination-item-padding;
-    display: block;
-    color: black;
-  }
-  .dots {
-    font-weight: normal;
-    &:hover {
-      background-color: inherit;
+    &__ellipsis::after {
+      content: "\2026";
+      font-weight: normal;
+      color: black;
     }
-  }
 
-  &__previous a::before,
-  &__previous.disabled::before,
-  .prev::before {
-    content: "\00ab";
-    display: inline-block;
-    margin-right: 0.5rem;
-  }
+    #{$prev-selector}::before {
+      content: "\00ab";
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
 
-  &__next a::after,
-  &__next.disabled::after,
-  .next::after {
-    content: "\00bb";
-    display: inline-block;
-    margin-left: 0.5rem;
+    #{$next-selector}::after {
+      content: "\00bb";
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
   }
 }

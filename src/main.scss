@@ -32,7 +32,7 @@
 // @import "objects/wordpress"; // native wp class output. move?
 
 // Then all components, alphabetical
-// @import "components/accordion";
+@import "components/accordion/accordion";
 @import "components/button/button";
 @include button();
 // @import "components/card";
@@ -52,6 +52,13 @@
 // @import "components/mediaplayer";
 // @import "components/menu";
 @import "components/pagination/pagination";
+@include pagination();
+@include pagination(
+  $base-selector: ".c-pagination",
+  $page-selector: ".page-numbers",
+  $prev-selector: ".prev",
+  $next-selector: ".next"
+);
 // @import "components/panel";
 // @import "components/post";
 // @import "components/searchmenu";
