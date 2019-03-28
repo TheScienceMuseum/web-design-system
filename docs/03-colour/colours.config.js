@@ -29,6 +29,12 @@ module.exports = {
         name: "$c-purple",
         hex: "#af1280"
       }
+    },
+    greys: {
+      black: {
+        name: "Black",
+        hex: "#000"
+      }
     }
   }
 };

@@ -31,29 +31,49 @@ $colourvars: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple
   $c-red $c-orange;
 
 body {
-  // slight selector bump
+  // slight selector bump. BUT WHY??
   @for $i from 1 through length($colournames) - 1 {
     .u-grad-#{nth($colournames, $i)}-#{nth($colournames, $i+1)} {
-      @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i+1));
+      @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i + 1));
     }
 
     .u-grad-#{nth($colournames, $i+1)}-#{nth($colournames, $i)} {
-      @include sm-gradient(nth($colourvars, $i+1) nth($colourvars, $i));
+      @include sm-gradient(nth($colourvars, $i + 1) nth($colourvars, $i));
     }
   }
   @for $i from 1 through length($colournames) - 2 {
     .u-grad-#{nth($colournames, $i)}-#{nth($colournames, $i+1)}-#{nth($colournames, $i+2)} {
-      @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i+1) nth($colourvars, $i+2));
-      color: contrasting-text-color(nth($colourvars, $i+1));
+      @include sm-gradient(
+        nth($colourvars, $i) nth($colourvars, $i + 1) nth($colourvars, $i + 2)
+      );
+      color: contrasting-text-color(nth($colourvars, $i + 1));
     }
 
     .u-grad-#{nth($colournames, $i+2)}-#{nth($colournames, $i+1)}-#{nth($colournames, $i)} {
-      @include sm-gradient(nth($colourvars, $i+2) nth($colourvars, $i+1) nth($colourvars, $i));
-      color: contrasting-text-color(nth($colourvars, $i+1));
+      @include sm-gradient(
+        nth($colourvars, $i + 2) nth($colourvars, $i + 1) nth($colourvars, $i)
+      );
+      color: contrasting-text-color(nth($colourvars, $i + 1));
     }
   }
   .u-grad-clear {
     background-image: none; //just for testing templates
+  }
+
+  // classes for all defined pallette colours:
+  @each $theme, $props in $palettes {
+    .u-bg-#{$theme} {
+      color: map-get($props, text);
+      background-color: map-get($props, base);
+    }
+    .u-bg-#{$theme}-light {
+      color: map-get($props, text);
+      background-color: map-get($props, light);
+    }
+    .u-bg-#{$theme}-dark {
+      color: map-get($props, text);
+      background-color: map-get($props, dark);
+    }
   }
 }
 
