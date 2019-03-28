@@ -40,18 +40,7 @@
       margin-bottom: 1rem;
     }
 
-    ul {
-      padding-left: 1rem;
-    }
-
-    a {
-      color: currentColor;
-      text-decoration: underline;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
+    // and o-textstyles applid to content, hopefully.
   }
 
   & &__title {
