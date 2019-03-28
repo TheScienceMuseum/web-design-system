@@ -1,0 +1,95 @@
+// Panel Component
+
+.c-panel {
+  background-color: black;
+  color: white;
+  @include between(padding, 1rem, 2rem);
+
+  &,
+  #{$text-elements} {
+    @include type-panel;
+  }
+
+  h1 {
+    // probbaly used already in page title, not used here?
+    @include type-h1;
+    // margin: 1em 0;
+  }
+
+  h2 {
+    @include type-h2;
+    // margin: 2em 0 1em 0;
+  }
+
+  h3 {
+    @include type-h3;
+    // margin: 2em 0 1em 0;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+
+  & + & {
+    //seperate following panels
+    border-top: 1px white solid;
+  }
+
+  a {
+    color: white;
+    fill: white;
+    &:hover {
+      color: grey(20);
+      fill: grey(20);
+    }
+    @each $theme, $props in $palettes {
+      .t-btn--#{$theme} &:hover {
+        color: map-get($props, light);
+        fill: map-get($props, light);
+      }
+    }
+  }
+
+  a[href$="pdf"]:after {
+    @include href-icon(1.25em);
+    background-image: url(../assets/img/icn/icn-pdf-white.svg);
+  }
+
+  &__resultslink:before {
+    @include href-icon(1.25em);
+    background-image: url(../assets/img/icn/back.svg);
+  }
+
+  //  a[href^=mailto]:after {
+  //    @include href-icon(1.25em);
+  //    background-image: url(../assets/img/icn/mail-white.svg);
+  //  }
+
+  &__img--bleed {
+    @include between(margin, -1rem, -2rem);
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &--author {
+    &__avatar {
+      display: inline;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+      background-color: white;
+      border-radius: 1rem;
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  &--relatedlinks {
+    background-color: grey(70);
+  }
+}
