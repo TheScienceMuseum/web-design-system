@@ -1,5 +1,15 @@
 ---
-title: Science Museum website style guide
+title: Science Museum Group style guide
 ---
 
-This is your index page. You can edit its contents at `docs/01-index.hbs`
+Or should that be 'design system' ?
+
+## How to use this guide
+
+```
+npm install thesciencemuseum/xxx
+```
+
+then import the relevant modules into js and scss
+
+[is there a required base/core?]
