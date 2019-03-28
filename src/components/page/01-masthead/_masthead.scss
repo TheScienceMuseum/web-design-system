@@ -1,0 +1,43 @@
+.c-masthead {
+  background-color: black;
+  color: white;
+
+  &__logo {
+    float: left;
+    position: relative;
+    z-index: 1; // make clickable above menu
+
+    img {
+      width: auto;
+      @include between(height, 45px, 70px);
+      @include between(margin, 20px 0, 25px 0);
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    // height: 100%;
+  }
+
+  // mirrors footer logo lockup
+  &__rowoflogos {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+  }
+
+  &__item img {
+    display: block;
+    @include between(
+      height,
+      1.5rem,
+      4.5rem
+    ); // but change this if number of logos change
+    margin: 1em 0;
+    max-width: none;
+  }
+}
