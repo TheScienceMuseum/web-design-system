@@ -15,7 +15,7 @@ fractal.set("project.version", pkg.version);
 fractal.components.set("path", path.join(__dirname, "fractal/components"));
 fractal.docs.set("path", path.join(__dirname, "fractal/docs"));
 fractal.web.set("static.path", path.join(__dirname, "public"));
-fractal.web.set("builder.dest", __dirname + "/build");
+fractal.web.set("builder.dest", __dirname + "/dist");
 
 fractal.components.set("default.preview", "@preview-container");
 
@@ -27,14 +27,7 @@ const myCustomisedTheme = mandelbrot({
   skin: "black",
   styles: ["/css/main.css", "/css/fractal.css"],
   nav: ["docs", "components"], // show docs above components in the sidebar
-  panels: [
-    "html",
-    "view",
-    //"context",
-    //"resources",
-    //"info",
-    "notes"
-  ]
+  panels: ["html", "view", "notes"] //     hidden: "context", "resources", "info",
 });
 fractal.web.theme(myCustomisedTheme);
 

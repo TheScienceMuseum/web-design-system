@@ -4,13 +4,13 @@
 set -e
 
 # build
-npm run build
+npm run dist
 
 # add readme
 cp gh-pages.md build/readme.md
 
 # navigate into the build output directory
-cd build
+cd dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
