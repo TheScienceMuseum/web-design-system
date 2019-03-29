@@ -24,7 +24,6 @@
     "dist": "run-s build minify dist:fractal",
     "dist:fractal": "fractal build",
     "deploy": "./deploy-to-gh-pages.sh",
-    "postinstall": "npm run dist",
     "build": "run-p build:*",
     "build:css": "run-s build:css:*",
     "build:css:sass": "node-sass src/scss -o public/css/ --include-path node_modules --source-map-root file://${PWD}/ --source-map-embed true --error-bell",
