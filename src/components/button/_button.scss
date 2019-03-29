@@ -1,28 +1,42 @@
 // Button component
 //
 //
-$c-button-base-selector: ".c-btn" !default;
-$c-button-padding-x: 1em !default;
-$c-button-padding-y: 0.75em !default;
-$c-button-font-size: false !default;
-$c-button-font-size-min: 1rem !default;
-$c-button-font-size-max: 1.5rem !default;
 /// basic button styles, may be applied to other (wordpress) elements too
-@mixin btn() {
-  @if $c-button-font-size {
-    font-size: $c-button-font-size;
+@mixin btn(
+  $base-selector: ".c-btn",
+  $padding-x: 1em,
+  $padding-y: 0.75em,
+  $font-size: false,
+  $font-size-min: 1rem,
+  $font-size-max: 1.5rem,
+  $theme: false
+) {
+  @if $font-size {
+    font-size: $font-size;
   } @else {
-    @include between(
-      font-size,
-      $c-button-font-size-min,
-      $c-button-font-size-max
-    );
+    @include between(font-size, $font-size-min, $font-size-max);
   }
 
-  padding-top: $c-button-padding-y;
-  padding-bottom: $c-button-padding-y;
-  padding-left: $c-button-padding-x;
-  padding-right: $c-button-padding-x;
+  @if (index(map_keys($palettes), $theme)) {
+    /* yes */
+    color: palette($theme, text);
+    background-color: palette($theme);
+    &:hover,
+    &:focus {
+      background-color: palette($theme, dark);
+    }
+  } @else if type-of($theme) == color {
+    background-color: $theme;
+    color: contrasting-text-color($theme);
+  } @else {
+    color: white; //default
+    background-color: grey(80); //default
+  }
+
+  padding-top: $padding-y;
+  padding-bottom: $padding-y;
+  padding-left: $padding-x;
+  padding-right: $padding-x;
 
   text-transform: uppercase;
   text-decoration: none;
@@ -31,12 +45,11 @@ $c-button-font-size-max: 1.5rem !default;
   display: inline-block;
   line-height: 1;
   border: 0; // may be applied to inputs
-  color: white; //default
-  background-color: grey(80); //default
   transition: background-color $transition-default;
 
   @each $theme, $props in $palettes {
-    .t-btn--#{$theme} & {
+    .t-btn--#{$theme} &,
+    &#{&}--#{$theme} {
       background-color: map-get($props, base);
       color: map-get($props, text);
 
@@ -48,9 +61,25 @@ $c-button-font-size-max: 1.5rem !default;
   }
 }
 
-@mixin button() {
-  #{$c-button-base-selector} {
-    @include btn;
+@mixin button(
+  $base-selector: ".c-btn",
+  $padding-x: 1em,
+  $padding-y: 0.75em,
+  $font-size: false,
+  $font-size-min: 1rem,
+  $font-size-max: 1.5rem,
+  $theme: false
+) {
+  #{$base-selector} {
+    @include btn(
+      $base-selector,
+      $padding-x,
+      $padding-y,
+      $font-size,
+      $font-size-min,
+      $font-size-max,
+      $theme
+    );
 
     &--primary {
       padding-right: 2.5em;

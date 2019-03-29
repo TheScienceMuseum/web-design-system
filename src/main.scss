@@ -34,7 +34,8 @@
 // Then all components, alphabetical
 @import "components/accordion/accordion";
 @import "components/button/button";
-@include button();
+// @include button();
+@include button($theme: blue); // set a default colour
 @import "components/card/card";
 // @import "components/carousel";
 // @import "components/category";

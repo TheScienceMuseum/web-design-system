@@ -11,7 +11,16 @@ module.exports = {
       name: "Themed",
       context: {
         label: "Purple button!",
-        theme: "purple"
+        theme: "purple",
+        class: "c-btn--purple"
+      }
+    },
+    {
+      name: "Themed2",
+      context: {
+        label: "Orange button!",
+        theme: "xxx",
+        class: "c-btn--orange"
       }
     },
     {
