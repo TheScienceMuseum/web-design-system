@@ -7,7 +7,7 @@ set -e
 npm run dist
 
 # add readme
-cp gh-pages.md build/readme.md
+cp gh-pages.md dist/readme.md
 
 # navigate into the build output directory
 cd dist
