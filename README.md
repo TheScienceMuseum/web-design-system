@@ -8,6 +8,12 @@
 
 ...
 
+### Deploy /dist to gh-pages
+
+```
+npm run deploy
+```
+
 ## Principles
 
 Everything should be modular, so all modules are optional.

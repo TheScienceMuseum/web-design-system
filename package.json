@@ -1,5 +1,5 @@
 {
-  "name": "smg-style-guide",
+  "name": "smg-design-system",
   "version": "0.1.0",
   "dependencies": {
     "@frctl/fractal": "^1.1.7",
@@ -13,6 +13,7 @@
     "start": "npm run watch",
     "dist": "run-s build minify dist:fractal",
     "dist:fractal": "fractal build",
+    "deploy": "./deploy-to-gh-pages.sh",
     "postinstall": "npm run dist",
     "build": "run-p build:*",
     "build:css": "run-s build:css:*",
