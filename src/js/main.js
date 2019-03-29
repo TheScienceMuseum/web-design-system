@@ -1,5 +1,5 @@
-import accordions from "./components/accordion/accordion.js";
-import illuminate from "./components/illuminate/illuminate.js";
+import accordions from "./components/accordion.js";
+import illuminate from "./components/illuminate.js";
 // console.log("in main");
 document.addEventListener("DOMContentLoaded", function(event) {
   accordions();

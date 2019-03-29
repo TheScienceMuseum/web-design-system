@@ -32,11 +32,11 @@
 // @import "objects/wordpress"; // native wp class output. move?
 
 // Then all components, alphabetical
-@import "components/accordion/accordion";
-@import "components/button/button";
+@import "components/accordion";
+@import "components/button";
 // @include button();
 @include button($theme: blue); // set a default colour
-@import "components/card/card";
+@import "components/card";
 // @import "components/carousel";
 // @import "components/category";
 // @import "components/collection";
@@ -47,12 +47,12 @@
 // @import "components/gallery";
 // @import "components/hero";
 // @import "components/info-block";
-@import "components/loading/loading";
-@import "components/page/logo-panel/logo-panel";
-@import "components/page/01-masthead/masthead";
+@import "components/loading";
+@import "components/logo-panel";
+@import "components/masthead";
 // @import "components/mediaplayer";
 // @import "components/menu";
-@import "components/pagination/pagination";
+@import "components/pagination";
 @include pagination();
 @include pagination(
   $base-selector: ".c-pagination",
@@ -60,7 +60,7 @@
   $prev-selector: ".prev",
   $next-selector: ".next"
 );
-@import "components/panel/panel";
+@import "components/panel";
 // @import "components/post";
 // @import "components/searchmenu";
 // @import "components/searchresult";
