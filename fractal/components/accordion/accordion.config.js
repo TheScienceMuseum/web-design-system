@@ -1,6 +1,7 @@
 module.exports = {
   title: "Accordion",
   status: "wip",
+  tags: ["js"],
   context: {
     accordions: [
       {

@@ -2,6 +2,7 @@ module.exports = {
   title: "Illuminate",
   status: "wip",
   notes: "[todo: clarify limited use cases]",
+  tags: ["js"],
   collated: true, // show all variants on one page
   context: {
     text: "ILLUMINATED TEXT",
