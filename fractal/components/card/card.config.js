@@ -10,10 +10,9 @@ module.exports = {
   context: {
     griditem: "4-col",
     title: "Conserving the collection",
-    notes:
-      "[todo: version from drupal sites where whole thing is wrapped in a link?]",
-    info:
-      '<div>By Ruth Watson</div><a href="https://blog.sciencemuseum.org.uk/conserving-the-collection/"><time class="date" datetime="2019-02-27T16:02:23+00:00" itemprop="datePublished">27 February 2019</time></a>',
+    info: `
+      <div>By Ruth Watson</div>
+      <a href="https://blog.sciencemuseum.org.uk/conserving-the-collection/"><time class="date" datetime="2019-02-27T16:02:23+00:00" itemprop="datePublished">27 February 2019</time></a>`,
     desc:
       "Go behind the scenes with our conservation team and discover what it takes to prepare to move 300,000 objects to their new home.",
     img:
