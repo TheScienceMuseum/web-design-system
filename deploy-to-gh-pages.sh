@@ -6,8 +6,11 @@ set -e
 # build
 npm run build
 
+# add readme
+cp gh-pages.md build/readme.md
+
 # navigate into the build output directory
-cd dist
+cd build
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME

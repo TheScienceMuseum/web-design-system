@@ -2,6 +2,8 @@
 
 > N.B W.I.P - not ready for use yet!
 
+If you just want to read, the built version of this repository is at https://thesciencemuseum.github.io/design-system/
+
 ## How to use
 
 `npm install` me.
