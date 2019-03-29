@@ -1,4 +1,4 @@
-export default function() {
+export default function accordion() {
   let accordions = document.querySelectorAll(".js-accordion-tab");
   if (accordions) {
     Array.prototype.slice.call(accordions).forEach(el => {

@@ -5,7 +5,7 @@
   If the string doesn't divide equally, we spread the modulos from the heavier end
 */
 
-export default function(options) {
+export default function illuminate(options) {
   options = options || {};
   var selector = options.selector || ".js-illuminate";
 
