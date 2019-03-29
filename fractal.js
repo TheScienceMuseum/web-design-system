@@ -26,7 +26,15 @@ const mandelbrot = require("@frctl/mandelbrot"); // require the Mandelbrot theme
 const myCustomisedTheme = mandelbrot({
   skin: "black",
   styles: ["/css/main.css", "/css/fractal.css"],
-  nav: ["docs", "components"] // show docs above components in the sidebar
+  nav: ["docs", "components"], // show docs above components in the sidebar
+  panels: [
+    "html",
+    "view",
+    //"context",
+    //"resources",
+    //"info",
+    "notes"
+  ]
 });
 fractal.web.theme(myCustomisedTheme);
 
