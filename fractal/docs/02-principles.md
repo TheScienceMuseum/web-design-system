@@ -1,5 +1,7 @@
 # OUR COMMUNICATION PRINCIPLES
 
+> This stuff is straight out of the brand guidelines, but should be relevant here too.
+
 ## ALWAYS INFORMATIVE
 
 We communicate with purpose, sharing our stories in ways that feel relevant to our audiences. We aim to surprise and delight but don’t assume knowledge. We are open and honest when things go wrong.
