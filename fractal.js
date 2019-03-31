@@ -22,12 +22,20 @@ fractal.components.set("default.preview", "@preview-container");
 /**
  * Custom theme
  */
+
+//  show these panels in production:
+var panels = ["html", "view", "notes"];
+// Add these panels for dev only
+if (process.env.ENV == "development") {
+  panels.push("context", "resources", "info");
+}
+
 const mandelbrot = require("@frctl/mandelbrot"); // require the Mandelbrot theme module
 const myCustomisedTheme = mandelbrot({
   skin: "black",
   styles: ["/css/main.css", "/css/fractal.css"],
   nav: ["docs", "components"], // show docs above components in the sidebar
-  panels: ["html", "view", "notes"] //     hidden: "context", "resources", "info",
+  panels: panels
 });
 fractal.web.theme(myCustomisedTheme);
 

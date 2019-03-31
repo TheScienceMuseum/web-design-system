@@ -34,7 +34,7 @@
     "minify:css": "postcss public/css/*.css -u cssnano --replace --map",
     "minify:js": "uglifyjs public/js/bundle.js -o public/js/bundle.js",
     "watch": "npm-run-all build --parallel watch:*",
-    "watch:fractal": "fractal start --sync",
+    "watch:fractal": "ENV=development fractal start --sync",
     "watch:css": "onchange 'src/**/*.scss' -- npm run build:css",
     "watch:js": "onchange 'src/**/*.js' -- npm run build:js",
     "watch:svg": "onchange 'src/svg/**/*.svg' -- npm run build:svg",
