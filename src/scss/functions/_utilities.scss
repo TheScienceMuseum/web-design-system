@@ -193,12 +193,9 @@
 // http://codepen.io/tigt/post/optimizing-svgs-in-data-uris
 //-----------------------------------------------------------------------------
 
-////
 /// Helper function to easily use an SVG inline in CSS
 /// without encoding it to base64, saving bytes.
 /// It also helps with browser support.
-////
-
 /// A small function allowing skipping base64 encoding
 /// and simply pasting the SVG markup right in the CSS.
 /// @author Jakob Eriksen

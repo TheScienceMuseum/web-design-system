@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "npm run watch",
-    "dist": "run-s build minify dist:fractal",
+    "dist": "run-s build minify dist:fractal sassdoc",
     "dist:fractal": "fractal build",
     "deploy": "./deploy-to-gh-pages.sh",
     "build": "run-p build:*",
@@ -38,14 +38,14 @@
     "watch:css": "onchange 'src/**/*.scss' -- npm run build:css",
     "watch:js": "onchange 'src/**/*.js' -- npm run build:js",
     "watch:svg": "onchange 'src/svg/**/*.svg' -- npm run build:svg",
-    "sassdoc": "sassdoc src --dest build/sassdoc"
+    "sassdoc": "sassdoc src/scss"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
     "@frctl/fractal": "^1.1.7",
     "@frctl/handlebars": "^1.1.5",
     "@frctl/mandelbrot": "^1.2.0",
-    "@babel/core": "^7.4.0",
-    "@babel/preset-env": "^7.4.2",
     "autoprefixer": "^9.5.0",
     "babelify": "^10.0.0",
     "browserify": "^16.2.3",
@@ -56,6 +56,7 @@
     "postcss": "^7.0.14",
     "postcss-cli": "^6.1.2",
     "sassdoc": "^2.5.1",
+    "sassdoc-theme-flippant": "^0.1.0",
     "svg-sprite": "^1.5.0",
     "uglifyjs": "^2.4.11"
   },

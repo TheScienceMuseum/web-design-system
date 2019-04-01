@@ -9,11 +9,11 @@
 // Normal
 //-----------------------------------------------------------------------------
 
-/// Returns a color simulating Photoshop blend mode: Normal
-/// @example blend-normal(rgba(red, 0.5), green) = [yucky brown]
+/// Returns a color simulating Photoshop blend mode - Normal
 /// @param {Color} $foreground - topmost colour. (likely to contain opacity)
 /// @param {Color} $background - bottom colour.
 /// @return {Color}
+
 @function blend-normal($foreground, $background) {
   $opacity: opacity($foreground);
   $background-opacity: opacity($background);
@@ -31,11 +31,12 @@
 //--------------------------------
 // Multiply
 //--------------------------------
-/// Returns a color simulating Photoshop blend mode: Multiply
-/// @example blend-multiply(red, green) = [yucky brown]
+
+/// Returns a color simulating Photoshop blend mode -  Multiply
 /// @param {Color} $foreground - top colour.
 /// @param {Color} $background - bottom colour.
 /// @return {Color}
+
 @function blend-multiply($foreground, $background) {
   $bm-red: red($background) * red($foreground) / 255;
   $bm-green: green($background) * green($foreground) / 255;
@@ -48,9 +49,9 @@
 }
 
 /// Returns a grey color from 0-white to 100-black
-/// @example grey(20) = #ccc
 /// @param {Number} $tint - number between 0-100
 /// @return {Color}
+
 @function grey($tint) {
   @return rgb(255 - $tint * 2.55, 255 - $tint * 2.55, 255 - $tint * 2.55);
 }
@@ -59,6 +60,7 @@
 /// @param {Color} $color - color to tint
 /// @param {Number} $percentage - percentage of `$color` in returned color
 /// @return {Color}
+
 @function tint($color, $percentage) {
   @return mix($color, white, $percentage);
 }
@@ -74,6 +76,7 @@
 
 /// create a Background gradient from the SMG palette
 /// @param {List} $stops - List of colors
+
 @mixin sm-gradient($stops) {
   @each $stop in $stops {
     @if type-of($stop) != color {
@@ -105,7 +108,6 @@
 /// @access public
 /// @param {String} $duration - time + s
 /// @param {Number} $layers - if multiple properties, number of
-/// @return {String}
 
 @mixin sm-gradient-animated($duration: 5s, $layers: 1) {
   $name: sm-grad-fade-#{$duration}-#{$layers}; // if these variables change, we'd need to ouput a different name at root.

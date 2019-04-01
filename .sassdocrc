@@ -1,0 +1,4 @@
+dest:
+  ./dist/sassdoc
+theme:
+  flippant
