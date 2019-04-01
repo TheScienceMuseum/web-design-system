@@ -50,18 +50,6 @@
     height: auto;
   }
 
-  a:not([class]),
-  a:not([class]):visited {
-    color: $c-blue;
-
-    &:visited {
-      color: $c-purple;
-    }
-    &:hover {
-      text-decoration: none;
-    }
-  }
-
   a[href$="pdf"]:after {
     @include href-icon;
     background-image: url(../assets/img/icn/icn-pdf.svg);

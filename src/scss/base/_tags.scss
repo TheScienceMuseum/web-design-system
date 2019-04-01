@@ -53,3 +53,14 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+a {
+  color: $c-blue;
+
+  &:visited {
+    color: $c-purple;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
