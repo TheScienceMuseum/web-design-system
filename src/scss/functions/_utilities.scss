@@ -3,20 +3,18 @@
 ////
 
 /// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
-///
 /// @param {Number} $num - Number to strip unit from.
-///
 /// @returns {Number} The same number, sans unit.
+
 @function strip-unit($num) {
   @return $num / ($num * 0 + 1);
 }
 
 /// Converts one or more pixel values into matching rem values.
-///
 /// @param {Number|List} $values - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
 /// @param {Number} $base [null] - The base value to use when calculating the `rem`. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
-///
 /// @returns {List} A list of converted values.
+
 @function rem($values, $base: null) {
   $rem-values: ();
   $count: length($values);
@@ -69,6 +67,8 @@
 
   @return $value;
 }
+
+/// Visually hides an element, whil leaving it's contents accesible for screen readers.
 
 @mixin for-screen-readers {
   position: absolute;
@@ -165,8 +165,9 @@
 }
 
 /// Calculates a √square root
-/// http://www.antimath.info/css/sass-sqrt-function/
 /// used in number conversion
+/// @link http://www.antimath.info/css/sass-sqrt-function/
+
 @function sqrt($r) {
   $x0: 1;
   $x1: $x0;

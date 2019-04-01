@@ -1,4 +1,7 @@
 dest:
-  ./dist/sassdoc
-theme:
-  flippant
+  ./fractal/docs/21-sassdoc
+theme: md
+md:
+  extension: .md #default: .html.md
+groups:
+  undefined: 'Undefined - but hopefully just include-media?'

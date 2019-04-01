@@ -1,5 +1,5 @@
 ////
-/// @group Colours
+/// @group Colour functions
 ////
 
 // Photoshop blend modes from https://github.com/heygrady/scss-blend-modes
@@ -13,6 +13,8 @@
 /// @param {Color} $foreground - topmost colour. (likely to contain opacity)
 /// @param {Color} $background - bottom colour.
 /// @return {Color}
+/// @author Grady Kuhnline
+/// @link https://github.com/heygrady/scss-blend-modes
 
 @function blend-normal($foreground, $background) {
   $opacity: opacity($foreground);
@@ -36,6 +38,8 @@
 /// @param {Color} $foreground - top colour.
 /// @param {Color} $background - bottom colour.
 /// @return {Color}
+/// @author Grady Kuhnline
+/// @link https://github.com/heygrady/scss-blend-modes
 
 @function blend-multiply($foreground, $background) {
   $bm-red: red($background) * red($foreground) / 255;
@@ -51,23 +55,17 @@
 /// Returns a grey color from 0-white to 100-black
 /// @param {Number} $tint - number between 0-100
 /// @return {Color}
+/// @example scss
+///   grey(20)
+///   // #ccc
 
 @function grey($tint) {
   @return rgb(255 - $tint * 2.55, 255 - $tint * 2.55, 255 - $tint * 2.55);
 }
 
-/// lighten a color
-/// @param {Color} $color - color to tint
-/// @param {Number} $percentage - percentage of `$color` in returned color
-/// @return {Color}
-
-@function tint($color, $percentage) {
-  @return mix($color, white, $percentage);
-}
-
 /// Get a colour from the $palette map
 /// @param {Color} $palette - base color
-/// @param {String} $tone - color variation to return, default: base
+/// @param {String} $tone [base]- color variation to return
 /// @return {Color}
 
 @function palette($palette, $tone: "base") {
@@ -75,7 +73,11 @@
 }
 
 /// create a Background gradient from the SMG palette
-/// @param {List} $stops - List of colors
+/// @param {List} $stops - 2 or colours, probably adjacent on the SMG base palette, but can also be hex values
+/// @example scss - with 2 custom colours
+///   @include sm-gradient($c-orange #f00);
+/// @example scss - with 3 SMG colours
+///   @include sm-gradient($c-green $c-teal $c-blue);
 
 @mixin sm-gradient($stops) {
   @each $stop in $stops {
@@ -105,9 +107,13 @@
 }
 
 /// Animates background gradients
+/// Apply to an element that has a static sm-gradient (fallback) to add a subtle movement / fade to them.
 /// @access public
 /// @param {String} $duration - time + s
 /// @param {Number} $layers - if multiple properties, number of
+/// @link https://collection.sciencemuseum.org.uk (see footer logo-panel)
+/// @see {mixin} sm-gradient
+/// @todo Apply as extra args to main sm-gradient mixin?
 
 @mixin sm-gradient-animated($duration: 5s, $layers: 1) {
   $name: sm-grad-fade-#{$duration}-#{$layers}; // if these variables change, we'd need to ouput a different name at root.
@@ -129,7 +135,7 @@
   }
 }
 
-/// repeats a value. For properties that take comma-separated lists
+/// Repeats a value. For properties that take comma-separated lists
 /// @access public
 /// @param {String} $value - initial value to repeat
 /// @param {Number} $repetitions - number of repetitions
@@ -144,7 +150,7 @@
   @return $values;
 }
 
-// brightness or luminance finction from compass, but not quite accurate.
+// brightness or luminance function from compass, but not quite accurate.
 @function brightness($color) {
   @if type-of($color) == color {
     @return (red($color) * 0.299 + green($color) * 0.587 + blue($color) * 0.114) /
@@ -154,14 +160,21 @@
   }
 }
 
-// https://gist.github.com/jlong/f06f5843104ee10006fe
-$red-magic-number: 241;
-$green-magic-number: 691;
-$blue-magic-number: 68;
-$brightness-divisor: $red-magic-number + $green-magic-number +
-  $blue-magic-number;
+/// Returns the perceived brightness of a colour.
+/// @access public
+/// @param {Color} $color - color to test
+/// @return {Percent}
+/// @link http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx
+/// @link https://gist.github.com/jlong/f06f5843104ee10006fe
 
 @function perceivedbrightness($color) {
+
+  $red-magic-number: 241;
+  $green-magic-number: 691;
+  $blue-magic-number: 68;
+  $brightness-divisor: $red-magic-number + $green-magic-number +
+    $blue-magic-number;
+
   // Extract color components
   $red-component: red($color);
   $green-component: green($color);
@@ -180,10 +193,24 @@ $brightness-divisor: $red-magic-number + $green-magic-number +
   @return 100% * $number / 255;
 }
 
+/// Returns a contrasting text color, based on the brightness of the original color.
+/// Assuming your original color is applied as a background-color, this will ensure that there is sufficient contrast for a11y guidelines.
+/// @access public
+/// @param {Color} $color - color to test
+/// @param {Color} $light [white] - The light color to return
+/// @param {Color} $dark [dark] - The dark color to return
+/// @return {Percent}
+/// @link http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx
+/// @link https://gist.github.com/jlong/f06f5843104ee10006fe
+/// @example scss
+///   background-color: $c-orange;
+///   color: contrasting-text-color($c-orange);
+///   // black
+
 @function contrasting-text-color($color, $light: white, $dark: black) {
   @if (perceivedbrightness($color) > 68) {
-    @return $dark; // Lighter background, return dark color
+    @return $dark;
   } @else {
-    @return $light; // Darker background, return light color
+    @return $light;
   }
 }
