@@ -24,7 +24,7 @@ fractal.components.set("default.preview", "@preview-container");
  */
 
 //  show these panels in production:
-var panels = ["html", "view", "notes"];
+var panels = ["notes", "html", "view"];
 // Add these panels for dev only
 if (process.env.ENV == "development") {
   panels.push("context", "resources", "info");
