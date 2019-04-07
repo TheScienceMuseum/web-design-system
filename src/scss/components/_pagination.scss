@@ -42,6 +42,10 @@
       padding: $item-padding;
       text-decoration: none;
 
+      &[href]:visited {
+        color: black;
+      }
+
       &[href]:hover {
         background-color: grey(10);
       }

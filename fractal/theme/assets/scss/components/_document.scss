@@ -16,10 +16,17 @@
   // .Status {
   //     @include margin-inline(start, auto);
   // }
+  margin: -1.5rem -2rem 1.5rem -2rem; // opposite of .Document padding
+  @include sm-gradient($c-teal $c-blue $c-purple);
+  @include sm-gradient-animated;
+  border-bottom: none;
+  width: calc(100% + 4rem);
+  padding: 4rem 2rem 1rem;
 }
 
 .Document-title {
   // @include font(title);
-  @include type-h1;
+  @include type-h2;
   text-transform: uppercase;
+  color: contrasting-text-color($c-blue);
 }

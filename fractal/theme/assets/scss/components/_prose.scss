@@ -1,0 +1,16 @@
+.Prose {
+  font-size: inherit;
+  max-width: 48em;
+}
+
+.o-textstyles {
+  code,
+  code pre {
+    background: grey(5);
+  }
+  code pre {
+    margin: 1rem 0;
+    padding: 0.25rem;
+    overflow: auto;
+  }
+}

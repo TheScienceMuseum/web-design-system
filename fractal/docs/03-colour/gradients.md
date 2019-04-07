@@ -1,5 +1,3 @@
-#grads
-
 Use to create areas of vibrant brand expression.
 
 If you have a great image to work with, there is no need to add a gradient.
@@ -18,6 +16,8 @@ Or you can add use the scss mixin, e.g.
 ```
 @include sm-gradient($c-green $c-teal $c-blue);
 ```
+
+{{> fullwidth }}
 
 2 colour:
 

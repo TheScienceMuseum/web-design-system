@@ -1,0 +1,19 @@
+.Examplegrid {
+  // border: 1px black solid;
+  display: flex;
+  flex-flow: row nowrap;
+
+  &__item {
+    border: 1px solid currentColor;
+    margin: 0 -1px -1px 0;
+    padding: 1rem;
+  }
+
+  &--reversed {
+    color: white;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}
