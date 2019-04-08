@@ -29,7 +29,11 @@
     "build:css:sass": "node-sass src/scss -o public/css/ --include-path node_modules --source-map-root file://${PWD}/ --source-map-embed true --error-bell",
     "build:css:prefix": "postcss --u autoprefixer -r public/css/*.css --map",
     "build:js": "browserify src/js/main.js > public/js/bundle.js",
-    "build:svg": "svg-sprite --view --vscss --view-sprite=sprite.view.svg --symbol --symbol-example --symbol-sprite=sprite.symbol.svg --dest=public/assets/img/sprite src/logos/**/*.svg src/icons/**/*.svg",
+    "build:svg": "run-p build:svg:*",
+    "build:svg:sprite": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/logos src/assets/logos/**/*.svg",
+    "build:svg:spriteicons": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/icons src/assets/icons/**/*.svg",
+    "build:svg:logos": "svgo -f src/assets/logos -o public/assets/logos",
+    "build:svg:icons": "svgo -f src/assets/icons -o public/assets/icons",
     "minify": "run-p minify:*",
     "minify:css": "postcss public/css/*.css -u cssnano --replace --map",
     "minify:js": "uglifyjs public/js/bundle.js -o public/js/bundle.js",
@@ -37,7 +41,7 @@
     "watch:fractal": "ENV=development fractal start --sync",
     "watch:css": "onchange 'src/**/*.scss' -- npm run build:css",
     "watch:js": "onchange 'src/**/*.js' -- npm run build:js",
-    "watch:svg": "onchange 'src/**/*.svg' -- npm run build:svg",
+    "watch:svg": "onchange 'src/assets/**/*.svg' -- npm run build:svg",
     "watch:sassdoc": "onchange 'src/**/*.scss' -- npm run sassdoc",
     "sassdoc": "sassdoc src/scss node_modules/include-media/dist"
   },
@@ -58,6 +62,7 @@
     "postcss-cli": "^6.1.2",
     "sassdoc": "^2.5.1",
     "svg-sprite": "^1.5.0",
+    "svgo": "^1.2.1",
     "uglifyjs": "^2.4.11"
   },
   "jshintConfig": {
@@ -84,6 +89,7 @@
   ],
   "files": [
     "src",
+    "dist/assets",
     "dist/js",
     "dist/css"
   ]
