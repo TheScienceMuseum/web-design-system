@@ -4,37 +4,37 @@ module.exports = {
   preview: "@preview-raw",
   context: {
     strap: "The Science Museum Group",
-    links: [
-      {
+    links: {
+      sml: {
         name: "Science Museum",
         url: "http://www.sciencemuseum.org.uk",
-        image:
-          "https://collection.sciencemuseum.org.uk/assets/img/global/sml-logo.svg"
+        width: "398",
+        height: 154
       },
-      {
-        name: "National Science and Media Museum",
-        url: "https://www.scienceandmediamuseum.org.uk",
-        image:
-          "https://collection.sciencemuseum.org.uk/assets/img/global/smm-logo.svg"
-      },
-      {
+      sim: {
         name: "Science and Industry Museum",
         url: "https://www.scienceandindustrymuseum.org.uk",
-        image:
-          "https://collection.sciencemuseum.org.uk/assets/img/global/msi-logo.svg"
+        width: "448",
+        height: 236
       },
-      {
+      smm: {
+        name: "National Science and Media Museum",
+        url: "https://www.scienceandmediamuseum.org.uk",
+        width: "448",
+        height: 236
+      },
+      rm: {
         name: "National Railway Museum",
         url: "http://www.railwaymuseum.org.uk",
-        image:
-          "https://collection.sciencemuseum.org.uk/assets/img/global/nrm-logo.svg"
+        width: "379",
+        height: 154
       },
-      {
+      loco: {
         name: "Locomotion",
         url: "https://www.locomotion.org.uk/",
-        image:
-          "https://collection.sciencemuseum.org.uk/assets/img/global/loco-logo.svg"
+        width: "544",
+        height: 70
       }
-    ]
+    }
   }
 };
