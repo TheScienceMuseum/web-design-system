@@ -34,7 +34,7 @@ here is an icon <span class="u-icon"><svg><use xlink:href="/assets/icons/sprite.
 {{#each icons }}
   <div class="Examplegrid__item">
     <svg style="margin: 1rem"  width="24" height="24">
-      <use xlink:href="/assets/icons/sprite.symbol.svg#{{ @key }}" />
+      <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
     </svg>
     <div><code>{{@key}}</code></div>
   </div>
