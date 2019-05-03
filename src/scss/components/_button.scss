@@ -42,7 +42,7 @@
   text-decoration: none;
   font-weight: bold;
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   line-height: 1;
   border: 0; // may be applied to inputs
   transition: background-color $transition-default;
@@ -88,8 +88,10 @@
         content: "";
         // TODO: match  fill/stroke color to theme color
         background-image: svg-uri(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g fill="none" stroke-width="3" stroke="#fff"><path d="M21 12H4m11-6l6 6-6 6"/></g></svg>'
+          '<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15.8030016 13.665h-11.8030016v-3.33h11.8030016l-4.1576672-4.15766721 2.3546656-2.35466558 8.1773328 8.17733279-8.1773328 8.1773328-2.3546656-2.3546656z" fill="white"/></svg>'
         );
+        // background-image: url("/assets/icons/3d.svg");
+        // fill: white;
         background-repeat: no-repeat;
         position: absolute;
         right: 1em;
@@ -109,6 +111,9 @@
       }
     }
 
+    .u-icon:last-child {
+      margin-left: 1rem;
+    }
     // Variation:
     // -disabled
     // Grey background and not clickable - when the event is sold out

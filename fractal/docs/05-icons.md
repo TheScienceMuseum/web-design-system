@@ -10,9 +10,9 @@ Based on a 24px em-square, & therefore 24px base square icon, The original strok
 - Regular: 2.25
 - Light: 1.6
 
-However, all icons are exported outlined to a single path without stroke, and without a specified fill colour, so the default fil (black) can be overriden with css <code>fill: #f00</code> or generally, even simpler, it will inherit: <code>fill: currentColor;</code>.
+However, all icons are exported outlined to a single path without stroke, and without a specified fill colour, so the default fill (black) can be overridden with css <code>fill: #f00</code> or generally, even simpler, it will inherit: <code>fill: currentColor;</code>.
 
-> TODO: symbol aliases for e.g. youtube -> video. Both collections and wordpress require icons named after differnt data IDs
+> TODO: symbol aliases for e.g. youtube -> video. Both collections and wordpress require icons named after different data IDs
 
 ### Usage
 

@@ -1,7 +1,16 @@
+# publish as .md files to inside fractal docs:
 dest:
-  ./fractal/docs/21-sassdoc
+  ./fractal/docs/99-sass-tools
 theme: md
 md:
   extension: .md #default: .html.md
-groups:
-  undefined: 'Undefined - but hopefully just include-media?'
+groups: #rename groups:
+  undefined: 'include-media' # this external doesn't use groups, so i'm cheating by renaming the undefined group 
+display:
+  access:
+    - public
+description: |
+  This is the description of the project!
+
+  * It is parsed as markdown.
+  * It is displayed in your documentation page.

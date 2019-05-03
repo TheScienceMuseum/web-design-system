@@ -1,6 +1,8 @@
 Handlebars template adapted from collections, but markup more like WP because it has more a11y.
 
-TODO:
+Icons included here from sprite-sheet, but they could be inlined.
 
-- change WP markup
-- get ellipsis rules from collections
+> TODO:
+>
+> - change WP markup
+> - get ellipsis rules from collections

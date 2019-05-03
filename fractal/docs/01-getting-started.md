@@ -1,8 +1,6 @@
 ---
-title: Getting started
+title: How to use this
 ---
-
-# How to use this
 
 ## To import source Scss and js into another project:
 
@@ -30,7 +28,7 @@ Add a link to the compiled version via unpkg.io (or SMG cdn?)
 
 ### using node-sass CLI:
 
-Add ` --include-path node_modules`
+Add `--include-path node_modules`
 
 ```
 @import "smg-design-system/src/scss/main.scss";

@@ -16,6 +16,8 @@
 
 {{> endfullwidth }}
 
+&nbsp;
+
 You can also pass a fill colour to override the default (black)
 
 Logos have different aspect ratios to keep the same relative letter height.

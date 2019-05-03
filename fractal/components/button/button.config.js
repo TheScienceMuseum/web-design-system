@@ -24,9 +24,19 @@ module.exports = {
     {
       name: "Themed2",
       context: {
-        label: "Orange button!",
+        label: "Orange button with icon!",
         theme: "xxx",
-        class: "c-btn--orange"
+        class: "c-btn--orange",
+        icon: "arrow-right-bold"
+      }
+    },
+    {
+      name: "Themed3",
+      context: {
+        label: "yellow icon!",
+        theme: "xxx",
+        class: "c-btn--yellow",
+        icon: "video"
       }
     },
     {

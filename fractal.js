@@ -43,7 +43,7 @@ const hbs = require("@frctl/handlebars")({
   partials: {
     foobar: "This is a partial! live",
     fullwidth: "</div><div>",
-    endfullwidth: '</div><div class="o-textstyles">'
+    endfullwidth: '</div><div class="o-textstyles Prose">'
   }
   /* other configuration options here */
 });

@@ -1,4 +1,6 @@
-# OUR COMMUNICATION PRINCIPLES
+---
+title: OUR COMMUNICATION PRINCIPLES
+---
 
 > This stuff is straight out of the brand guidelines, but should be relevant here too.
 

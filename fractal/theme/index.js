@@ -20,6 +20,7 @@ if (process.env.ENV == "development") {
 }
 
 const subTheme = mandelbrot({
+  favicon: "/assets/favicon.ico",
   skin: "blue",
   styles: ["/css/main.css", "/subtheme/css/main.css"],
   nav: ["docs", "components"], // show docs above components in the sidebar

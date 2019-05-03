@@ -51,7 +51,7 @@
       }
 
       @if $mobile-items {
-        display: inline-block;
+        display: inline-flex;
       } @else {
         display: none;
 
@@ -59,11 +59,11 @@
         &:first-child,
         &.current,
         &[aria-current="page"] {
-          display: inline-block;
+          display: inline-flex;
         }
 
         @include media(">=medium") {
-          display: inline-block;
+          display: inline-flex;
         }
       }
     }
@@ -99,16 +99,16 @@
       color: black;
     }
 
-    #{$prev-selector}::before {
-      content: "\00ab";
-      display: inline-block;
+    #{$prev-selector} .u-icon {
       margin-right: 0.5rem;
     }
 
-    #{$next-selector}::after {
-      content: "\00bb";
-      display: inline-block;
+    #{$next-selector} .u-icon {
       margin-left: 0.5rem;
+    }
+    #{$prev-selector},
+    #{$prev-selector} {
+      display: flex;
     }
   }
 }

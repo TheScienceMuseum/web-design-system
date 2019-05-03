@@ -26,7 +26,7 @@
 
 .Document-title {
   // @include font(title);
-  @include type-h2;
+  @include type-h1;
   text-transform: uppercase;
   color: contrasting-text-color($c-blue);
 }
