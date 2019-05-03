@@ -22,9 +22,9 @@ There is a sprite version that compiles all the icons into one svg that can be u
 
 Wrap in <pre>.u-icon</pre> to size at 1em, therefore same as current text context
 
-here is an icon <span class="u-icon"><svg><use xlink:href="/assets/icons/sprite.symbol.svg#people" /></svg></span>inline
+here is an icon <span class="u-icon"><svg><use xlink:href="{{path '/assets/icons/sprite.symbol.svg#people'}}" /></svg></span>inline
 
-## here is an icon <span class="u-icon"><svg><use xlink:href="/assets/icons/sprite.symbol.svg#3d" /></svg></span>inline
+## here is an icon <span class="u-icon"><svg><use xlink:href="{{path '/assets/icons/sprite.symbol.svg#3d'}}" /></svg></span>inline
 
 > It should line up with the baseline, but I still think there's something weird with the font metrics that also causes the misalignment in Windows browsers
 
@@ -45,7 +45,7 @@ here is an icon <span class="u-icon"><svg><use xlink:href="/assets/icons/sprite.
 {{#each icons }}
   <div class="Examplegrid__item ">
     <svg style="margin: 1rem" width="24" height="24">
-      <use xlink:href="/assets/icons/sprite.symbol.svg#{{ @key }}" />
+      <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
     </svg>
     <div><code>{{@key}}</code></div>
   </div>
