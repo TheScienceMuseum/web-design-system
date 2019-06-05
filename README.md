@@ -1,4 +1,4 @@
-#Science Museum Group Design System
+#Science Museum Group: Web Design System
 
 > N.B W.I.P - not ready for use yet!
 

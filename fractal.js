@@ -5,7 +5,7 @@ const pkg = require(path.join(__dirname, "package.json"));
 const fractal = (module.exports = require("@frctl/fractal").create());
 var Fs = require("fs");
 
-fractal.set("project.title", "Science Museum Group design system");
+fractal.set("project.title", "Science Museum Group: Web Design System");
 // Provide the package.json "version" to the templates
 fractal.set("project.version", pkg.version);
 

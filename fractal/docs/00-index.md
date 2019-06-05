@@ -1,7 +1,5 @@
 ---
-title: Science Museum Group style guide
+title: "Science Museum Group: Web Design System"
 ---
-
-Or should that be 'design system' ?
 
 > TODO: make this Fractal theme more adherent to the style guide styles?
