@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = (env, argv) => {
   let devMode = argv.mode !== "production";
@@ -9,7 +10,8 @@ module.exports = (env, argv) => {
       extensions: [".js"]
     },
     entry: {
-      index: path.resolve(__dirname, "src/js/index.js")
+      index: path.resolve(__dirname, "src/js/index.js"),
+      main: "./src/scss/main.scss"
     },
     output: {
       // path: devMode
@@ -28,10 +30,39 @@ module.exports = (env, argv) => {
           test: /\.js$/,
           exclude: /node_modules/,
           loader: "babel-loader"
+        },
+        {
+          test: /\.scss$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader
+            },
+            "css-loader",
+            {
+              loader: "postcss-loader",
+              options: {
+                plugins: [require("autoprefixer")(), require("cssnano")()]
+              }
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                includePaths: ["node_modules"]
+              }
+            }
+          ]
+        },
+        {
+          test: /\.(png|svg|jpg|gif)$/,
+          use: ["file-loader"]
         }
       ]
     },
-    plugins: [],
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: "css/[name].css"
+      })
+    ],
     devServer: {
       hot: true,
       disableHostCheck: true,

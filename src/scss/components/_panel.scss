@@ -56,7 +56,7 @@
 
   a[href$="pdf"]:after {
     @include href-icon(1.25em);
-    background-image: url(../assets/icons/icn-pdf-white.svg);
+    background-image: url(../assets/icons/pdf.svg);
   }
 
   &__resultslink:before {

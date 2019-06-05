@@ -25,9 +25,6 @@
     "dist:fractal": "fractal build",
     "deploy": "./deploy-to-gh-pages.sh",
     "build": "run-p build:*",
-    "build:css": "run-s build:css:*",
-    "build:css:sass": "node-sass src/scss -o public/css/ --include-path node_modules --source-map-root file://${PWD}/ --source-map-embed true --error-bell",
-    "build:css:prefix": "postcss --u autoprefixer -r public/css/*.css --map",
     "build:js": "NODE_ENV=production webpack",
     "build:svg": "run-p build:svg:*",
     "build:svg:sprite": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/logos src/assets/logos/**/*.svg",
@@ -36,10 +33,8 @@
     "build:svg:icons": "svgo -f src/assets/icons -o public/assets/icons",
     "build:favicons": "cp -R src/assets/favicons public/assets/favicons",
     "minify": "run-p minify:*",
-    "minify:css": "postcss public/css/*.css -u cssnano --replace --map",
     "watch": "npm-run-all build --parallel watch:*",
     "watch:fractal": "ENV=development fractal start --sync",
-    "watch:css": "onchange 'src/**/*.scss' -- npm run build:css",
     "watch:js": "webpack-dev-server",
     "watch:svg": "onchange 'src/assets/**/*.svg' -- npm run build:svg",
     "watch:sassdoc": "onchange 'src/**/*.scss' -- npm run sassdoc",
@@ -53,36 +48,27 @@
     "@frctl/mandelbrot": "^1.2.0",
     "autoprefixer": "^9.5.0",
     "babel-loader": "^8.0.6",
-    "babelify": "^10.0.0",
-    "browserify": "^16.2.3",
+    "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
+    "file-loader": "^4.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.11.0",
     "npm-run-all": "^4.1.5",
     "onchange": "^5.2.0",
     "postcss": "^7.0.14",
     "postcss-cli": "^6.1.2",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
     "sassdoc": "^2.5.1",
+    "style-loader": "^0.23.1",
     "svg-sprite": "^1.5.0",
     "svgo": "^1.2.1",
-    "uglifyjs": "^2.4.11",
     "webpack": "^4.33.0",
     "webpack-cli": "^3.3.2",
     "webpack-dev-server": "^3.5.1"
   },
   "jshintConfig": {
     "esversion": 6
-  },
-  "browserify": {
-    "transform": [
-      [
-        "babelify",
-        {
-          "presets": [
-            "@babel/preset-env"
-          ]
-        }
-      ]
-    ]
   },
   "browserslist": [
     "last 2 versions",
