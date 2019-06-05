@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "npm run watch",
-    "dist": "run-s build minify dist:fractal sassdoc",
+    "dist": "run-s build dist:fractal sassdoc",
     "dist:fractal": "fractal build",
     "deploy": "./deploy-to-gh-pages.sh",
     "build": "run-p build:*",
@@ -32,7 +32,6 @@
     "build:svg:logos": "svgo -f src/assets/logos -o public/assets/logos",
     "build:svg:icons": "svgo -f src/assets/icons -o public/assets/icons",
     "build:favicons": "cp -R src/assets/favicons public/assets/favicons",
-    "minify": "run-p minify:*",
     "watch": "npm-run-all build --parallel watch:*",
     "watch:fractal": "ENV=development fractal start --sync",
     "watch:js": "webpack-dev-server",
