@@ -15,7 +15,7 @@ module.exports = {
         text: "Using a custom selector",
         class: "custom-class",
         init:
-          "<script>document.addEventListener('DOMContentLoaded', function(event) {smg.illuminate({selector: '.custom-class'})})</script>"
+          "<script>document.addEventListener('DOMContentLoaded', function(event) {smgwds.illuminate();smgwds.illuminate({selector: '.custom-class'})})</script>"
       }
     }
   ]

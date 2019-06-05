@@ -17,6 +17,13 @@ fractal.docs.set("path", path.join(__dirname, "fractal/docs"));
 fractal.web.set("static.path", path.join(__dirname, "public"));
 fractal.web.set("builder.dest", __dirname + "/dist");
 
+/**
+ * Server configuration
+ */
+fractal.web.set("server.port", 4000);
+fractal.web.set("server.sync", true);
+fractal.web.set("debug", true);
+
 fractal.components.set("default.preview", "@preview-container");
 
 /**

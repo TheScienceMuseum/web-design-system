@@ -3,6 +3,8 @@ module.exports = {
   status: "wip",
   tags: ["js"],
   context: {
+    init:
+      "<script>document.addEventListener('DOMContentLoaded', function(event) {smgwds.accordions();})</script>",
     accordions: [
       {
         title: "Accordion Title",
