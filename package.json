@@ -5,15 +5,15 @@
   "main": "dist/js/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TheScienceMuseum/design-system.git"
+    "url": "git+https://github.com/TheScienceMuseum/web-design-system.git"
   },
   "keywords": [],
   "author": "toby@tobystokes.uk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/TheScienceMuseum/design-system/issues"
+    "url": "https://github.com/TheScienceMuseum/web-design-system/issues"
   },
-  "homepage": "https://github.com/TheScienceMuseum/design-system#readme",
+  "homepage": "https://github.com/TheScienceMuseum/web-design-system#readme",
   "dependencies": {
     "include-media": "^1.4.9",
     "normalize-scss": "^7.0.1",

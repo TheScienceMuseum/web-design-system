@@ -2,7 +2,7 @@
 
 > N.B W.I.P - not ready for use yet!
 
-If you just want to read, the built version of this repository is at https://thesciencemuseum.github.io/design-system/
+If you just want to read, the built version of this repository is at https://thesciencemuseum.github.io/web-design-system/
 
 ## How to use
 

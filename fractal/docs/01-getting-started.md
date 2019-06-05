@@ -7,7 +7,7 @@ title: How to use this
 > direct from github while in dev:
 
 ```
-TheScienceMuseum/design-system#master
+TheScienceMuseum/web-design-system#master
 ```
 
 > but once its published to npm:
