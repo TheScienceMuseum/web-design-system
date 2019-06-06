@@ -5,9 +5,9 @@ Our group typeface is called SMG Sans and is to be used by our whole family of m
 SMG Sans has been designed to create a modern, clear and recognisable typographic style for our brand and should be used for all communications.
 It is a multiplexed font which comes in comes in six weights, giving us flexibility to communicate the varying content across our family of museums, and when used in combination, creates the ownable ’illuminated’ aesthetic of our visual identity.
 
-## Typesetting
+## Licensing
 
-> [Here, my opinions diverge from North's print usage on what works best as default for screen legibility. TBC]
+> Need to include licensing guidelines here? Presume that all SMG properties are allowed to use the font, but should probably include some copyright info here.
 
 ## CDN
 

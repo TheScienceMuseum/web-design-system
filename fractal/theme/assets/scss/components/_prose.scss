@@ -1,6 +1,10 @@
 .Prose {
   font-size: inherit;
   max-width: 48em;
+
+  h2:first-child {
+    margin-top: 0;
+  }
 }
 
 .o-textstyles {

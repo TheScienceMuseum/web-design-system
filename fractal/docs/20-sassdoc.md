@@ -2,7 +2,7 @@
 title: Scss docs
 ---
 
-Further docs about _internal_ SCSS mixins and functions are available at [Sass tools](docs/sass-tools/ ?).
+Further docs about _internal_ SCSS mixins and functions are available at [Sass tools](/docs/sass-tools/colour).
 
 You'll also have use of these third party libraries:
 
@@ -10,4 +10,4 @@ You'll also have use of these third party libraries:
 - [normalize-scss](https://github.com/JohnAlbin/normalize-scss)
 - [sass-between](https://github.com/tobystokes/sass-between)
 
-> TODO: Sass comments are processed into markdown via our special theme, but could be improved in terms of formatting / template.
+> TODO: Sass comments are processed from the source into markdown you see here via our special sassdoc theme, but it could be improved in terms of formatting / template. If it's actually of use to anyone...
