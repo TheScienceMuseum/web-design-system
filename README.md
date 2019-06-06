@@ -1,24 +1,26 @@
 #Science Museum Group: Web Design System
 
-> N.B W.I.P - not ready for use yet!
+> N.B This is W.I.P - not ready for public use yet!
 
-If you just want to read, the built version of this repository is at https://thesciencemuseum.github.io/web-design-system/
+Visit https://thesciencemuseum.github.io/web-design-system/ to browse the contents of this repository,and for further usage instructions.
 
-## How to use
+## Contributing to the system
 
-`npm install` me.
+If you want to contribute to this, you will need to:
 
-...
+- Clone this repository
+- `npm install` to get dependencies
+- `npm run watch` to start a development server and watch for your changes on http://localhost:3000 (n.b. Fractal is running on :4000 but is proxied by webpack dev server on :3000 for hot reloading)
+- `npm run dist` to make a production-ready copy (you'll need to serve that yourself)
+- `npm run deploy` to update the `gh-pages` branch the public documentation is on.
 
-### Deploy /dist to gh-pages
+## Contribution guideline
 
-```
-npm run deploy
-```
+TBC - https://github.com/TheScienceMuseum/collectionsonline/wiki/Collaborator-contributions is a good starting place?
 
 ## Principles
 
-Everything should be modular, so all modules are optional.
+Everything should be modular, all modules are optional.
 
 Modules should be consumable by scss for customisation, or a dist css
 
