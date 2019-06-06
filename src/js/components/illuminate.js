@@ -1,8 +1,7 @@
 /*
   'illuminate' is the SMG brand guidelines term for using a range of font-weights across text.
   Only to be used on special occasions.
-  Note this implementation doesn't check for possible text wrap.
-  If the string doesn't divide equally, we spread the modulos from the heavier end
+  
 */
 
 export default function illuminate(options) {
@@ -17,6 +16,7 @@ export default function illuminate(options) {
 
   function chunkString(string) {
     var chunkLength = Math.floor(string.length / weights.length);
+    // If the string doesn't divide equally, we spread the modulos from the heavier end
     var modulo = string.length % weights.length;
     var chunks = [];
     var strStart = 0;
@@ -32,8 +32,8 @@ export default function illuminate(options) {
     return chunks;
   }
 
-  function addWrappers(element) {
-    var chunkedString = chunkString(element.innerHTML);
+  function addWeightWrappers(textString) {
+    var chunkedString = chunkString(textString);
     var spanified = [];
     for (var i = 0; i < chunkedString.length; i++) {
       spanified[i] =
@@ -46,15 +46,71 @@ export default function illuminate(options) {
     return spanified.join("");
   }
 
+  function wrapLines(element) {
+    var string = element.getAttribute("aria-label");
+    var text = string.split("");
+
+    // get all the current line-break points.
+    // if the height of the el increases when we add a character, then we haz wrap. BUT that's not necessarily the break point. Generally, browsers will break at word boundary, so we reverse to the previous space. Though other characters or space constraints could cause different breaks?
+
+    element.innerHTML = "";
+    var span = document.createElement("span");
+    element.appendChild(span);
+    var spanHeight = 0;
+    var splitPoints = [];
+    var lastBreak = 0;
+    for (var i = 0; i < text.length; i++) {
+      span.innerHTML = span.innerHTML + text[i];
+      if (text[i] == " ") lastBreak = i;
+      if (span.offsetHeight > spanHeight) {
+        spanHeight = span.offsetHeight;
+        splitPoints.push(lastBreak);
+      }
+      if (text[i].match(/\n/)) {
+        // add exceptions, such as line break characters.
+        splitPoints.push(i);
+      }
+    }
+    splitPoints.push(text.length);
+    splitPoints.sort();
+
+    var lines = splitPoints.reduce((accumulator, currentValue, i) => {
+      if (i + 1 < splitPoints.length) {
+        accumulator.push(string.slice(splitPoints[i], splitPoints[i + 1]));
+      }
+
+      return accumulator;
+    }, []);
+
+    element.innerHTML = "";
+    for (var i = 0; i < lines.length; i++) {
+      var span = document.createElement("span");
+      span.className = "line";
+      span.innerHTML = addWeightWrappers(lines[i]);
+      element.appendChild(span);
+      if (i < lines.length - 1) {
+        element.appendChild(document.createElement("br"));
+      }
+    }
+
+    return element.innerHTML;
+  }
+
   function renderStrings(elements) {
     for (var i = 0; i < elements.length; i++) {
-      // Add aria-label to maintain voice-readability of original
-      elements[i].setAttribute("aria-label", elements[i].innerHTML);
-      // Replace old string with gradientised one
-      elements[i].innerHTML = addWrappers(elements[i]);
+      // Add aria-label to maintain voice-readability of original, and use as reference text for remeasuring.
+      if (!elements[i].getAttribute("aria-label"))
+        elements[i].setAttribute("aria-label", elements[i].innerText);
+
+      elements[i].innerHTML = wrapLines(elements[i]);
     }
   }
 
-  var strings = document.querySelectorAll(selector);
-  renderStrings(strings);
+  // go, and go again on resize.
+  function initialise() {
+    var strings = document.querySelectorAll(selector);
+    renderStrings(strings);
+  }
+  initialise();
+  window.addEventListener("resize", initialise);
 }

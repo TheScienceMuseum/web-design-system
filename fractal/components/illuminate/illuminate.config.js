@@ -13,7 +13,14 @@ module.exports = {
       name: "Custom selector",
       context: {
         text: "Using a custom selector",
-        class: "custom-class",
+        class: "custom-class"
+      }
+    },
+    {
+      name: "Wrapping text ",
+      context: {
+        text:
+          "So much text that it wraps onto two lines or maybe <br/> includes line-breaks",
         init:
           "<script>document.addEventListener('DOMContentLoaded', function(event) {smgwds.illuminate();smgwds.illuminate({selector: '.custom-class'})})</script>"
       }
