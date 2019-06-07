@@ -18,6 +18,23 @@ If you want to contribute to this, you will need to:
 
 TBC - https://github.com/TheScienceMuseum/collectionsonline/wiki/Collaborator-contributions is a good starting place?
 
+## Structure
+
+```
+├── dist            // built version of fractal, and select files for npm
+├── fractal         // all the stuff for the fractal styleguide
+│   ├── components
+│   ├── docs
+│   └── theme       // subtheme of Mandelbrot, with its own deps for recompiling
+├── public          // static directory for serving fractal
+├── src             // gets included in pkg
+│   ├── assets
+│   ├── js
+│   └── scss
+├── fractal.js      // Fractal setup
+└── package.json
+```
+
 ## Principles
 
 Everything should be modular, all modules are optional.
