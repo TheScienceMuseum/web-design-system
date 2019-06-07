@@ -451,12 +451,151 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
 
 ---
 
+## c-red
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-red: #e60060
+```
+
+---
+
+## c-orange
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-orange: #ec6408
+```
+
+---
+
+## c-yellow
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-yellow: #ffee00
+```
+
+---
+
+## c-green
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-green: #95c11f
+```
+
+---
+
+## c-teal
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-teal: #4bbecf
+```
+
+---
+
+## c-blue
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-blue: #004899
+```
+
+---
+
+## c-purple
+
+### Description
+
+Base colour
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$c-purple: #af1280
+```
+
+---
+
 ## palettes
 
 ### Description
 
 Main palette variable map.
 these can not be overrriden.
+
+### Type
+
+`Map`
+
+### Example
+
+Access via pallette function
+
+```scss
+background-color: palette(blue)
+color: palette(blue, text)
+```
 
 ### Used By
 
@@ -473,45 +612,45 @@ $palettes: (
   red: (
     base: $c-red,
     text: contrasting-text-color($c-red),
-    light:  blend-normal(rgba($c-red, 0.66), white),
+    light: blend-normal(rgba($c-red, 0.66), white),
     dark: blend-multiply($c-red, $c-red)
   ),
   orange: (
     base: $c-orange,
     text: contrasting-text-color($c-orange),
-    light:  blend-normal(rgba($c-orange, 0.66), white),
+    light: blend-normal(rgba($c-orange, 0.66), white),
     dark: blend-multiply($c-orange, $c-orange)
   ),
   yellow: (
     base: $c-yellow,
     text: contrasting-text-color($c-yellow),
-    light:  blend-normal(rgba($c-yellow, 0.66), white),
+    light: blend-normal(rgba($c-yellow, 0.66), white),
     dark: blend-multiply($c-yellow, $c-yellow)
   ),
   green: (
     base: $c-green,
     text: contrasting-text-color($c-green),
-    light:  blend-normal(rgba($c-green, 0.66), white),
+    light: blend-normal(rgba($c-green, 0.66), white),
     dark: blend-multiply($c-green, $c-green)
   ),
   teal: (
     base: $c-teal,
     text: contrasting-text-color($c-teal),
-    light:  blend-normal(rgba($c-teal, 0.66), white),
+    light: blend-normal(rgba($c-teal, 0.66), white),
     dark: blend-multiply($c-teal, $c-teal)
   ),
   blue: (
     base: $c-blue,
     text: contrasting-text-color($c-blue),
-    light:  blend-normal(rgba($c-blue, 0.66), white),
+    light: blend-normal(rgba($c-blue, 0.66), white),
     dark: blend-multiply($c-blue, $c-blue)
   ),
   purple: (
     base: $c-purple,
     text: contrasting-text-color($c-purple),
-    light:  blend-normal(rgba($c-purple, 0.66), white),
+    light: blend-normal(rgba($c-purple, 0.66), white),
     dark: blend-multiply($c-purple, $c-purple)
-  ),
+  )
 )
 ```
 

@@ -2,12 +2,26 @@
 /// @group Colour
 ////
 
+/// Base colour
+/// @type Color
 $c-red: #e60060;
+/// Base colour
+/// @type Color
 $c-orange: #ec6408;
+/// Base colour
+/// @type Color
 $c-yellow: #ffee00;
+/// Base colour
+/// @type Color
 $c-green: #95c11f;
+/// Base colour
+/// @type Color
 $c-teal: #4bbecf;
+/// Base colour
+/// @type Color
 $c-blue: #004899;
+/// Base colour
+/// @type Color
 $c-purple: #af1280;
 
 // used for cycle order in gradient builder
@@ -15,47 +29,52 @@ $colourwheel: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple;
 
 /// Main palette variable map.
 /// these can not be overrriden.
+/// @type Map
+/// @example scss - Access via pallette function
+///   background-color: palette(blue)
+///   color: palette(blue, text)
+
 $palettes: (
   red: (
     base: $c-red,
     text: contrasting-text-color($c-red),
-    light:  blend-normal(rgba($c-red, 0.66), white),
+    light: blend-normal(rgba($c-red, 0.66), white),
     dark: blend-multiply($c-red, $c-red)
   ),
   orange: (
     base: $c-orange,
     text: contrasting-text-color($c-orange),
-    light:  blend-normal(rgba($c-orange, 0.66), white),
+    light: blend-normal(rgba($c-orange, 0.66), white),
     dark: blend-multiply($c-orange, $c-orange)
   ),
   yellow: (
     base: $c-yellow,
     text: contrasting-text-color($c-yellow),
-    light:  blend-normal(rgba($c-yellow, 0.66), white),
+    light: blend-normal(rgba($c-yellow, 0.66), white),
     dark: blend-multiply($c-yellow, $c-yellow)
   ),
   green: (
     base: $c-green,
     text: contrasting-text-color($c-green),
-    light:  blend-normal(rgba($c-green, 0.66), white),
+    light: blend-normal(rgba($c-green, 0.66), white),
     dark: blend-multiply($c-green, $c-green)
   ),
   teal: (
     base: $c-teal,
     text: contrasting-text-color($c-teal),
-    light:  blend-normal(rgba($c-teal, 0.66), white),
+    light: blend-normal(rgba($c-teal, 0.66), white),
     dark: blend-multiply($c-teal, $c-teal)
   ),
   blue: (
     base: $c-blue,
     text: contrasting-text-color($c-blue),
-    light:  blend-normal(rgba($c-blue, 0.66), white),
+    light: blend-normal(rgba($c-blue, 0.66), white),
     dark: blend-multiply($c-blue, $c-blue)
   ),
   purple: (
     base: $c-purple,
     text: contrasting-text-color($c-purple),
-    light:  blend-normal(rgba($c-purple, 0.66), white),
+    light: blend-normal(rgba($c-purple, 0.66), white),
     dark: blend-multiply($c-purple, $c-purple)
-  ),
+  )
 );

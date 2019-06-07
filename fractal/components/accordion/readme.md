@@ -1,0 +1,1 @@
+This component requires javascript.
