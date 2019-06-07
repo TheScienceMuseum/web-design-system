@@ -1,5 +1,5 @@
 {
-  "name": "@smg/wds",
+  "name": "smg-web-design-system",
   "version": "0.1.0",
   "description": "Science Museum Group: Web Design System > N.B W.I.P - not ready for use yet!",
   "main": "dist/js/index.js",
