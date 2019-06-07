@@ -180,7 +180,7 @@ Get a colour from the $palette map
 
 ---
 
-## repeat
+## multiple-repeat
 
 ### Description
 
@@ -206,7 +206,7 @@ Repeats a value. For properties that take comma-separated lists
 ### Source
 
 ```scss
-@function repeat($value, $repetitions) { safe: 
+@function multiple-repeat($value, $repetitions) { safe: 
   $values: ();
   @for $i from 1 through $repetitions {
     $next_value: $value;
@@ -409,9 +409,9 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
 
 ### Requires
 
-* [function] `repeat` 
+* [function] `multiple-repeat` 
 
-* [function] `repeat` 
+* [function] `multiple-repeat` 
 
 ### See
 
@@ -439,10 +439,10 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
   @at-root {
     @keyframes #{$name} {
       0% {
-        background-size: repeat(100% 100%, $layers);
+        background-size: multiple-repeat(100% 100%, $layers);
       }
       100% {
-        background-size: repeat(200% 200%, $layers);
+        background-size: multiple-repeat(200% 200%, $layers);
       }
     }
   }

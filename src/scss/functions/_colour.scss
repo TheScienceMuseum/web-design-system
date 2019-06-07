@@ -119,10 +119,10 @@
   @at-root {
     @keyframes #{$name} {
       0% {
-        background-size: repeat(100% 100%, $layers);
+        background-size: multiple-repeat(100% 100%, $layers);
       }
       100% {
-        background-size: repeat(200% 200%, $layers);
+        background-size: multiple-repeat(200% 200%, $layers);
       }
     }
   }
@@ -134,7 +134,7 @@
 /// @param {Number} $repetitions - number of repetitions
 /// @return {String}
 
-@function repeat($value, $repetitions) {
+@function multiple-repeat($value, $repetitions) {
   $values: ();
   @for $i from 1 through $repetitions {
     $next_value: $value;
