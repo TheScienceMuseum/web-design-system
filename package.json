@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Science Museum Group: Web Design System > N.B W.I.P - not ready for use yet!",
   "main": "dist/js/index.js",
+  "style": "src/scss/main.scss",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TheScienceMuseum/web-design-system.git"
