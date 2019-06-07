@@ -1,4 +1,9 @@
 /**
+ * Most of these files are pulled from the original Mandelbrot theme untouched.
+ * If you need to make modifications, copy to local and update path.
+ */
+
+/**
  * Settings
  */
 @import "../../src/scss/lib";
@@ -16,7 +21,7 @@
  * Core
  */
 @import "@frctl/mandelbrot/assets/scss/core/mixins.scss";
-@import "@frctl/mandelbrot/assets/scss/core/foundation.scss";
+@import "core/foundation.scss";
 
 /**
  * Helpers
