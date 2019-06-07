@@ -1,7 +1,7 @@
 module.exports = {
   griditem: "top level",
   label: "Card",
-  status: "wip",
+  status: "ready",
   preview: "@preview-grid",
   // display: {
   //   "max-width": "640px",

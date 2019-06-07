@@ -1,5 +1,5 @@
 module.exports = {
-  status: "wip",
+  status: "ready",
   preview: "@preview-raw",
   notes: "[todo: define linking rules]",
   context: {

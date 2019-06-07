@@ -1,6 +1,6 @@
 module.exports = {
   title: "Accordion",
-  status: "wip",
+  status: "ready",
   tags: ["js"],
   context: {
     init:
