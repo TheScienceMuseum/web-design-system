@@ -36,6 +36,9 @@ here is an icon <span class="u-icon"><svg><use xlink:href="{{path '/assets/icons
     <svg style="margin: 1rem"  width="24" height="24">
       <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
     </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
+    </svg>
     <div><code>{{@key}}</code></div>
   </div>
 {{/each}}
@@ -45,6 +48,9 @@ here is an icon <span class="u-icon"><svg><use xlink:href="{{path '/assets/icons
 {{#each icons }}
   <div class="Examplegrid__item ">
     <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
       <use xlink:href="{{path '/assets/icons/sprite.symbol.svg'}}#{{ @key }}" />
     </svg>
     <div><code>{{@key}}</code></div>
