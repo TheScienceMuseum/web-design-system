@@ -4,32 +4,53 @@ title: How to use this
 
 ## To import source Scss and js into another project:
 
-> direct from github while in dev:
+If your project already makes use of node modules, and you are building your own assetbundles for production, you'll probaly want to do this:
 
 ```
-TheScienceMuseum/web-design-system#master
+npm install smg-web-design-system
 ```
 
-> but once its published to npm:
+### Javascript
+
+Then you can add the necessary javascript like so:
 
 ```
-npm install smg-design-system
+import * as smgwds from "smg-web-design-system";
+
+// then use the namespaced modules, e.g.
+document.addEventListener("DOMContentLoaded", function(event) {
+  smgwds.illuminate();
+});
 ```
 
-then import the relevant modules into js and scss
+> TODO: All JS is currently all bundled together, so you can't include just the modules you need. This isn't an issue right now, as the only two components that require js are tiny. But should be addressed before more javascript-heavy components are added.
 
-> [is there a required base/core, and modularised?]
-
-## To use the compiled css/js
-
-> this will mean you can't customise e.g. theme colours, but it might be adequate in some circumstances, or for simpler uses
-
-Add a link to the compiled version via unpkg.io (or SMG cdn?)
+### Scss
 
 ### using node-sass CLI:
 
-Add `--include-path node_modules`
+Add `--include-path node_modules` to your compilation options.
+
+> TODO: check same for dart-sass. Provide instructions for webpack / gulp?
 
 ```
-@import "smg-design-system/src/scss/main.scss";
+@import "smg-web-design-system";
+// to import everything, or
+
+@import "smg-web-design-system/src/scss/lib";
+//for just the functions, and then add just the bits you want, e.g.
+@import "smg-web-design-system/src/scss/components/loading";
+```
+
+> TODO: Clarify which modules are optional.
+> TODO: check complete bundle size:
+> TODO: Explain which components need calling via their settings mixin
+
+## To use the pre-compiled css/js
+
+This will mean you can't customise e.g. theme colours, but it might be adequate in some circumstances, or for simpler uses
+
+```
+<link rel="stylesheet" src="https://unpkg.com/smg-web-design-system@0.1.0/dist/css/main.css">
+<script src="https://unpkg.com/smg-web-design-system@0.1.0/dist/js/index.js></script>
 ```

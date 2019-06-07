@@ -4,6 +4,8 @@
 
 Visit https://thesciencemuseum.github.io/web-design-system/ to browse the contents of this repository,and for further usage instructions.
 
+[![npm version](https://badge.fury.io/js/smg-web-design-system.svg)](https://badge.fury.io/js/smg-web-design-system)
+
 ## Contributing to the system
 
 If you want to contribute to this, you will need to:
@@ -26,7 +28,7 @@ TBC - https://github.com/TheScienceMuseum/collectionsonline/wiki/Collaborator-co
 │   ├── components
 │   ├── docs
 │   └── theme       // subtheme of Mandelbrot, with its own deps for recompiling
-├── public          // static directory for serving fractal
+├── public          // static directory for serving fractal - all generated
 ├── src             // gets included in pkg
 │   ├── assets
 │   ├── js
