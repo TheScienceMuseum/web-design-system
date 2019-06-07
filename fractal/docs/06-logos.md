@@ -1,4 +1,6 @@
-> Given that all sites include all the museum logos, what with header and footer, it probably makes sense to sprite this.
+All the museum logos are included in the source of this system - you can also use them via the CDN path of [...]
+
+As all the museum logos are included in the standard footer, you may find it more efficient to use the 'sprite' svg version, that contains all of the museum logos, and can be reused in both black and white versions.
 
 > We should also pull all favicon sets from here too? as component example?
 
