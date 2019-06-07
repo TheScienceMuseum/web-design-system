@@ -3,6 +3,10 @@
   display: flex;
   flex-flow: row nowrap;
 
+  // but better:
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+
   &__item {
     border: 1px solid currentColor;
     margin: 0 -1px -1px 0;
