@@ -32,7 +32,7 @@
     "build:svg:spriteicons": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/icons src/assets/icons/**/*.svg",
     "build:svg:logos": "svgo -f src/assets/logos -o public/assets/logos",
     "build:svg:icons": "svgo -f src/assets/icons -o public/assets/icons",
-    "build:favicons": "cp -R src/assets/favicons public/assets/favicons",
+    "build:favicons": "cp -R src/assets/favicons public/assets/",
     "watch": "npm-run-all build --parallel watch:*",
     "watch:fractal": "ENV=development fractal start --sync",
     "watch:js": "webpack-dev-server",
