@@ -72,7 +72,12 @@ export default function illuminate(options) {
       }
     }
     splitPoints.push(text.length);
+    // sort and remove duplicates, just in case
     splitPoints.sort();
+    splitPoints = splitPoints.reduce(
+      (x, y) => (x.includes(y) ? x : [...x, y]),
+      []
+    );
 
     var lines = splitPoints.reduce((accumulator, currentValue, i) => {
       if (i + 1 < splitPoints.length) {
