@@ -1,12 +1,14 @@
 /*
   'illuminate' is the SMG brand guidelines term for using a range of font-weights across text.
   Only to be used on special occasions.
-  
+
 */
 
 export default function illuminate(options) {
   options = options || {};
   var selector = options.selector || ".js-illuminate";
+  var debug = options.debug || false;
+  var log = {};
 
   /**
    * Array of `font-weight`s to use, in the order we want them.
@@ -70,14 +72,17 @@ export default function illuminate(options) {
         // add exceptions, such as line break characters.
         splitPoints.push(i);
       }
+      log.heights = {};
+      log.heights[i] = span.offsetHeight;
     }
     splitPoints.push(text.length);
     // sort and remove duplicates, just in case
-    splitPoints.sort();
+    splitPoints.sort((a, b) => a - b);
     splitPoints = splitPoints.reduce(
       (x, y) => (x.includes(y) ? x : [...x, y]),
       []
     );
+    log.splitPoints = splitPoints;
 
     var lines = splitPoints.reduce((accumulator, currentValue, i) => {
       if (i + 1 < splitPoints.length) {
@@ -115,6 +120,9 @@ export default function illuminate(options) {
   function initialise() {
     var strings = document.querySelectorAll(selector);
     renderStrings(strings);
+    if (debug) {
+      console.log(log);
+    }
   }
   initialise();
   window.addEventListener("resize", initialise);
