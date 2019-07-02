@@ -89,7 +89,10 @@
     }
   }
 
-  &--relatedlinks {
+  &--lighter {
+    background-color: grey(85);
+  }
+  &--lighter + &--lighter {
     background-color: grey(70);
   }
 }
