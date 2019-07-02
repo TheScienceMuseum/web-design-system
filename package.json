@@ -23,6 +23,7 @@
   "scripts": {
     "start": "npm run watch",
     "dist": "run-s build dist:fractal sassdoc",
+    "prepublish": "npm run dist",
     "dist:fractal": "fractal build",
     "deploy": "./deploy-to-gh-pages.sh",
     "build": "run-p build:*",
