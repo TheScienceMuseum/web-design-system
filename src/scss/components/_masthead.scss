@@ -6,6 +6,7 @@
     float: left;
     position: relative;
     z-index: 1; // make clickable above menu
+    color: white !important; // IE inheriting href styles, override.
 
     img,
     svg {
