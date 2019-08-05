@@ -92,3 +92,8 @@ body {
     display: none !important;
   }
 }
+
+.u-responsive-embed {
+  @include responsive-embed(16 by 9);
+  // override to other ratios by setting padding-bottom % inline?
+}
