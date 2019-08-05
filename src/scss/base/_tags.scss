@@ -51,6 +51,9 @@ select {
 iframe,
 img {
   max-width: 100%;
+  border: 0;
+}
+img {
   height: auto;
 }
 
