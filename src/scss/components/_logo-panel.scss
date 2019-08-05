@@ -1,7 +1,19 @@
+$logo-panel-gradient: $c-green $c-blue $c-purple !default;
+$logo-panel-gradient-animated: true !default;
+$logo-panel-color: white !default;
+
 .c-logo-panel {
-  @include sm-gradient($c-green $c-teal $c-blue);
-  @include sm-gradient-animated($layers: 2);
-  color: contrasting-text-color($c-teal);
+  @if ($logo-panel-gradient and type-of($logo-panel-gradient) == "list") {
+    @include sm-gradient($logo-panel-gradient);
+  }
+  @if ($logo-panel-gradient-animated) {
+    @if (length($logo-panel-gradient) > 2) {
+      @include sm-gradient-animated($layers: 2);
+    } @else {
+      @include sm-gradient-animated();
+    }
+  }
+  color: $logo-panel-color;
   @include between(padding-top, 1rem, 3rem);
   @include between(padding-bottom, 1rem, 3rem);
 
