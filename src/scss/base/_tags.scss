@@ -58,10 +58,10 @@ img {
 }
 
 a {
-  color: $c-blue;
+  color: inherit;
 
   &:visited {
-    color: $c-purple;
+    color: inherit;
   }
   &:hover {
     text-decoration: none;
