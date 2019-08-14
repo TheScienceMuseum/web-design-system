@@ -13,12 +13,11 @@ $logo-panel-color: white !default;
       @include sm-gradient-animated();
     }
   }
-  color: $logo-panel-color;
   @include between(padding-top, 1rem, 3rem);
   @include between(padding-bottom, 1rem, 3rem);
 
   a {
-    color: inherit;
+    color: $logo-panel-color;
   }
 
   &__title {
