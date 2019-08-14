@@ -4,6 +4,7 @@
 
 .u-skip-link,
 .u-visually-hidden,
+.visually-hidden,
 .screen-reader-text {
   @include for-screen-readers;
 }
