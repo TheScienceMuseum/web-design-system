@@ -22,6 +22,7 @@
 
 // Then all components, alphabetical
 @import "components/accordion";
+@import "components/audioplayer";
 @import "components/button";
 // @include button();
 @include button($theme: blue); // set a default colour
