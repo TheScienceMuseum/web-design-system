@@ -455,7 +455,9 @@ Creates a responsive embed container.
   iframe,
   object,
   embed,
-  video {
+  video,
+  img,
+  svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -496,7 +498,8 @@ Aspect ratios used to determine padding-bottom of responsive embed containers.
 ```scss
 $responsive-embed-ratios: (
   default: 4 by 3,
-  widescreen: 16 by 9
+  widescreen: 16 by 9,
+  square: 1 by 1
 )
 ```
 

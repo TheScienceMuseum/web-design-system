@@ -324,7 +324,7 @@ black
 
 ```scss
 @function contrasting-text-color($color, $light: white, $dark: dark) { safe: 
-  @if (perceivedbrightness($color) > 68) {
+  @if (perceivedbrightness($color) > 65) {
     @return $dark;
   } @else {
     @return $light;
