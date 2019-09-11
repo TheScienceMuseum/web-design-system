@@ -11,6 +11,7 @@ module.exports = (env, argv) => {
     },
     entry: {
       index: path.resolve(__dirname, "src/js/index.js"),
+      fractal: path.resolve(__dirname, "src/js/fractal.js"),
       main: "./src/scss/main.scss"
     },
     output: {

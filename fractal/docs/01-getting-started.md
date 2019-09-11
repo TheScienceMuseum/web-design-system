@@ -54,3 +54,10 @@ This will mean you can't customise e.g. theme colours, but it might be adequate 
 <link rel="stylesheet" src="https://unpkg.com/smg-web-design-system@0.1.0/dist/css/main.css">
 <script src="https://unpkg.com/smg-web-design-system@0.1.0/dist/js/index.js></script>
 ```
+
+## Polyfills
+
+some browser features are used that aren't supportred in all our target browsers, so should be polyfilled. These are:
+
+- **[object-fit-images](https://github.com/fregante/object-fit-images)** Polyfill object-fit/object-position on `<img>`: IE9, IE10, IE11, Edge, Safari,
+- **[svg4everybody](https://github.com/jonathantneal/svg4everybody)** SVG for Everybody adds SVG External Content support to all browsers.
