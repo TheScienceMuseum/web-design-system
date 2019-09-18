@@ -5,9 +5,8 @@
       {{#each links}}
       <a href="{{url}}" class="c-logo-panel__item">
         <div class="c-logo-panel__text">{{name}}</div>
-        <svg width="{{ width }}" height="236" viewBox="0 0 {{ width }} {{ height }}"
+        <svg aria-hidden="true" width="{{ width }}" height="236" viewBox="0 0 {{ width }} {{ height }}"
           preserveAspectRatio="xMinYMin meet">
-          <title>{{name}}</title>
           <use xlink:href="{{path '/assets/logos/sprite.symbol.svg'}}#{{ @key }}"></use>
         </svg>
       </a>

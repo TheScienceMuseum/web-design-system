@@ -42,11 +42,8 @@ $logo-panel-color: white !default;
   }
 
   &__text {
-    display: block;
-    //   margin: 0.4rem 0;
-
     @include media(">small") {
-      display: none;
+      @include for-screen-readers;
     }
   }
 
