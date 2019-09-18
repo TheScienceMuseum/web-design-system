@@ -5,7 +5,7 @@ module.exports = {
   context: {
     strap: "The Science Museum Group",
     links: {
-      sml: {
+      scm: {
         name: "Science Museum",
         url: "http://www.sciencemuseum.org.uk",
         width: "398",
@@ -17,13 +17,13 @@ module.exports = {
         width: "448",
         height: 236
       },
-      smm: {
+      nsmm: {
         name: "National Science and Media Museum",
         url: "https://www.scienceandmediamuseum.org.uk",
         width: "448",
         height: 236
       },
-      rm: {
+      nrm: {
         name: "National Railway Museum",
         url: "http://www.railwaymuseum.org.uk",
         width: "379",
