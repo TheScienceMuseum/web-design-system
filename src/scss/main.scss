@@ -24,8 +24,6 @@
 @import "components/accordion";
 @import "components/audioplayer";
 @import "components/button";
-// @include button();
-@include button($theme: "blue"); // set a default colour
 @import "components/card";
 // @import "components/carousel";
 // @import "components/category";
@@ -43,13 +41,6 @@
 // @import "components/mediaplayer";
 // @import "components/menu";
 @import "components/pagination";
-@include pagination();
-@include pagination(
-  $base-selector: ".c-pagination",
-  $page-selector: ".page-numbers",
-  $prev-selector: ".prev",
-  $next-selector: ".next"
-);
 @import "components/panel";
 // @import "components/post";
 // @import "components/searchmenu";

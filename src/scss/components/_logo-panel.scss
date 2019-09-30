@@ -1,5 +1,18 @@
+////
+/// Pagination component
+/// @group components
+////
+
+/// Include SMG-type gradient background.
+/// @type List
 $logo-panel-gradient: $c-green $c-blue $c-purple !default;
+
+/// Add soft-fade to bg gradient.
+/// @type Bool
 $logo-panel-gradient-animated: true !default;
+
+/// Set text color.
+/// @type Color
 $logo-panel-color: white !default;
 
 .c-logo-panel {

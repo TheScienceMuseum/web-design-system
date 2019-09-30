@@ -1,42 +1,47 @@
-// Button component
-//
-//
-/// basic button styles, may be applied to other (wordpress) elements too
-@mixin btn(
-  $base-selector: ".c-btn",
-  $padding-x: 1em,
-  $padding-y: 0.75em,
-  $font-size: false,
-  $font-size-min: 1rem,
-  $font-size-max: 1.5rem,
-  $theme: false
-) {
-  @if $font-size {
-    font-size: $font-size;
+////
+/// Button component
+/// @group components
+////
+
+$button-base-selector: ".c-btn" !default;
+$button-padding-x: 1em !default;
+$button-padding-y: 0.75em !default;
+$button-font-size: false !default;
+$button-font-size-min: 1rem !default;
+$button-font-size-max: 1.5rem !default;
+
+/// Set default theme color. Can be a name from the palettes map, an other color value, or false
+/// @type String|Color|Bool
+$button-theme: false !default;
+
+// basic button styles, may be applied to other (wordpress) elements too
+@mixin btn() {
+  @if $button-font-size {
+    font-size: $button-font-size;
   } @else {
-    @include between(font-size, $font-size-min, $font-size-max);
+    @include between(font-size, $button-font-size-min, $button-font-size-max);
   }
 
-  @if (index(map_keys($palettes), $theme)) {
+  @if (index(map_keys($palettes), $button-theme)) {
     /* yes */
-    color: palette($theme, text);
-    background-color: palette($theme);
+    color: palette($button-theme, text);
+    background-color: palette($button-theme);
     &:hover,
     &:focus {
-      background-color: palette($theme, dark);
+      background-color: palette($button-theme, dark);
     }
-  } @else if type-of($theme) == color {
-    background-color: $theme;
-    color: contrasting-text-color($theme);
+  } @else if type-of($button-theme) == color {
+    background-color: $button-theme;
+    color: contrasting-text-color($button-theme);
   } @else {
     color: white; //default
     background-color: grey(80); //default
   }
 
-  padding-top: $padding-y;
-  padding-bottom: $padding-y;
-  padding-left: $padding-x;
-  padding-right: $padding-x;
+  padding-top: $button-padding-y;
+  padding-bottom: $button-padding-y;
+  padding-left: $button-padding-x;
+  padding-right: $button-padding-x;
 
   text-transform: uppercase;
   text-decoration: none;
@@ -47,9 +52,9 @@
   border: 0; // may be applied to inputs
   transition: background-color $transition-default;
 
-  @each $theme, $props in $palettes {
-    .t-btn--#{$theme} &,
-    &#{&}--#{$theme} {
+  @each $button-theme, $props in $palettes {
+    .t-btn--#{$button-theme} &,
+    &#{&}--#{$button-theme} {
       background-color: map-get($props, base);
       color: map-get($props, text);
 
@@ -61,75 +66,57 @@
   }
 }
 
-@mixin button(
-  $base-selector: ".c-btn",
-  $padding-x: 1em,
-  $padding-y: 0.75em,
-  $font-size: false,
-  $font-size-min: 1rem,
-  $font-size-max: 1.5rem,
-  $theme: false
-) {
-  #{$base-selector} {
-    @include btn(
-      $base-selector,
-      $padding-x,
-      $padding-y,
-      $font-size,
-      $font-size-min,
-      $font-size-max,
-      $theme
-    );
+#{$button-base-selector} {
+  @include btn();
 
-    &--primary {
-      padding-right: 2.5em;
+  &--primary {
+    padding-right: 2.5em;
 
+    &:after {
+      content: "";
+      // TODO: match  fill/stroke color to theme color
+      background-image: svg-uri(
+        '<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15.8030016 13.665h-11.8030016v-3.33h11.8030016l-4.1576672-4.15766721 2.3546656-2.35466558 8.1773328 8.17733279-8.1773328 8.1773328-2.3546656-2.3546656z" fill="white"/></svg>'
+      );
+      // background-image: url("/assets/icons/3d.svg");
+      // fill: white;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 1em;
+      width: 1em;
+      height: 1em;
+      background-size: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: right $transition-default;
+    }
+
+    &:hover,
+    &:focus {
       &:after {
-        content: "";
-        // TODO: match  fill/stroke color to theme color
-        background-image: svg-uri(
-          '<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15.8030016 13.665h-11.8030016v-3.33h11.8030016l-4.1576672-4.15766721 2.3546656-2.35466558 8.1773328 8.17733279-8.1773328 8.1773328-2.3546656-2.3546656z" fill="white"/></svg>'
-        );
-        // background-image: url("/assets/icons/3d.svg");
-        // fill: white;
-        background-repeat: no-repeat;
-        position: absolute;
-        right: 1em;
-        width: 1em;
-        height: 1em;
-        background-size: 100%;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: right $transition-default;
-      }
-
-      &:hover,
-      &:focus {
-        &:after {
-          right: 0.75em;
-        }
+        right: 0.75em;
       }
     }
+  }
 
-    .u-icon:last-child {
-      margin-left: 1rem;
+  .u-icon:last-child {
+    margin-left: 1rem;
+  }
+  // Variation:
+  // -disabled
+  // Grey background and not clickable - when the event is sold out
+
+  &--disabled {
+    pointer-events: none;
+    background-color: grey(50) !important;
+
+    &:after {
+      content: none;
     }
-    // Variation:
-    // -disabled
-    // Grey background and not clickable - when the event is sold out
 
-    &--disabled {
-      pointer-events: none;
+    &:hover,
+    &:focus {
       background-color: grey(50) !important;
-
-      &:after {
-        content: none;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: grey(50) !important;
-      }
     }
   }
 }
