@@ -32,7 +32,8 @@
 
 // Generates a bunch of classes to apply gradients to things.
 // gradients can be 2 or 3 colours, but must be sequential on the colour wheel.
-$colournames: red orange yellow green teal blue purple red orange;
+$colournames: "red" "orange" "yellow" "green" "teal" "blue" "purple" "red"
+  "orange";
 $colourvars: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple
   $c-red $c-orange;
 

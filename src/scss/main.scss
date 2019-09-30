@@ -25,7 +25,7 @@
 @import "components/audioplayer";
 @import "components/button";
 // @include button();
-@include button($theme: blue); // set a default colour
+@include button($theme: "blue"); // set a default colour
 @import "components/card";
 // @import "components/carousel";
 // @import "components/category";
