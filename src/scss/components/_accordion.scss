@@ -91,7 +91,7 @@
     &:not([aria-expanded="true"]):focus {
       outline: 0;
       text-decoration: none;
-      background: grey(5);
+      background: grey(6);
 
       // @include theme() {
       //   background-color: getThemeColor('defaultAccordionHover');
