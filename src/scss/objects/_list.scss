@@ -20,6 +20,16 @@
     }
   }
 
+  &--compact {
+    margin: 0;
+    padding: 0;
+    margin-left: 1em;
+
+    li + li {
+      margin-top: 0.5rem;
+    }
+  }
+
   &--socials {
     margin: 0;
     padding: 0;
