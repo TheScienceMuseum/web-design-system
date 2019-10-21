@@ -45,7 +45,7 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "@frctl/fractal": "^1.2.0",
+    "@frctl/fractal": "1.2.1-beta.1",
     "@frctl/handlebars": "^1.1.5",
     "@frctl/mandelbrot": "^1.2.1",
     "autoprefixer": "^9.6.0",
