@@ -3,7 +3,8 @@ module.exports = {
   status: "wip",
   context: {
     title: "Track title",
-    description: "track description",
+    description:
+      "track description. Antonia Senna, One of the first few patients in this country to have robot-assisted surgery at St Mary’s Hospital, London",
     img:
       "https://smgco-oralhistories.s3-eu-west-1.amazonaws.com/Jack+Cuzick/Image+Jack+Cuzick+29_5_18.JPG",
     audio:

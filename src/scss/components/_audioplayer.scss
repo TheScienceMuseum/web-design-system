@@ -42,33 +42,31 @@ $plyr-range-thumb-height: 16px;
 .c-audioplayer {
   background-color: grey(80);
   color: white;
-  @include media(">small") {
+  @include media(">medium") {
     display: flex;
-    // float: none;
   }
-  display: flex;
 
   &__main {
     width: 100%;
     @include between(padding, 1rem, 2rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include media(">medium") {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
   }
   &__thumb {
-    // float: left;
-    // @include media(">small") {
-    //   float: none;
-    // }
+    float: left;
+    @include between(margin-right, 1rem, 2rem);
+    @include between(margin-bottom, 1rem, 2rem);
+    @include media(">medium") {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
     background-color: grey(90);
     flex-shrink: 0;
     width: 20%;
-    // @include media(">small") {
-    //   flex-basis: 25%;
-    // }
-    // @include media(">=large") {
-    //   flex-basis: 25%;
-    // }
     img {
       object-fit: cover;
       font-family: "object-fit: cover;";
@@ -126,7 +124,9 @@ $plyr-range-thumb-height: 16px;
     font-size: 1rem;
   }
 
-  audio {
+  audio,
+  .plyr {
+    margin-top: 1rem;
     display: block;
     width: 100%;
   }
