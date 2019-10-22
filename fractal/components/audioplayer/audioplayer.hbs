@@ -1,7 +1,7 @@
 <div class="c-audioplayer">
     <div class="c-audioplayer__thumb">
-        <button class="c-audioplayer__button">
-            {{#if img}}<img class="" src="{{img}}" />{{else}}
+        <button class="c-audioplayer__button" aria-label="Play audio">
+            {{#if img}}<img class="" src="{{img}}" alt="{{title}}" />{{else}}
             <svg height="248" width="248" viewBox="0 0 248 248" xmlns="http://www.w3.org/2000/svg">
                 <g fill-rule="evenodd" fill="rgba(0,0,0,0.25)">
                     <path
