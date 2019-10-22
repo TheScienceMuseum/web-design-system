@@ -3,130 +3,182 @@ label: components
 ---
 # components
 
-## pagination
+## button-theme
 
 ### Description
 
-Pagination component
+Set default theme color. Can be a name from the palettes map, an other color value, or false
 
-### Parameters
+### Type
 
-| Name          | Description                                                                    | Type        | Default Value   |
-| ------------- | ------------------------------------------------------------------------------ | ----------- | --------------- |
-| base-selector | defines the base selector for output.                                          | String      | .c-pagination   |
-| page-selector | defines the selector for page items                                            | String      | &amp;__page         |
-| prev-selector | defines the selector for &#39;prev&#39; page item                                      | String      | &amp;__page--prev   |
-| next-selector | defines the selector for &#39;next page item&#39;                                      | String      | &amp;__page--next   |
-| item-padding  | defines the padding around the page items                                      | String,List | 0.75rem 1.25rem |
-| mobile-items  | If false, don&#39;t display page number links on mobile, only next/previous links. | Bool        | false           |
-
-### Requires
-
-* [mixin] `media` 
-
-* [function] `grey` 
-
-* [function] `grey` 
-
-* [function] `grey` 
-
-### Author
-
-* Toby
+`String|Color|Bool`
 
 ### Source
 
 ```scss
-@mixin pagination($base-selector: .c-pagination, $page-selector: &__page, $prev-selector: &__page--prev, $next-selector: &__page--next, $item-padding: 0.75rem 1.25rem, $mobile-items: false) { safe: 
-  #{$base-selector} {
-    text-align: center;
+$button-theme: false
+```
 
-    &__links {
-      margin: 0 auto;
-      padding: 0;
-      display: inline-flex;
-      font-size: 0;
-      border: 1px solid black;
-    }
+---
 
-    // Page links
-    #{$page-selector} {
-      @include type-meta;
-      color: black;
-      display: block;
-      padding: $item-padding;
-      text-decoration: none;
+## logo-panel-gradient
 
-      &[href]:visited {
-        color: black;
-      }
+### Description
 
-      &[href]:hover {
-        background-color: grey(10);
-      }
+Include SMG-type gradient background.
 
-      @if $mobile-items {
-        display: inline-flex;
-      } @else {
-        display: none;
+### Type
 
-        &:last-child,
-        &:first-child,
-        &.current,
-        &[aria-current="page"] {
-          display: inline-flex;
-        }
+`List`
 
-        @include media(">=medium") {
-          display: inline-flex;
-        }
-      }
-    }
+### Source
 
-    #{$page-selector} + #{$page-selector} {
-      border-left: 1px solid black;
-    }
+```scss
+$logo-panel-gradient: $c-green $c-blue $c-purple
+```
 
-    [aria-current="page"] {
-      padding: $item-padding;
-      @include type-meta;
-      background: black;
-      color: white;
-      cursor: default;
-      &:hover {
-        background: black;
-      }
-    }
+---
 
-    [aria-disabled] {
-      cursor: not-allowed;
-      color: grey(50);
+## logo-panel-gradient-animated
 
-      &:hover {
-        background-color: inherit;
-        color: grey(50) !important;
-      }
-    }
+### Description
 
-    &__ellipsis::after {
-      content: "\2026";
-      font-weight: normal;
-      color: black;
-    }
+Add soft-fade to bg gradient.
 
-    #{$prev-selector} .u-icon {
-      margin-right: 0.5rem;
-    }
+### Type
 
-    #{$next-selector} .u-icon {
-      margin-left: 0.5rem;
-    }
-    #{$prev-selector},
-    #{$prev-selector} {
-      display: flex;
-    }
-  }
-}
+`Bool`
+
+### Source
+
+```scss
+$logo-panel-gradient-animated: true
+```
+
+---
+
+## logo-panel-color
+
+### Description
+
+Set text color.
+
+### Type
+
+`Color`
+
+### Source
+
+```scss
+$logo-panel-color: white
+```
+
+---
+
+## pagination-base-selector
+
+### Description
+
+Var defines the base selector for output.
+
+### Type
+
+`String`
+
+### Source
+
+```scss
+$pagination-base-selector: ".c-pagination"
+```
+
+---
+
+## pagination-page-selector
+
+### Description
+
+defines the selector for page items
+
+### Type
+
+`String`
+
+### Source
+
+```scss
+$pagination-page-selector: ".page-numbers"
+```
+
+---
+
+## pagination-prev-selector
+
+### Description
+
+defines the selector for 'prev' page item
+
+### Type
+
+`String`
+
+### Source
+
+```scss
+$pagination-prev-selector: ".prev"
+```
+
+---
+
+## pagination-next-selector
+
+### Description
+
+defines the selector for 'next page item'
+
+### Type
+
+`String`
+
+### Source
+
+```scss
+$pagination-next-selector: ".next"
+```
+
+---
+
+## pagination-item-padding
+
+### Description
+
+defines the padding around the page items
+
+### Type
+
+`String|List`
+
+### Source
+
+```scss
+$pagination-item-padding: 0.75rem 1.25rem
+```
+
+---
+
+## pagination-mobile-items
+
+### Description
+
+If false, don't display page number links on mobile, only next/previous links.
+
+### Type
+
+`Bool`
+
+### Source
+
+```scss
+$pagination-mobile-items: false
 ```
 
 ---

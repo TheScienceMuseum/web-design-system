@@ -1080,10 +1080,6 @@ Mixing everything
 
 * [variable] `im-media-support` 
 
-### Used By
-
-* [mixin] `pagination`
-
 ### Author
 
 * Eduardo Boucas
@@ -1101,85 +1097,6 @@ Mixing everything
       // Recursive call
       @include media(slice($conditions, 2)...) {
         @content;
-      }
-    }
-  }
-}
-```
-
----
-
-## btn
-
-### Description
-
-basic button styles, may be applied to other (wordpress) elements too
-
-### Requires
-
-* [function] `palette` 
-
-* [function] `palette` 
-
-* [function] `palette` 
-
-* [function] `contrasting-text-color` 
-
-* [function] `grey` 
-
-* [variable] `palettes` 
-
-* [variable] `palettes` 
-
-### Source
-
-```scss
-@mixin btn() { safe: 
-  @if $font-size {
-    font-size: $font-size;
-  } @else {
-    @include between(font-size, $font-size-min, $font-size-max);
-  }
-
-  @if (index(map_keys($palettes), $theme)) {
-    /* yes */
-    color: palette($theme, text);
-    background-color: palette($theme);
-    &:hover,
-    &:focus {
-      background-color: palette($theme, dark);
-    }
-  } @else if type-of($theme) == color {
-    background-color: $theme;
-    color: contrasting-text-color($theme);
-  } @else {
-    color: white; //default
-    background-color: grey(80); //default
-  }
-
-  padding-top: $padding-y;
-  padding-bottom: $padding-y;
-  padding-left: $padding-x;
-  padding-right: $padding-x;
-
-  text-transform: uppercase;
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  display: inline-flex;
-  line-height: 1;
-  border: 0; // may be applied to inputs
-  transition: background-color $transition-default;
-
-  @each $theme, $props in $palettes {
-    .t-btn--#{$theme} &,
-    &#{&}--#{$theme} {
-      background-color: map-get($props, base);
-      color: map-get($props, text);
-
-      &:hover,
-      &:focus {
-        background-color: map-get($props, dark);
       }
     }
   }

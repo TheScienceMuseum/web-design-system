@@ -121,16 +121,6 @@ grey(20)
 // #ccc
 ```
 
-### Used By
-
-* [mixin] `pagination`
-
-* [mixin] `pagination`
-
-* [mixin] `pagination`
-
-* [mixin] `btn`
-
 ### Source
 
 ```scss
@@ -161,14 +151,6 @@ Get a colour from the $palette map
 ### Requires
 
 * [variable] `palettes` 
-
-### Used By
-
-* [mixin] `btn`
-
-* [mixin] `btn`
-
-* [mixin] `btn`
 
 ### Source
 
@@ -309,10 +291,6 @@ black
 ### Requires
 
 * [function] `perceivedbrightness` 
-
-### Used By
-
-* [mixin] `btn`
 
 ### Links
 
@@ -601,51 +579,47 @@ color: palette(blue, text)
 
 * [function] `palette`
 
-* [mixin] `btn`
-
-* [mixin] `btn`
-
 ### Source
 
 ```scss
 $palettes: (
-  red: (
+  "red": (
     base: $c-red,
     text: contrasting-text-color($c-red),
     light: blend-normal(rgba($c-red, 0.66), white),
     dark: blend-multiply($c-red, $c-red)
   ),
-  orange: (
+  "orange": (
     base: $c-orange,
     text: contrasting-text-color($c-orange),
     light: blend-normal(rgba($c-orange, 0.66), white),
     dark: blend-multiply($c-orange, $c-orange)
   ),
-  yellow: (
+  "yellow": (
     base: $c-yellow,
     text: contrasting-text-color($c-yellow),
     light: blend-normal(rgba($c-yellow, 0.66), white),
     dark: blend-multiply($c-yellow, $c-yellow)
   ),
-  green: (
+  "green": (
     base: $c-green,
     text: contrasting-text-color($c-green),
     light: blend-normal(rgba($c-green, 0.66), white),
     dark: blend-multiply($c-green, $c-green)
   ),
-  teal: (
+  "teal": (
     base: $c-teal,
     text: contrasting-text-color($c-teal),
     light: blend-normal(rgba($c-teal, 0.66), white),
     dark: blend-multiply($c-teal, $c-teal)
   ),
-  blue: (
+  "blue": (
     base: $c-blue,
     text: contrasting-text-color($c-blue),
     light: blend-normal(rgba($c-blue, 0.66), white),
     dark: blend-multiply($c-blue, $c-blue)
   ),
-  purple: (
+  "purple": (
     base: $c-purple,
     text: contrasting-text-color($c-purple),
     light: blend-normal(rgba($c-purple, 0.66), white),
