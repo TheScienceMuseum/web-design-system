@@ -8,11 +8,23 @@
     z-index: 1; // make clickable above menu
     color: white !important; // IE inheriting href styles, override.
 
+    $logo-min-height: 45px;
+    $logo-max-height: 70px;
     img,
     svg {
+      display: block;
       width: auto;
-      @include between(height, 45px, 70px);
+      @include between(height, $logo-min-height, $logo-max-height);
       @include between(margin, 20px 0, 25px 0);
+    }
+    @each $key, $logo in $logos {
+      .c-logo--#{$key} {
+        @include between(
+          width,
+          ($logo-min-height * logo-ratio($key)),
+          ($logo-max-height * logo-ratio($key))
+        );
+      }
     }
   }
 

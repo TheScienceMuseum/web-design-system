@@ -10,3 +10,42 @@ $breakpoints: (
 
 $between-min: map-get($breakpoints, tiny);
 $between-max: map-get($breakpoints, large);
+
+// to preserve aspect ratios of logos at various sizes while maintaining relative alignment. n.b. this is only a requirement for IE11, other browsers can work this out for themeselves.
+$logos: (
+  smg: (
+    width: 388,
+    natural-height: 236,
+    aligned-height: 236
+  ),
+  scm: (
+    width: 398,
+    natural-height: 154,
+    aligned-height: 236
+  ),
+  nrm: (
+    width: 379,
+    natural-height: 154,
+    aligned-height: 236
+  ),
+  sim: (
+    width: 448,
+    natural-height: 236,
+    aligned-height: 236
+  ),
+  nsmm: (
+    width: 448,
+    natural-height: 236,
+    aligned-height: 236
+  ),
+  loco: (
+    width: 544,
+    natural-height: 70,
+    aligned-height: 236
+  )
+);
+
+@function logo-ratio($key) {
+  $logo: map-get($logos, $key);
+  @return map-get($logo, width) / map-get($logo, aligned-height);
+}

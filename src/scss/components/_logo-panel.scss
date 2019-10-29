@@ -60,19 +60,31 @@ $logo-panel-color: white !default;
     }
   }
 
+  $logo-min-height: 2rem;
+  $logo-max-height: 4rem;
   img,
   svg {
     display: none;
     @include between(
       height,
-      2rem,
-      4rem
+      $logo-min-height,
+      $logo-max-height
     ); // but change this if number of logos change
     width: auto;
     max-width: none;
 
     @include media(">small") {
       display: block;
+    }
+  }
+
+  @each $key, $logo in $logos {
+    .c-logo--#{$key} {
+      @include between(
+        width,
+        ($logo-min-height * logo-ratio($key)),
+        ($logo-max-height * logo-ratio($key))
+      );
     }
   }
 }
