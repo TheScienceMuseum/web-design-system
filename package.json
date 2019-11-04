@@ -40,7 +40,8 @@
     "watch:js": "webpack-dev-server",
     "watch:svg": "onchange 'src/assets/**/*.svg' -- npm run build:svg",
     "watch:sassdoc": "onchange 'src/**/*.scss' -- npm run sassdoc",
-    "sassdoc": "sassdoc src/scss node_modules/include-media/dist"
+    "sassdoc": "sassdoc src/scss node_modules/include-media/dist",
+    "stats": "webpack --json > stats.json"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
@@ -51,6 +52,7 @@
     "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
     "colorable": "^1.0.5",
+    "core-js": "^3.3.6",
     "css-loader": "^2.1.1",
     "cssnano": "^4.1.10",
     "file-loader": "^4.0.0",
@@ -77,10 +79,9 @@
     "esversion": 6
   },
   "browserslist": [
-    "last 2 versions",
+    "last 1 versions",
     "> 2%",
-    "Edge >= 15",
-    "IE >= 10",
+    "IE >= 11",
     "safari >= 7"
   ],
   "files": [

@@ -12,6 +12,9 @@ module.exports = (env, argv) => {
     entry: {
       index: path.resolve(__dirname, "src/js/index.js"),
       fractal: path.resolve(__dirname, "src/js/fractal.js"),
+      accordion: path.resolve(__dirname, "src/js/components/accordion.js"),
+      illuminate: path.resolve(__dirname, "src/js/components/illuminate.js"),
+      audioplayer: path.resolve(__dirname, "src/js/components/audioplayer.js"),
       main: "./src/scss/main.scss"
     },
     output: {
@@ -33,7 +36,16 @@ module.exports = (env, argv) => {
           use: {
             loader: "babel-loader",
             options: {
-              presets: ["@babel/preset-env"]
+              presets: [
+                [
+                  "@babel/preset-env",
+                  {
+                    useBuiltIns: "usage",
+                    corejs: 3,
+                    debug: false
+                  }
+                ]
+              ]
             }
           }
         },
