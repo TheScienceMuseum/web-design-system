@@ -2,7 +2,7 @@ module.exports = {
   context: {
     logos: {
       smg: {
-        name: "Science Museum Grop",
+        name: "Science Museum Group",
         url: "https://group.sciencemuseum.org.uk",
         width: 388,
         height: 236,

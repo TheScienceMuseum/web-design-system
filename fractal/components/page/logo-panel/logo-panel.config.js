@@ -1,8 +1,11 @@
 const logos = require("../../../docs/logos.config");
 
-//except, delete smg (but not from the original object!)
-const panellogos = Object.assign({}, logos);
-delete panellogos.context.logos.smg;
+var links = {};
+Object.keys(logos.context.logos).forEach(function(item) {
+  if (item != "smg") {
+    links[item] = logos.context.logos[item];
+  }
+});
 
 module.exports = {
   title: "Logo panel (footer)",
@@ -10,6 +13,6 @@ module.exports = {
   preview: "@preview-raw",
   context: {
     strap: "The Science Museum Group",
-    links: panellogos.context.logos
+    links: links
   }
 };

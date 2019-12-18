@@ -109,6 +109,9 @@ exports.options = {
     },
     log(someVar) {
       console.log(someVar);
+    },
+    json(someVar) {
+      JSON.stringify(someVar);
     }
   }
 };

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <link media="all" rel="stylesheet" href="{{ path '/css/main.css' }}">
-    <title>Preview Layout</title>
+  <meta charset="utf-8">
+  <link media="all" rel="stylesheet" href="{{ path '/css/main.css' }}">
+  <title>Preview Layout</title>
 </head>
-<body class="t-btn--x{{#if _target.context.theme}}{{ _target.context.theme }}{{else}}green{{/if}}">
+
+<body class="t-btn--x{{#if _target.context.theme}}{{ _target.context.theme }}{{else}}green{{/if}}"
+  {{#if _target.context.background}} style="background:{{ _target.context.background }}" {{/if}}>
