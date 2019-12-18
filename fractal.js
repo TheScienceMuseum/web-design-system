@@ -41,32 +41,10 @@ const mySubTheme = require("./fractal/theme");
 // });
 fractal.web.theme(mySubTheme);
 
-const hbs = require("@frctl/handlebars")({
-  helpers: {
-    uppercase: function(str) {
-      return str.toUpperCase();
-    }
-  },
-  partials: {
-    foobar: "This is a partial! live",
-    fullwidth: "</div><div>",
-    endfullwidth: '</div><div class="o-textstyles Prose">'
-  }
-  /* other configuration options here */
-});
-
-const instance = fractal.components.engine(
-  hbs
-); /* set as the default template engine for components */
-fractal.docs.engine(
-  hbs
-); /* you can also use the same instance for documentation, if you like! */
-
-instance.handlebars.registerPartial(
-  "preview/header",
-  Fs.readFileSync("./fractal/components/_layout/header.hbs", "utf8")
-);
-instance.handlebars.registerPartial(
-  "preview/footer",
-  Fs.readFileSync("./fractal/components/_layout/footer.hbs", "utf8")
-);
+/*
+ * Require Handlebars
+ */
+const handlebars = require(path.join(__dirname, "handlebars.js"));
+const hbs = require("@frctl/handlebars")(handlebars.options);
+const engine = fractal.components.engine(hbs);
+fractal.docs.engine(hbs);
