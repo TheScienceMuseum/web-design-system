@@ -36,6 +36,7 @@
   position: relative;
   height: 100%;
   @include cardhover();
+  display: block;
 
   > a {
     display: block;
@@ -59,8 +60,8 @@
     padding-top: 75%;
     background: black;
 
-    img,
-    svg {
+    & > img,
+    & > svg {
       position: absolute;
       top: 0;
       display: block;
@@ -78,6 +79,7 @@
     left: 0;
     top: 0;
     background-color: rgba(black, 0.75);
+    color: white;
     padding: 0.25rem;
     display: flex;
     justify-content: flex-start;

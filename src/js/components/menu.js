@@ -8,67 +8,58 @@ but kept the same class names so css can be re-used without much change.
 */
 
 export default function menu() {
-  console.log("menu js");
-  var menuContainer = document.querySelector(".c-menu");
-  var menuToggle = menuContainer.querySelector(".c-menu__button");
-  var siteHeaderMenu = menuContainer.querySelector(".c-menu__wrapper");
-  var siteNavigation = menuContainer.querySelector(".c-menu__nav");
-
-  var screenReaderText = {
-    expand: "Expand child menu",
-    collapse: "Collapse child menu"
+  var menuContainers = document.querySelectorAll(".c-menu");
+  var toggleExpanded = function(el) {
+    el.setAttribute(
+      "aria-expanded",
+      el.getAttribute("aria-expanded") === "false" ? "true" : "false"
+    );
   };
+  menuContainers.forEach(function(menuContainer) {
+    // console.log("menu js once", menuContainer);
+    var menuToggle = menuContainer.querySelector(".c-menu__button");
+    var mobileNav = document.querySelector(".c-nav-mobile");
+    menuContainer.dataset.init = true; // stop duplicate
 
-  // Toggles the menu button
-  if (menuToggle) {
-    menuToggle.addEventListener("click", function() {
-      this.classList.toggle("toggled-on");
-      siteHeaderMenu.classList.toggle("toggled-on");
+    var screenReaderText = {
+      expand: "Expand child menu",
+      collapse: "Collapse child menu"
+    };
 
-      this.setAttribute(
-        "aria-expanded",
-        this.getAttribute("aria-expanded") === "false" ? "true" : "false"
-      );
-      siteNavigation.setAttribute(
-        "aria-expanded",
-        this.getAttribute("aria-expanded") === "false" ? "true" : "false"
-      );
-    });
-  }
+    // Toggles the menu button
+    if (menuToggle) {
+      menuToggle.addEventListener("click", function() {
+        console.log(
+          "menu jsx",
+          this.getAttribute("aria-expanded"),
+          mobileNav.getAttribute("aria-expanded")
+        );
+        toggleExpanded(this);
+        toggleExpanded(mobileNav);
+      });
+    }
 
-  // If a dropdown has no top-level link (it's dummied to act as group, then skip it from tab order)
-  siteNavigation.querySelectorAll('[href="#"]').forEach(function(el) {
-    el.setAttribute("tabindex", -1);
-    el.addEventListener("click", function(e) {
-      e.preventDefault();
-    });
-  });
-
-  // Toggles the sub-menu when dropdown toggle button clicked
-  siteHeaderMenu.querySelectorAll(".dropdown-toggle").forEach(function(el) {
-    el.addEventListener("click", function(e) {
-      var screenReaderSpan = this.querySelectorAll(".screen-readers");
-
-      e.preventDefault();
-      // this.classList.toggle("toggled-on");
-      // this.nextElementSibling.classList.toggle("toggled-on");
-      this.nextElementSibling.hidden = !this.nextElementSibling.hidden;
-      this.setAttribute(
-        "aria-expanded",
-        this.getAttribute("aria-expanded") === "false" ? "true" : "false"
-      );
-      screenReaderSpan.forEach(function(el) {
-        el.textContent = screenReaderText.expand
-          ? screenReaderText.collapse
-          : screenReaderText.expand;
+    // If a dropdown has no top-level link (it's dummied to act as group, then skip it from tab order)
+    mobileNav.querySelectorAll('[href="#"]').forEach(function(el) {
+      el.setAttribute("tabindex", -1);
+      el.addEventListener("click", function(e) {
+        e.preventDefault();
       });
     });
-  });
 
-  // Adds a class to sub-menus for styling
-  var submenus = document.querySelectorAll(".sub-menu .menu-item-has-children");
-  submenus.forEach(function(el) {
-    // console.log(el.parentNode);
-    el.parentNode.classList.add("has-sub-menu");
+    // Toggles the sub-menu when dropdown toggle button clicked
+    menuContainer.querySelectorAll(".c-menu__toggle").forEach(function(el) {
+      el.addEventListener("click", function(e) {
+        var screenReaderSpan = this.querySelectorAll(".screen-readers");
+        e.preventDefault();
+        toggleExpanded(this.nextElementSibling);
+        toggleExpanded(this);
+        screenReaderSpan.forEach(function(el) {
+          el.textContent = screenReaderText.expand
+            ? screenReaderText.collapse
+            : screenReaderText.expand;
+        });
+      });
+    });
   });
 }

@@ -1,11 +1,26 @@
 <header class="c-masthead">
-  <div class="o-container">
+  <div class="o-flex-container">
     <a href="{{link}}" class="c-masthead__logo">
       <svg viewBox="0 0 {{width}} {{height}}" width="{{width}}" height="{{aligned-height}}"
         preserveAspectRatio="xMinYMid meet" class="c-logo--{{slug}}">
         <use xlink:href="{{path '/assets/logos/sprite.symbol.svg'}}#{{slug}}" fill="#fff"></use>
       </svg>
     </a>
-    <div class="c-masthead__nav">{{ render '@menu' }}</div>
+    <div class="c-masthead__right c-menu">
+      <button class="c-menu__button" aria-controls="mobile-menu" aria-expanded="false">Site name</button>
+      <nav class="c-menu__nav" aria-expanded="false">
+        {{ render '@menu' }}
+      </nav>
+    </div>
   </div>
 </header>
+{{ render '@sitenav' }}
+<header class="c-nav-mobile" id="mobile-menu" aria-expanded="false">
+  <nav class="c-menu {{class}}">
+    {{ render '@menu--sitenav' }}
+    {{ render '@menu' }}
+  </nav>
+
+</header>
+
+{{{ init }}}

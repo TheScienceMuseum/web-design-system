@@ -1,20 +1,25 @@
 module.exports = {
   status: "ready",
   preview: "@preview-container",
-  // notes: "[todo: define linking rules]",
+  notes: "[the 'menu' is jsut the ul of links, will be inside a 'nav']",
   context: {
-    background: "grey",
-    init:
-      "<script>document.addEventListener('DOMContentLoaded', function(event) {smgwds.menu();})</script>",
-
+    class: "c-menu--global",
     items: [
       {
         url: "https://www.sciencemuseumgroup.org.uk/",
-        name: "A single link"
+        name: "About us"
       },
       {
         url: "https://www.sciencemuseumgroup.org.uk/",
-        name: "Another link",
+        name: "Collections"
+      },
+      {
+        url: "https://www.sciencemuseumgroup.org.uk/",
+        name: "Learning"
+      },
+      {
+        url: "https://www.sciencemuseumgroup.org.uk/",
+        name: "Visit us",
         items: [
           {
             url: "https://www.sciencemuseumgroup.org.uk/",
@@ -22,15 +27,47 @@ module.exports = {
           },
           {
             url: "https://www.sciencemuseumgroup.org.uk/",
-            name: "Another child link",
+            name: "Another child link"
+          }
+        ]
+      }
+    ]
+  },
+  variants: [
+    {
+      name: "sitenav",
+      context: {
+        class: "c-menu--site",
+        items: [
+          {
+            url: "https://www.sciencemuseumgroup.org.uk/",
+            name: "A single link"
+          },
+          {
+            url: "https://www.sciencemuseumgroup.org.uk/",
+            name: "Another link",
             items: [
               {
                 url: "https://www.sciencemuseumgroup.org.uk/",
-                name: "level 3!"
+                name: "A child link with a long title that wraps"
               },
               {
                 url: "https://www.sciencemuseumgroup.org.uk/",
-                name: "Another child link"
+                name: "Another child link",
+                items: [
+                  {
+                    url: "https://www.sciencemuseumgroup.org.uk/",
+                    name: "level 3!"
+                  },
+                  {
+                    url: "https://www.sciencemuseumgroup.org.uk/",
+                    name: "Another child link"
+                  },
+                  {
+                    url: "https://www.sciencemuseumgroup.org.uk/",
+                    name: "Another child link"
+                  }
+                ]
               },
               {
                 url: "https://www.sciencemuseumgroup.org.uk/",
@@ -40,14 +77,10 @@ module.exports = {
           },
           {
             url: "https://www.sciencemuseumgroup.org.uk/",
-            name: "Another child link"
+            name: "A single link"
           }
         ]
-      },
-      {
-        url: "https://www.sciencemuseumgroup.org.uk/",
-        name: "A single link"
       }
-    ]
-  }
+    }
+  ]
 };

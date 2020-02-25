@@ -3,9 +3,8 @@ $grid-gutter: 2rem !default;
 $grid-columns: 12 !default;
 $page-gutter: 1rem !default;
 
-.o-container {
+@mixin container {
   max-width: $grid-width;
-  @include clearfix;
   position: relative;
   margin-left: $page-gutter / 2;
   margin-right: $page-gutter / 2;
@@ -15,6 +14,14 @@ $page-gutter: 1rem !default;
   }
   padding-left: $page-gutter / 2;
   padding-right: $page-gutter / 2;
+}
+.o-container {
+  @include clearfix;
+  @include container;
+}
+.o-flex-container {
+  @include container;
+  display: flex;
 }
 
 .o-grid {
@@ -53,7 +60,7 @@ $page-gutter: 1rem !default;
     width: 100%;
     padding-left: $grid-gutter / 2;
     padding-right: $grid-gutter / 2;
-    margin-bottom: $grid-gutter /2;
+    margin-bottom: $grid-gutter / 2;
     @include media(">=medium") {
       margin-bottom: $grid-gutter;
     }

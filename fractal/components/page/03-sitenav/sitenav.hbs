@@ -1,0 +1,10 @@
+<header class="c-nav-site {{gradient}}">
+  <div class="o-flex-container">
+    <h1 class="c-nav-site__title">{{title}}</h1>
+    <div class="c-nav-site__right c-menu">
+      <nav class="c-menu__nav" aria-expanded="false">
+        {{render '@menu--sitenav' (contextData '@sitenav') merge=true}}
+      </nav>
+    </div>
+  </div>
+</header>
