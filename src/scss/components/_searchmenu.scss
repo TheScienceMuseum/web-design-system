@@ -1,0 +1,96 @@
+// search menu item in top nav.
+// styled like c-menu, but sadly cant live within
+
+.c-searchmenu {
+  font-size: 18px;
+  @include clearfix;
+  position: relative;
+  // right: 0;
+  width: $searchmenu-width;
+  height: 100%;
+
+  &__menuitem {
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    a {
+      padding: 1rem;
+      stroke: white;
+      color: white;
+      line-height: 0;
+    }
+
+    &--close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: black;
+      display: none;
+      :target + div + & {
+        // this follows the targeted el.
+        display: flex;
+      }
+    }
+  }
+
+  // this is a :target at the same location as the main menu, so no jump down on target.
+  &__target {
+    position: fixed;
+    top: 0;
+  }
+
+  &__panel {
+    background-color: black;
+    padding: 0 2rem 2rem;
+    position: absolute;
+    right: -$page-gutter / 2;
+    width: 24rem;
+    max-width: 100vw;
+    z-index: 8; // behind menu if visible/dropped
+    color: white;
+    display: none;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out 0s;
+    // :hover + &,
+    :target + & {
+      display: block;
+      transform: scaleY(1);
+      transform: none; // FF won't combine background-attach with transform, so remove after we're done transitioning.
+    }
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  & &__input {
+    padding-left: 0;
+    padding-bottom: 0;
+    appearance: none;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      border-width: 0 0 2px 0;
+      border-color: white;
+      border-style: solid;
+      background-color: transparent;
+      color: white;
+    }
+  }
+
+  &__submit {
+    border-width: 0 0 2px 0;
+    border-color: white;
+    border-style: solid;
+    background-color: transparent;
+    stroke: white;
+    color: white;
+    padding: 0.5rem 0 0 0.5rem;
+  }
+}

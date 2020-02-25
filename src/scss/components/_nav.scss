@@ -1,9 +1,11 @@
 /// Include SMG-type gradient background.
+/// It might well be the same as $logo-panel-gradient.
 /// @type List
 $nav-panel-gradient: $c-green $c-blue $c-purple !default;
 
 .c-nav-site {
   background-color: black;
+  @include sm-gradient($nav-panel-gradient);
   color: white;
   -webkit-font-smoothing: antialiased; // render reversed text better.
   background-attachment: fixed;
@@ -24,12 +26,14 @@ $nav-panel-gradient: $c-green $c-blue $c-purple !default;
   }
 
   &__right {
-    // position: absolute;
-    // right: 0;
-    // top: 0;
-    // bottom: 0;
-    // width: 100%;
-    // height: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .c-menu__submenu,
+  .c-searchmenu__menuitem--close,
+  .c-searchmenu__panel {
+    @include sm-gradient($nav-panel-gradient);
+    background-attachment: fixed;
   }
 }
 

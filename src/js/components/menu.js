@@ -15,32 +15,29 @@ export default function menu() {
       el.getAttribute("aria-expanded") === "false" ? "true" : "false"
     );
   };
+  var mobileNav = document.querySelector(".c-nav-mobile");
+
   menuContainers.forEach(function(menuContainer) {
-    // console.log("menu js once", menuContainer);
     var menuToggle = menuContainer.querySelector(".c-menu__button");
-    var mobileNav = document.querySelector(".c-nav-mobile");
-    menuContainer.dataset.init = true; // stop duplicate
 
     var screenReaderText = {
       expand: "Expand child menu",
       collapse: "Collapse child menu"
     };
 
-    // Toggles the menu button
+    // menu button toggles either global nav or the mobile copy depending on setup
     if (menuToggle) {
+      var menu = document.querySelector(
+        "#" + menuToggle.getAttribute("aria-controls")
+      );
       menuToggle.addEventListener("click", function() {
-        console.log(
-          "menu jsx",
-          this.getAttribute("aria-expanded"),
-          mobileNav.getAttribute("aria-expanded")
-        );
         toggleExpanded(this);
-        toggleExpanded(mobileNav);
+        toggleExpanded(menu);
       });
     }
 
     // If a dropdown has no top-level link (it's dummied to act as group, then skip it from tab order)
-    mobileNav.querySelectorAll('[href="#"]').forEach(function(el) {
+    menuContainer.querySelectorAll('[href="#"]').forEach(function(el) {
       el.setAttribute("tabindex", -1);
       el.addEventListener("click", function(e) {
         e.preventDefault();
@@ -62,4 +59,16 @@ export default function menu() {
       });
     });
   });
+  // in mobile view, remove #links completely and uplevel children. could be done server-side ideally
+  if (mobileNav) {
+    mobileNav.querySelectorAll('[href="#"]').forEach(function(el) {
+      var parentLi = el.parentNode;
+      var menu = el.parentNode.parentNode;
+      var kids = parentLi.querySelectorAll(".c-menu__submenu li");
+      kids.forEach(function(li) {
+        menu.appendChild(li);
+      });
+      menu.removeChild(parentLi);
+    });
+  }
 }

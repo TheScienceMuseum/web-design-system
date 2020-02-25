@@ -1,7 +1,7 @@
 module.exports = {
   status: "ready",
   preview: "@preview-container",
-  notes: "[the 'menu' is jsut the ul of links, will be inside a 'nav']",
+  notes: "The 'menu' is just the ul of links, will always be inside a 'nav'",
   context: {
     class: "c-menu--global",
     items: [
@@ -10,7 +10,7 @@ module.exports = {
         name: "About us"
       },
       {
-        url: "https://www.sciencemuseumgroup.org.uk/",
+        url: "https://collection.sciencemuseumgroup.org.uk/",
         name: "Collections"
       },
       {
@@ -18,22 +18,44 @@ module.exports = {
         name: "Learning"
       },
       {
-        url: "https://www.sciencemuseumgroup.org.uk/",
+        url: "#",
         name: "Visit us",
         items: [
+          { url: "http://www.sciencemuseum.org.uk", name: "Science Museum" },
           {
-            url: "https://www.sciencemuseumgroup.org.uk/",
-            name: "A child link with a long title that wraps"
+            url: "https://www.scienceandmediamuseum.org.uk",
+            name: "National Science and Media Museum"
           },
           {
-            url: "https://www.sciencemuseumgroup.org.uk/",
-            name: "Another child link"
-          }
+            url: "https://www.scienceandindustrymuseum.org.uk",
+            name: "Science and Industry Museum"
+          },
+          {
+            url: "http://www.railwaymuseum.org.uk",
+            name: "National Railway Museum"
+          },
+          { url: "https://www.locomotion.org.uk/", name: "Locomotion" }
         ]
       }
     ]
   },
   variants: [
+    {
+      name: "blog",
+      context: {
+        items: [
+          {
+            url: "https://www.sciencemuseumgroup.org.uk/",
+            name: "A blog link"
+          },
+          {
+            url: "https://www.sciencemuseumgroup.org.uk/",
+            name: "Another blog link"
+          }
+        ]
+      }
+    },
+
     {
       name: "sitenav",
       context: {
