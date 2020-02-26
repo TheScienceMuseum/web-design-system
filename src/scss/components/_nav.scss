@@ -41,6 +41,9 @@ $nav-panel-gradient: $c-green $c-blue $c-purple !default;
   @include sm-gradient($nav-panel-gradient);
   color: white;
   display: none;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 
   &[aria-expanded="true"] {
     display: block;

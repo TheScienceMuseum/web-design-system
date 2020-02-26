@@ -16,29 +16,30 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     padding: 0.5rem 1rem;
   }
 
-  @mixin toplink {
+  @mixin toplink($underline: true) {
     text-transform: uppercase;
     font-weight: bold;
     position: relative;
+    @if $underline {
+      &:before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        bottom: 5px;
+        background: white;
+        left: 1rem;
+        right: 1rem;
+        visibility: hidden;
+        transform: scaleX(0);
+        transform-origin: 0 center;
+        transition: transform 0.3s ease-in-out 0s;
+        margin: 0 auto;
+      }
 
-    &:before {
-      content: "";
-      position: absolute;
-      height: 2px;
-      bottom: 5px;
-      background: white;
-      left: 1rem;
-      right: 1rem;
-      visibility: hidden;
-      transform: scaleX(0);
-      transform-origin: 0 center;
-      transition: transform 0.3s ease-in-out 0s;
-      margin: 0 auto;
-    }
-
-    &:hover:before {
-      visibility: visible;
-      transform: scaleX(1);
+      &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
     }
   }
 
@@ -71,7 +72,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     color: #fff;
     @include button;
     padding-right: 1.25rem;
-    @include toplink;
+    @include toplink($underline: false);
     top: 50%;
     transform: translateY(-50%);
 

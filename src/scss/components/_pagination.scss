@@ -9,7 +9,7 @@ $pagination-base-selector: ".c-pagination" !default;
 
 /// defines the selector for page items
 /// @type String
-$pagination-page-selector: ".page-numbers" !default;
+$pagination-page-selector: ".c-pagination__page" !default;
 
 /// defines the selector for 'prev' page item
 /// @type String

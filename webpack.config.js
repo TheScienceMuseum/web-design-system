@@ -15,6 +15,7 @@ module.exports = (env, argv) => {
       accordion: path.resolve(__dirname, "src/js/components/accordion.js"),
       illuminate: path.resolve(__dirname, "src/js/components/illuminate.js"),
       audioplayer: path.resolve(__dirname, "src/js/components/audioplayer.js"),
+      menu: path.resolve(__dirname, "src/js/components/menu.js"),
       main: "./src/scss/main.scss"
     },
     output: {

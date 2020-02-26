@@ -61,7 +61,9 @@
     background: black;
 
     & > img,
-    & > svg {
+    & > svg,
+    & > a > img,
+    & > a > svg {
       position: absolute;
       top: 0;
       display: block;
