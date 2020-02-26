@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../../css/main.css?cachebust=1.2.1" type="text/css">
+
+<link rel="stylesheet" href="../../subtheme/css/main.css?cachebust=1.2.1" type="text/css">
+
+
+<title>Gradients | Science Museum Group: Web Design System</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Science Museum Group: Web Design System</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Gradients</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="o-main">
+  <div class="o-textstyles Prose">
+    
+      
+      
+          
+          
+          <p>Use to create areas of vibrant brand expression.</p>
+<p>If you have a great image to work with, there is no need to add a gradient.
+However when brand is the key communication, a gradient-only design may be the most appropriate solution.</p>
+<p>Css-generated graients can be two or three colours.
+Always use colours that are contiguous on the colour wheel.
+To add a gradients as a background colour, you can add the utility class, e.g.</p>
+<pre><code> &lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">"u-grad-red-orange"</span>&gt;</code></pre><p>Or you can add use the scss mixin, e.g.</p>
+<pre><code>@<span class="hljs-keyword">include</span> sm-gradient(<span class="hljs-variable">$c-green</span> <span class="hljs-variable">$c-teal</span> <span class="hljs-variable">$c-blue</span>);</code></pre></div><div>
+2 colour:
+
+<div class="o-grid o-grid--4-col">
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-red-orange">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  red–orange
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-red-orange</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-orange-red">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  orange–red
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-orange-red</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-orange-yellow">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  orange–yellow
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-orange-yellow</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-yellow-orange">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  yellow–orange
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-yellow-orange</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-yellow-green">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  yellow–green
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-yellow-green</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-green-yellow">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  green–yellow
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-green-yellow</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-green-teal">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  green–teal
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-green-teal</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-teal-green">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  teal–green
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-teal-green</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-teal-blue">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  teal–blue
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-teal-blue</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-blue-teal">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  blue–teal
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-blue-teal</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-blue-purple">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  blue–purple
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-blue-purple</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-purple-blue">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  purple–blue
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-purple-blue</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-purple-red">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  purple–red
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-purple-red</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-red-purple">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  red–purple
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-red-purple</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+
+</div>
+
+<p>3 colour:</p>
+<div class="o-grid o-grid--4-col">
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-red-orange-yellow">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  red–orange–yellow
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-red-orange-yellow</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-yellow-orange-red">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  yellow–orange–red
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-yellow-orange-red</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-orange-yellow-green">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  orange–yellow–green
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-orange-yellow-green</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-green-yellow-orange">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  green–yellow–orange
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-green-yellow-orange</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-yellow-green-teal">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  yellow–green–teal
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-yellow-green-teal</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-teal-green-yellow">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  teal–green–yellow
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-teal-green-yellow</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-green-teal-blue">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  green–teal–blue
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-green-teal-blue</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-blue-teal-green">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  blue–teal–green
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-blue-teal-green</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-teal-blue-purple">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  teal–blue–purple
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-teal-blue-purple</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-purple-blue-teal">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  purple–blue–teal
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-purple-blue-teal</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-blue-purple-red">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  blue–purple–red
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-blue-purple-red</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-red-purple-blue">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  red–purple–blue
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-red-purple-blue</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-purple-red-orange">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  purple–red–orange
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-purple-red-orange</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="o-grid__item">
+    <article class="c-card c-card--default">
+      <div class="c-card__img u-grad-orange-red-purple">
+      </div>
+      <div class="c-card__content">
+          <div class="c-card__info">
+              <h3 class="c-card__title">
+                  orange–red–purple
+              </h3>
+          </div>
+          <div class="c-card__info">
+            <dl class="o-dl">
+              <dt>class</dt>
+              <dd><code>.u-grad-orange-red-purple</code></dd>              
+            </dl>
+          </div>
+      </div>
+    </article>
+
+  </div>
+
+
+</div>
+
+          
+      
+    
+  </div>
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../getting-started.html" data-pjax>
+                <span>Getting Started</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../principles.html" data-pjax>
+                <span>Principles</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-colour">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Colour</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="colours.html" data-pjax>
+                <span>Colours</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>Gradients</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../typography.html" data-pjax>
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../icons.html" data-pjax>
+                <span>Icons</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../logos.html" data-pjax>
+                <span>Logos</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../standards.html" data-pjax>
+                <span>Standards</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sassdoc.html" data-pjax>
+                <span>Sassdoc</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-sass-tools">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Sass Tools</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sass-tools/colour.html" data-pjax>
+                <span>colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sass-tools/components.html" data-pjax>
+                <span>components</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sass-tools/undefined.html" data-pjax>
+                <span>include-media</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sass-tools/utilities.html" data-pjax>
+                <span>utilities</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/accordion.html" data-pjax>
+                <span>Accordion</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-audioplayer">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Audioplayer</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/audioplayer--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/audioplayer--no-img.html" data-pjax>
+                <span>No Img</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/button.html" data-pjax>
+                <span>Button</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Card</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/card--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/card--list-view.html" data-pjax>
+                <span>List View</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/illuminate.html" data-pjax>
+                <span>Illuminate</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/lists.html" data-pjax>
+                <span>Lists</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/loading.html" data-pjax>
+                <span>Loading</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-page">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Page</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-masthead">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Masthead</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--smg.html" data-pjax>
+                <span>Smg</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--scm.html" data-pjax>
+                <span>Scm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--nrm.html" data-pjax>
+                <span>Nrm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--sim.html" data-pjax>
+                <span>Sim</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--nsmm.html" data-pjax>
+                <span>Nsmm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--loco.html" data-pjax>
+                <span>Loco</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-menu">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Menu</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--blog.html" data-pjax>
+                <span>Blog</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Grid</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/grid--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/grid--page.html" data-pjax>
+                <span>Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/logo-panel.html" data-pjax>
+                <span>Logo Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/searchmenu.html" data-pjax>
+                <span>Searchmenu</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/textstyles.html" data-pjax>
+                <span>Textstyles</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-pagination">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Pagination</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--short.html" data-pjax>
+                <span>Short</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--last-page.html" data-pjax>
+                <span>Last Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--wordpress.html" data-pjax>
+                <span>Wordpress</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/panel.html" data-pjax>
+                <span>Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/utilities.html" data-pjax>
+                <span>Utilities</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+
+
+</body>
+</html>

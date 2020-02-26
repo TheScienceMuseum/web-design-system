@@ -1,0 +1,2311 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../css/main.css?cachebust=1.2.1" type="text/css">
+
+<link rel="stylesheet" href="../subtheme/css/main.css?cachebust=1.2.1" type="text/css">
+
+
+<title>Icons | Science Museum Group: Web Design System</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="../index.html" class="Header-title" data-pjax>Science Museum Group: Web Design System</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">Icons</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="o-main">
+  <div class="o-textstyles Prose">
+    
+      
+      
+          
+          
+          <p>Icons can be included as one big sprite or individually from CDN.</p>
+<blockquote>
+<p>we should clarify / make consistent different arrows and triangles for direction V. disclosure.</p>
+</blockquote>
+<p>All icons are based on a stroke width that matches the SMG Sans font.</p>
+<p>Based on a 24px em-square, &amp; therefore 24px base square icon, The original stroke widths are:</p>
+<ul>
+<li>Bold: 3.33</li>
+<li>Regular: 2.25</li>
+<li>Light: 1.6</li>
+</ul>
+<p>However, all icons are exported outlined to a single path without stroke, and without a specified fill colour, so the default fill (black) can be overridden with css <code>fill: #f00</code> or generally, even simpler, it will inherit: <code>fill: currentColor;</code>.</p>
+<blockquote>
+<p>TODO: symbol aliases for e.g. youtube -&gt; video. Both collections and wordpress require icons named after different data IDs</p>
+</blockquote>
+<h3 id="usage">Usage</h3>
+<p>There is a sprite version that compiles all the icons into one svg that can be used via ‘svg use symbol’ - <em>but</em> if you don’t have need for all the icons, it might be just as easy to include inline the ones you want, or use svg-sprite to re-sprite the ones you need along with other assets. They’re all pretty tiny files, so shouldn’t massively bloat html that way.</p>
+<h3 id="matching-text-size">Matching text size:</h3>
+<p>Wrap in <pre>.u-icon</pre> to size at 1em, therefore same as current text context</p>
+<p>here is an icon <span class="u-icon"><svg><use xlink:href="../assets/icons/sprite.symbol.svg#people" /></svg></span>inline</p>
+<h2 id="here-is-an-icon-span-classu-iconsvguse-xlinkhrefassetsiconsspritesymbolsvg3d-svgspaninline">here is an icon <span class="u-icon"><svg><use xlink:href="../assets/icons/sprite.symbol.svg#3d" /></svg></span>inline</h2>
+<blockquote>
+<p>It should line up with the baseline, but I still think there’s something weird with the font metrics that also causes the misalignment in Windows browsers</p>
+</blockquote>
+</div><div>
+<div class="Examplegrid Examplegrid--wrap">
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#3d" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#3d" />
+    </svg>
+    <div><code>3d</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#all" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#all" />
+    </svg>
+    <div><code>all</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#app" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#app" />
+    </svg>
+    <div><code>app</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#archive" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#archive" />
+    </svg>
+    <div><code>archive</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-bold" />
+    </svg>
+    <div><code>arrow-down-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-light" />
+    </svg>
+    <div><code>arrow-down-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down" />
+    </svg>
+    <div><code>arrow-down</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-bold" />
+    </svg>
+    <div><code>arrow-left-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-light" />
+    </svg>
+    <div><code>arrow-left-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left" />
+    </svg>
+    <div><code>arrow-left</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-bold" />
+    </svg>
+    <div><code>arrow-right-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-light" />
+    </svg>
+    <div><code>arrow-right-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right" />
+    </svg>
+    <div><code>arrow-right</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-bold" />
+    </svg>
+    <div><code>arrow-up-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-light" />
+    </svg>
+    <div><code>arrow-up-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up" />
+    </svg>
+    <div><code>arrow-up</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_down" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_down" />
+    </svg>
+    <div><code>arrow_down</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_left" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_left" />
+    </svg>
+    <div><code>arrow_left</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_right" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_right" />
+    </svg>
+    <div><code>arrow_right</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_up" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_up" />
+    </svg>
+    <div><code>arrow_up</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#back" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#back" />
+    </svg>
+    <div><code>back</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#clipboard" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#clipboard" />
+    </svg>
+    <div><code>clipboard</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-bold" />
+    </svg>
+    <div><code>dismiss-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-light" />
+    </svg>
+    <div><code>dismiss-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss" />
+    </svg>
+    <div><code>dismiss</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#document" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#document" />
+    </svg>
+    <div><code>document</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#download" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#download" />
+    </svg>
+    <div><code>download</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#expand" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#expand" />
+    </svg>
+    <div><code>expand</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-bold" />
+    </svg>
+    <div><code>external-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-light" />
+    </svg>
+    <div><code>external-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-old" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-old" />
+    </svg>
+    <div><code>external-old</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external" />
+    </svg>
+    <div><code>external</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#filter" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#filter" />
+    </svg>
+    <div><code>filter</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#game" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#game" />
+    </svg>
+    <div><code>game</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#grid" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#grid" />
+    </svg>
+    <div><code>grid</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#home" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#home" />
+    </svg>
+    <div><code>home</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#list" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#list" />
+    </svg>
+    <div><code>list</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mail" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mail" />
+    </svg>
+    <div><code>mail</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-rotational" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-rotational" />
+    </svg>
+    <div><code>mediaplayer-rotational</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-sketchfab" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-sketchfab" />
+    </svg>
+    <div><code>mediaplayer-sketchfab</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-youtube" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-youtube" />
+    </svg>
+    <div><code>mediaplayer-youtube</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-bold" />
+    </svg>
+    <div><code>menu-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-light" />
+    </svg>
+    <div><code>menu-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-regular" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-regular" />
+    </svg>
+    <div><code>menu-regular</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#pdf" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#pdf" />
+    </svg>
+    <div><code>pdf</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#people" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#people" />
+    </svg>
+    <div><code>people</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-bold" />
+    </svg>
+    <div><code>person-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-light" />
+    </svg>
+    <div><code>person-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person" />
+    </svg>
+    <div><code>person</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#photo" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#photo" />
+    </svg>
+    <div><code>photo</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#print" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#print" />
+    </svg>
+    <div><code>print</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#remove" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#remove" />
+    </svg>
+    <div><code>remove</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#room" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#room" />
+    </svg>
+    <div><code>room</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-clockwise" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-clockwise" />
+    </svg>
+    <div><code>rotate-clockwise</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-counterclockwise" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-counterclockwise" />
+    </svg>
+    <div><code>rotate-counterclockwise</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-bold" />
+    </svg>
+    <div><code>search-bold</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-light" />
+    </svg>
+    <div><code>search-light</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search" />
+    </svg>
+    <div><code>search</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#taxonomy" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#taxonomy" />
+    </svg>
+    <div><code>taxonomy</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#video" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#video" />
+    </svg>
+    <div><code>video</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#xml" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#xml" />
+    </svg>
+    <div><code>xml</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomin" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomin" />
+    </svg>
+    <div><code>zoomin</code></div>
+  </div>
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomout" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomout" />
+    </svg>
+    <div><code>zoomout</code></div>
+  </div>
+</div>
+
+<div class="Examplegrid Examplegrid--wrap Examplegrid--reversed" style="background: black;">
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#3d" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#3d" />
+    </svg>
+    <div><code>3d</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#all" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#all" />
+    </svg>
+    <div><code>all</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#app" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#app" />
+    </svg>
+    <div><code>app</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#archive" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#archive" />
+    </svg>
+    <div><code>archive</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-bold" />
+    </svg>
+    <div><code>arrow-down-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down-light" />
+    </svg>
+    <div><code>arrow-down-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-down" />
+    </svg>
+    <div><code>arrow-down</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-bold" />
+    </svg>
+    <div><code>arrow-left-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left-light" />
+    </svg>
+    <div><code>arrow-left-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-left" />
+    </svg>
+    <div><code>arrow-left</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-bold" />
+    </svg>
+    <div><code>arrow-right-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right-light" />
+    </svg>
+    <div><code>arrow-right-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-right" />
+    </svg>
+    <div><code>arrow-right</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-bold" />
+    </svg>
+    <div><code>arrow-up-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up-light" />
+    </svg>
+    <div><code>arrow-up-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow-up" />
+    </svg>
+    <div><code>arrow-up</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_down" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_down" />
+    </svg>
+    <div><code>arrow_down</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_left" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_left" />
+    </svg>
+    <div><code>arrow_left</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_right" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_right" />
+    </svg>
+    <div><code>arrow_right</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_up" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#arrow_up" />
+    </svg>
+    <div><code>arrow_up</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#back" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#back" />
+    </svg>
+    <div><code>back</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#clipboard" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#clipboard" />
+    </svg>
+    <div><code>clipboard</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-bold" />
+    </svg>
+    <div><code>dismiss-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss-light" />
+    </svg>
+    <div><code>dismiss-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#dismiss" />
+    </svg>
+    <div><code>dismiss</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#document" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#document" />
+    </svg>
+    <div><code>document</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#download" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#download" />
+    </svg>
+    <div><code>download</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#expand" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#expand" />
+    </svg>
+    <div><code>expand</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-bold" />
+    </svg>
+    <div><code>external-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-light" />
+    </svg>
+    <div><code>external-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-old" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external-old" />
+    </svg>
+    <div><code>external-old</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#external" />
+    </svg>
+    <div><code>external</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#filter" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#filter" />
+    </svg>
+    <div><code>filter</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#game" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#game" />
+    </svg>
+    <div><code>game</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#grid" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#grid" />
+    </svg>
+    <div><code>grid</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#home" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#home" />
+    </svg>
+    <div><code>home</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#list" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#list" />
+    </svg>
+    <div><code>list</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mail" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mail" />
+    </svg>
+    <div><code>mail</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-rotational" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-rotational" />
+    </svg>
+    <div><code>mediaplayer-rotational</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-sketchfab" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-sketchfab" />
+    </svg>
+    <div><code>mediaplayer-sketchfab</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-youtube" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#mediaplayer-youtube" />
+    </svg>
+    <div><code>mediaplayer-youtube</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-bold" />
+    </svg>
+    <div><code>menu-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-light" />
+    </svg>
+    <div><code>menu-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-regular" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#menu-regular" />
+    </svg>
+    <div><code>menu-regular</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#pdf" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#pdf" />
+    </svg>
+    <div><code>pdf</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#people" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#people" />
+    </svg>
+    <div><code>people</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-bold" />
+    </svg>
+    <div><code>person-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person-light" />
+    </svg>
+    <div><code>person-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#person" />
+    </svg>
+    <div><code>person</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#photo" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#photo" />
+    </svg>
+    <div><code>photo</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#print" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#print" />
+    </svg>
+    <div><code>print</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#remove" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#remove" />
+    </svg>
+    <div><code>remove</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#room" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#room" />
+    </svg>
+    <div><code>room</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-clockwise" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-clockwise" />
+    </svg>
+    <div><code>rotate-clockwise</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-counterclockwise" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#rotate-counterclockwise" />
+    </svg>
+    <div><code>rotate-counterclockwise</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-bold" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-bold" />
+    </svg>
+    <div><code>search-bold</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-light" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search-light" />
+    </svg>
+    <div><code>search-light</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#search" />
+    </svg>
+    <div><code>search</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#taxonomy" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#taxonomy" />
+    </svg>
+    <div><code>taxonomy</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#video" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#video" />
+    </svg>
+    <div><code>video</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#xml" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#xml" />
+    </svg>
+    <div><code>xml</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomin" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomin" />
+    </svg>
+    <div><code>zoomin</code></div>
+  </div>
+  <div class="Examplegrid__item ">
+    <svg style="margin: 1rem" width="24" height="24">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomout" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="../assets/icons/sprite.symbol.svg#zoomout" />
+    </svg>
+    <div><code>zoomout</code></div>
+  </div>
+</div>
+
+          
+      
+    
+  </div>
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="getting-started.html" data-pjax>
+                <span>Getting Started</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="principles.html" data-pjax>
+                <span>Principles</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-colour">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Colour</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="colour/colours.html" data-pjax>
+                <span>Colours</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="colour/gradients.html" data-pjax>
+                <span>Gradients</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="typography.html" data-pjax>
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>Icons</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="logos.html" data-pjax>
+                <span>Logos</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="standards.html" data-pjax>
+                <span>Standards</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="sassdoc.html" data-pjax>
+                <span>Sassdoc</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-sass-tools">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Sass Tools</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="sass-tools/colour.html" data-pjax>
+                <span>colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="sass-tools/components.html" data-pjax>
+                <span>components</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="sass-tools/undefined.html" data-pjax>
+                <span>include-media</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="sass-tools/utilities.html" data-pjax>
+                <span>utilities</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/accordion.html" data-pjax>
+                <span>Accordion</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-audioplayer">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Audioplayer</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/audioplayer--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/audioplayer--no-img.html" data-pjax>
+                <span>No Img</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/button.html" data-pjax>
+                <span>Button</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Card</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/card--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/card--list-view.html" data-pjax>
+                <span>List View</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/illuminate.html" data-pjax>
+                <span>Illuminate</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/lists.html" data-pjax>
+                <span>Lists</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/loading.html" data-pjax>
+                <span>Loading</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-page">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Page</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-masthead">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Masthead</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--smg.html" data-pjax>
+                <span>Smg</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--scm.html" data-pjax>
+                <span>Scm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--nrm.html" data-pjax>
+                <span>Nrm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--sim.html" data-pjax>
+                <span>Sim</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--nsmm.html" data-pjax>
+                <span>Nsmm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/masthead--loco.html" data-pjax>
+                <span>Loco</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-menu">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Menu</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/menu--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/menu--blog.html" data-pjax>
+                <span>Blog</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/menu--sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Grid</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/grid--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/grid--page.html" data-pjax>
+                <span>Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/logo-panel.html" data-pjax>
+                <span>Logo Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/searchmenu.html" data-pjax>
+                <span>Searchmenu</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/textstyles.html" data-pjax>
+                <span>Textstyles</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-pagination">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Pagination</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/pagination--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/pagination--short.html" data-pjax>
+                <span>Short</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/pagination--last-page.html" data-pjax>
+                <span>Last Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/pagination--wordpress.html" data-pjax>
+                <span>Wordpress</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/panel.html" data-pjax>
+                <span>Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../components/detail/utilities.html" data-pjax>
+                <span>Utilities</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+
+
+</body>
+</html>

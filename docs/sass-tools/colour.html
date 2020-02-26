@@ -1,0 +1,1689 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../assets/favicon.ico" type="image/ico">
+
+<link rel="stylesheet" href="../../css/main.css?cachebust=1.2.1" type="text/css">
+
+<link rel="stylesheet" href="../../subtheme/css/main.css?cachebust=1.2.1" type="text/css">
+
+
+<title>colour | Science Museum Group: Web Design System</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <svg class="Header-navToggleIcon Header-navToggleIcon--open" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        <svg class="Header-navToggleIcon Header-navToggleIcon--closed" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Science Museum Group: Web Design System</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">colour</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="o-main">
+  <div class="o-textstyles Prose">
+    
+      
+      
+          
+          
+          <h1 id="colour">colour</h1>
+<h2 id="blend-normal">blend-normal</h2>
+<h3 id="description">Description</h3>
+<p>Returns a color simulating Photoshop blend mode - Normal</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>foreground</td>
+<td>topmost colour. (likely to contain opacity, otherwise no effect)</td>
+<td>Color</td>
+<td></td>
+</tr>
+<tr>
+<td>background</td>
+<td>bottom colour.</td>
+<td>Color</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns">Returns</h3>
+<p><code>Color</code></p>
+<h3 id="used-by">Used By</h3>
+<ul>
+<li>[function] <code>blend-multiply</code></li>
+</ul>
+<h3 id="links">Links</h3>
+<p><a href="https://github.com/heygrady/scss-blend-modes%3E">https://github.com/heygrady/scss-blend-modes</a></p>
+<h3 id="author">Author</h3>
+<ul>
+<li>Grady Kuhnline</li>
+</ul>
+<h3 id="source">Source</h3>
+<pre><code class="language-scss">@function blend-normal(<span class="hljs-variable">$foreground</span>, <span class="hljs-variable">$background</span>) { safe: 
+  <span class="hljs-variable">$opacity</span>: opacity(<span class="hljs-variable">$foreground</span>);
+  <span class="hljs-variable">$background-opacity</span>: opacity(<span class="hljs-variable">$background</span>);
+
+  <span class="hljs-comment">// calculate opacity</span>
+  <span class="hljs-variable">$bm-red</span>: red(<span class="hljs-variable">$foreground</span>) * <span class="hljs-variable">$opacity</span> + red(<span class="hljs-variable">$background</span>) * <span class="hljs-variable">$background-opacity</span> *
+    (<span class="hljs-number">1</span> - <span class="hljs-variable">$opacity</span>);
+  <span class="hljs-variable">$bm-green</span>: green(<span class="hljs-variable">$foreground</span>) * <span class="hljs-variable">$opacity</span> + green(<span class="hljs-variable">$background</span>) *
+    <span class="hljs-variable">$background-opacity</span> * (<span class="hljs-number">1</span> - <span class="hljs-variable">$opacity</span>);
+  <span class="hljs-variable">$bm-blue</span>: blue(<span class="hljs-variable">$foreground</span>) * <span class="hljs-variable">$opacity</span> + blue(<span class="hljs-variable">$background</span>) *
+    <span class="hljs-variable">$background-opacity</span> * (<span class="hljs-number">1</span> - <span class="hljs-variable">$opacity</span>);
+  @return rgb(<span class="hljs-variable">$bm-red</span>, <span class="hljs-variable">$bm-green</span>, <span class="hljs-variable">$bm-blue</span>);
+}</code></pre><hr>
+<h2 id="blend-multiply">blend-multiply</h2>
+<h3 id="description-1">Description</h3>
+<p>Returns a color simulating Photoshop blend mode -  Multiply</p>
+<h3 id="parameters-1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>foreground</td>
+<td>top colour.</td>
+<td>Color</td>
+<td></td>
+</tr>
+<tr>
+<td>background</td>
+<td>bottom colour.</td>
+<td>Color</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-1">Returns</h3>
+<p><code>Color</code></p>
+<h3 id="requires">Requires</h3>
+<ul>
+<li>[function] <code>blend-normal</code> </li>
+</ul>
+<h3 id="links-1">Links</h3>
+<p><a href="https://github.com/heygrady/scss-blend-modes%3E">https://github.com/heygrady/scss-blend-modes</a></p>
+<h3 id="author-1">Author</h3>
+<ul>
+<li>Grady Kuhnline</li>
+</ul>
+<h3 id="source-1">Source</h3>
+<pre><code class="language-scss">@function blend-multiply(<span class="hljs-variable">$foreground</span>, <span class="hljs-variable">$background</span>) { safe: 
+  <span class="hljs-variable">$bm-red</span>: red(<span class="hljs-variable">$background</span>) * red(<span class="hljs-variable">$foreground</span>) / <span class="hljs-number">255</span>;
+  <span class="hljs-variable">$bm-green</span>: green(<span class="hljs-variable">$background</span>) * green(<span class="hljs-variable">$foreground</span>) / <span class="hljs-number">255</span>;
+  <span class="hljs-variable">$bm-blue</span>: blue(<span class="hljs-variable">$background</span>) * blue(<span class="hljs-variable">$foreground</span>) / <span class="hljs-number">255</span>;
+
+  @return blend-normal(
+    rgba(<span class="hljs-variable">$bm-red</span>, <span class="hljs-variable">$bm-green</span>, <span class="hljs-variable">$bm-blue</span>, opacity(<span class="hljs-variable">$foreground</span>)),
+    <span class="hljs-variable">$background</span>
+  );
+}</code></pre><hr>
+<h2 id="grey">grey</h2>
+<h3 id="description-2">Description</h3>
+<p>Returns a grey color from 0-white to 100-black</p>
+<h3 id="parameters-2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tint</td>
+<td>number between 0-100</td>
+<td>Number</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-2">Returns</h3>
+<p><code>Color</code></p>
+<h3 id="example">Example</h3>
+<pre><code class="language-scss">grey(20)
+<span class="hljs-comment">// #ccc</span></code></pre><h3 id="source-2">Source</h3>
+<pre><code class="language-scss">@function grey(<span class="hljs-variable">$tint</span>) { safe: 
+  @return rgb(<span class="hljs-number">255</span> - <span class="hljs-variable">$tint</span> * <span class="hljs-number">2.55</span>, <span class="hljs-number">255</span> - <span class="hljs-variable">$tint</span> * <span class="hljs-number">2.55</span>, <span class="hljs-number">255</span> - <span class="hljs-variable">$tint</span> * <span class="hljs-number">2.55</span>);
+}</code></pre><hr>
+<h2 id="palette">palette</h2>
+<h3 id="description-3">Description</h3>
+<p>Get a colour from the $palette map</p>
+<h3 id="parameters-3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>palette</td>
+<td>base color</td>
+<td>Color</td>
+<td></td>
+</tr>
+<tr>
+<td>tone</td>
+<td>color variation to return</td>
+<td>String</td>
+<td>base</td>
+</tr>
+</tbody></table>
+<h3 id="returns-3">Returns</h3>
+<p><code>Color</code></p>
+<h3 id="requires-1">Requires</h3>
+<ul>
+<li>[variable] <code>palettes</code> </li>
+</ul>
+<h3 id="source-3">Source</h3>
+<pre><code class="language-scss">@function palette(<span class="hljs-variable">$palette</span>, <span class="hljs-variable">$tone</span>: base) { safe: 
+  @return map-get(map-get(<span class="hljs-variable">$palettes</span>, <span class="hljs-variable">$palette</span>), <span class="hljs-variable">$tone</span>);
+}</code></pre><hr>
+<h2 id="multiple-repeat">multiple-repeat</h2>
+<h3 id="description-4">Description</h3>
+<p>Repeats a value. For properties that take comma-separated lists</p>
+<h3 id="parameters-4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>initial value to repeat</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>repetitions</td>
+<td>number of repetitions</td>
+<td>Number</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-4">Returns</h3>
+<p><code>String</code></p>
+<h3 id="used-by-1">Used By</h3>
+<ul>
+<li><p>[mixin] <code>sm-gradient-animated</code></p>
+</li>
+<li><p>[mixin] <code>sm-gradient-animated</code></p>
+</li>
+</ul>
+<h3 id="source-4">Source</h3>
+<pre><code class="language-scss">@function multiple-repeat(<span class="hljs-variable">$value</span>, <span class="hljs-variable">$repetitions</span>) { safe: 
+  <span class="hljs-variable">$values</span>: ();
+  @<span class="hljs-keyword">for</span> <span class="hljs-variable">$i</span> from 1 through <span class="hljs-variable">$repetitions</span> {
+    <span class="hljs-variable">$next_value</span>: <span class="hljs-variable">$value</span>;
+    <span class="hljs-variable">$values</span>: append(<span class="hljs-variable">$values</span>, <span class="hljs-variable">$next_value</span>, comma);
+  }
+  @return <span class="hljs-variable">$values</span>;
+}</code></pre><hr>
+<h2 id="perceivedbrightness">perceivedbrightness</h2>
+<h3 id="description-5">Description</h3>
+<p>Returns the perceived brightness of a colour.</p>
+<h3 id="parameters-5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>color to test</td>
+<td>Color</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-5">Returns</h3>
+<p><code>Percent</code></p>
+<h3 id="requires-2">Requires</h3>
+<ul>
+<li>[function] <code>sqrt</code> </li>
+</ul>
+<h3 id="used-by-2">Used By</h3>
+<ul>
+<li>[function] <code>contrasting-text-color</code></li>
+</ul>
+<h3 id="links-2">Links</h3>
+<p><a href="http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx%3E">http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx</a></p>
+<p><a href="https://gist.github.com/jlong/f06f5843104ee10006fe%3E">https://gist.github.com/jlong/f06f5843104ee10006fe</a></p>
+<h3 id="source-5">Source</h3>
+<pre><code class="language-scss">@function perceivedbrightness(<span class="hljs-variable">$color</span>) { safe: 
+  <span class="hljs-variable">$red-magic-number</span>: <span class="hljs-number">241</span>;
+  <span class="hljs-variable">$green-magic-number</span>: <span class="hljs-number">691</span>;
+  <span class="hljs-variable">$blue-magic-number</span>: <span class="hljs-number">68</span>;
+  <span class="hljs-variable">$brightness-divisor</span>: <span class="hljs-variable">$red-magic-number</span> + <span class="hljs-variable">$green-magic-number</span> +
+    <span class="hljs-variable">$blue-magic-number</span>;
+
+  <span class="hljs-comment">// Extract color components</span>
+  <span class="hljs-variable">$red-component</span>: red(<span class="hljs-variable">$color</span>);
+  <span class="hljs-variable">$green-component</span>: green(<span class="hljs-variable">$color</span>);
+  <span class="hljs-variable">$blue-component</span>: blue(<span class="hljs-variable">$color</span>);
+
+  <span class="hljs-comment">// Calculate a brightness value in 3d color space between 0 and 255</span>
+  <span class="hljs-variable">$number</span>: sqrt(
+    (
+        (<span class="hljs-variable">$red-component</span> * <span class="hljs-variable">$red-component</span> * <span class="hljs-variable">$red-magic-number</span>) +
+          (<span class="hljs-variable">$green-component</span> * <span class="hljs-variable">$green-component</span> * <span class="hljs-variable">$green-magic-number</span>) +
+          (<span class="hljs-variable">$blue-component</span> * <span class="hljs-variable">$blue-component</span> * <span class="hljs-variable">$blue-magic-number</span>)
+      ) / <span class="hljs-variable">$brightness-divisor</span>
+  );
+
+  <span class="hljs-comment">// Convert to percentage and return</span>
+  @return 100% * <span class="hljs-variable">$number</span> / 255;
+}</code></pre><hr>
+<h2 id="contrasting-text-color">contrasting-text-color</h2>
+<h3 id="description-6">Description</h3>
+<p>Returns a contrasting text color, based on the brightness of the original color.
+Assuming your original color is applied as a background-color, this will ensure that there is sufficient contrast for a11y guidelines.</p>
+<h3 id="parameters-6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>color</td>
+<td>color to test</td>
+<td>Color</td>
+<td></td>
+</tr>
+<tr>
+<td>light</td>
+<td>The light color to return</td>
+<td>Color</td>
+<td>white</td>
+</tr>
+<tr>
+<td>dark</td>
+<td>The dark color to return</td>
+<td>Color</td>
+<td>dark</td>
+</tr>
+</tbody></table>
+<h3 id="returns-6">Returns</h3>
+<p><code>Percent</code></p>
+<h3 id="example-1">Example</h3>
+<pre><code class="language-scss"><span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$c-orange</span>;
+<span class="hljs-attribute">color</span>: contrasting-text-color(<span class="hljs-variable">$c-orange</span>);
+black</code></pre><h3 id="requires-3">Requires</h3>
+<ul>
+<li>[function] <code>perceivedbrightness</code> </li>
+</ul>
+<h3 id="links-3">Links</h3>
+<p><a href="http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx%3E">http://www.nbdtech.com/Blog/archive/2008/04/27/Calculating-the-Perceived-Brightness-of-a-Color.aspx</a></p>
+<p><a href="https://gist.github.com/jlong/f06f5843104ee10006fe%3E">https://gist.github.com/jlong/f06f5843104ee10006fe</a></p>
+<h3 id="source-6">Source</h3>
+<pre><code class="language-scss">@function contrasting-text-color(<span class="hljs-variable">$color</span>, <span class="hljs-variable">$light</span>: white, <span class="hljs-variable">$dark</span>: dark) { safe: 
+  @if (perceivedbrightness(<span class="hljs-variable">$color</span>) &gt; <span class="hljs-number">65</span>) {
+    @return <span class="hljs-variable">$dark</span>;
+  } @<span class="hljs-keyword">else</span> {
+    @return <span class="hljs-variable">$light</span>;
+  }
+}</code></pre><hr>
+<h2 id="sm-gradient">sm-gradient</h2>
+<h3 id="description-7">Description</h3>
+<p>create a Background gradient from the SMG palette</p>
+<h3 id="parameters-7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>stops</td>
+<td>2 or colours, probably adjacent on the SMG base palette, but can also be hex values</td>
+<td>List</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="example-2">Example</h3>
+<p>with 2 custom colours</p>
+<pre><code class="language-scss">@<span class="hljs-keyword">include</span> sm-gradient(<span class="hljs-variable">$c-orange</span> <span class="hljs-number">#f00</span>);</code></pre><p>with 3 SMG colours</p>
+<pre><code class="language-scss">@<span class="hljs-keyword">include</span> sm-gradient(<span class="hljs-variable">$c-green</span> <span class="hljs-variable">$c-teal</span> <span class="hljs-variable">$c-blue</span>);</code></pre><h3 id="source-7">Source</h3>
+<pre><code class="language-scss">@<span class="hljs-keyword">mixin</span> sm-gradient(<span class="hljs-variable">$stops</span>) { safe: 
+  @each <span class="hljs-variable">$stop</span> in <span class="hljs-variable">$stops</span> {
+    @if type-of(<span class="hljs-variable">$stop</span>) != color {
+      @warn <span class="hljs-string">'`#{$stop}` is not a color. I wish it was.'</span>;
+    }
+  }
+
+  @<span class="hljs-keyword">if</span> length(<span class="hljs-variable">$stops</span>) == 1 {
+    <span class="hljs-attribute">background-color</span>: <span class="hljs-variable">$stops</span>;
+  }
+  @<span class="hljs-keyword">if</span> length(<span class="hljs-variable">$stops</span>) == 2 {
+    <span class="hljs-attribute">background-image</span>: linear-gradient(
+      <span class="hljs-number">135deg</span>,
+      nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">1</span>) <span class="hljs-number">0%</span>,
+      nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">2</span>) <span class="hljs-number">100%</span>
+    );
+  }
+  @<span class="hljs-keyword">if</span> length(<span class="hljs-variable">$stops</span>) &gt; 2 {
+    <span class="hljs-attribute">background-image</span>: radial-gradient(
+        ellipse at bottom left,
+        nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">1</span>),
+        rgba(nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">1</span>), <span class="hljs-number">0</span>) <span class="hljs-number">50%</span>
+      ),
+      linear-gradient(to right, nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">2</span>) <span class="hljs-number">0%</span>, nth(<span class="hljs-variable">$stops</span>, <span class="hljs-number">3</span>) <span class="hljs-number">100%</span>);
+  }
+}</code></pre><hr>
+<h2 id="sm-gradient-animated">sm-gradient-animated</h2>
+<h3 id="description-8">Description</h3>
+<p>Animates background gradients
+Apply to an element that has a static sm-gradient (fallback) to add a subtle movement / fade to them.</p>
+<h3 id="parameters-8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>duration</td>
+<td>time + s</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>layers</td>
+<td>if multiple properties, number of</td>
+<td>Number</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="requires-4">Requires</h3>
+<ul>
+<li><p>[function] <code>multiple-repeat</code> </p>
+</li>
+<li><p>[function] <code>multiple-repeat</code> </p>
+</li>
+</ul>
+<h3 id="see">See</h3>
+<ul>
+<li>[mixin] <code>sm-gradient</code></li>
+</ul>
+<h3 id="todos">TODOs</h3>
+<ul>
+<li>Apply as extra args to main sm-gradient mixin?</li>
+</ul>
+<h3 id="links-4">Links</h3>
+<p><a href="https://collection.sciencemuseum.org.uk%3E">(see footer logo-panel)</a></p>
+<h3 id="source-8">Source</h3>
+<pre><code class="language-scss">@<span class="hljs-keyword">mixin</span> sm-gradient-animated(<span class="hljs-variable">$duration</span>, <span class="hljs-variable">$layers</span>) { safe: 
+  <span class="hljs-variable">$name</span>: sm-grad-fade-#{<span class="hljs-variable">$duration</span>}-#{<span class="hljs-variable">$layers</span>}; <span class="hljs-comment">// if these variables change, we'd need to ouput a different name at root.</span>
+  <span class="hljs-attribute">animation-name</span>: <span class="hljs-variable">$name</span>;
+  <span class="hljs-attribute">animation-duration</span>: <span class="hljs-variable">$duration</span>;
+  <span class="hljs-attribute">animation-timing-function</span>: ease-in-out;
+  <span class="hljs-attribute">animation-direction</span>: alternate;
+  <span class="hljs-attribute">animation-iteration-count</span>: infinite;
+
+  @at-root {
+    @keyframes #{<span class="hljs-variable">$name</span>} {
+      0% {
+        <span class="hljs-attribute">background-size</span>: multiple-repeat(<span class="hljs-number">100%</span> <span class="hljs-number">100%</span>, <span class="hljs-variable">$layers</span>);
+      }
+      100% {
+        <span class="hljs-attribute">background-size</span>: multiple-repeat(<span class="hljs-number">200%</span> <span class="hljs-number">200%</span>, <span class="hljs-variable">$layers</span>);
+      }
+    }
+  }
+}</code></pre><hr>
+<h2 id="c-red">c-red</h2>
+<h3 id="description-9">Description</h3>
+<p>Base colour</p>
+<h3 id="type">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-9">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-red</span>: <span class="hljs-number">#e60060</span></code></pre><hr>
+<h2 id="c-orange">c-orange</h2>
+<h3 id="description-10">Description</h3>
+<p>Base colour</p>
+<h3 id="type-1">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-10">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-orange</span>: <span class="hljs-number">#ec6408</span></code></pre><hr>
+<h2 id="c-yellow">c-yellow</h2>
+<h3 id="description-11">Description</h3>
+<p>Base colour</p>
+<h3 id="type-2">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-11">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-yellow</span>: <span class="hljs-number">#ffee00</span></code></pre><hr>
+<h2 id="c-green">c-green</h2>
+<h3 id="description-12">Description</h3>
+<p>Base colour</p>
+<h3 id="type-3">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-12">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-green</span>: <span class="hljs-number">#95c11f</span></code></pre><hr>
+<h2 id="c-teal">c-teal</h2>
+<h3 id="description-13">Description</h3>
+<p>Base colour</p>
+<h3 id="type-4">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-13">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-teal</span>: <span class="hljs-number">#4bbecf</span></code></pre><hr>
+<h2 id="c-blue">c-blue</h2>
+<h3 id="description-14">Description</h3>
+<p>Base colour</p>
+<h3 id="type-5">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-14">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-blue</span>: <span class="hljs-number">#004899</span></code></pre><hr>
+<h2 id="c-purple">c-purple</h2>
+<h3 id="description-15">Description</h3>
+<p>Base colour</p>
+<h3 id="type-6">Type</h3>
+<p><code>Color</code></p>
+<h3 id="source-15">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$c-purple</span>: <span class="hljs-number">#af1280</span></code></pre><hr>
+<h2 id="palettes">palettes</h2>
+<h3 id="description-16">Description</h3>
+<p>Main palette variable map.
+these can not be overrriden.</p>
+<h3 id="type-7">Type</h3>
+<p><code>Map</code></p>
+<h3 id="example-3">Example</h3>
+<p>Access via pallette function</p>
+<pre><code class="language-scss"><span class="hljs-attribute">background-color</span>: palette(blue)
+color: palette(blue, text)</code></pre><h3 id="used-by-3">Used By</h3>
+<ul>
+<li>[function] <code>palette</code></li>
+</ul>
+<h3 id="source-16">Source</h3>
+<pre><code class="language-scss"><span class="hljs-variable">$palettes</span>: (
+  <span class="hljs-string">"red"</span>: (
+    base: <span class="hljs-variable">$c-red</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-red</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-red</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-red</span>, <span class="hljs-variable">$c-red</span>)
+  ),
+  <span class="hljs-string">"orange"</span>: (
+    base: <span class="hljs-variable">$c-orange</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-orange</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-orange</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-orange</span>, <span class="hljs-variable">$c-orange</span>)
+  ),
+  <span class="hljs-string">"yellow"</span>: (
+    base: <span class="hljs-variable">$c-yellow</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-yellow</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-yellow</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-yellow</span>, <span class="hljs-variable">$c-yellow</span>)
+  ),
+  <span class="hljs-string">"green"</span>: (
+    base: <span class="hljs-variable">$c-green</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-green</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-green</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-green</span>, <span class="hljs-variable">$c-green</span>)
+  ),
+  <span class="hljs-string">"teal"</span>: (
+    base: <span class="hljs-variable">$c-teal</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-teal</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-teal</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-teal</span>, <span class="hljs-variable">$c-teal</span>)
+  ),
+  <span class="hljs-string">"blue"</span>: (
+    base: <span class="hljs-variable">$c-blue</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-blue</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-blue</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-blue</span>, <span class="hljs-variable">$c-blue</span>)
+  ),
+  <span class="hljs-string">"purple"</span>: (
+    base: <span class="hljs-variable">$c-purple</span>,
+    text: contrasting-text-color(<span class="hljs-variable">$c-purple</span>),
+    light: blend-normal(rgba(<span class="hljs-variable">$c-purple</span>, <span class="hljs-number">0.66</span>), white),
+    dark: blend-multiply(<span class="hljs-variable">$c-purple</span>, <span class="hljs-variable">$c-purple</span>)
+  )
+)</code></pre><hr>
+
+          
+      
+    
+  </div>
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-handle" data-role="frame-resize-handle"></div>
+        
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            <nav class="Navigation">
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <h3 class="Tree-title">documentation</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../index.html" data-pjax>
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../getting-started.html" data-pjax>
+                <span>Getting Started</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../principles.html" data-pjax>
+                <span>Principles</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-colour">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Colour</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../colour/colours.html" data-pjax>
+                <span>Colours</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../colour/gradients.html" data-pjax>
+                <span>Gradients</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../typography.html" data-pjax>
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../icons.html" data-pjax>
+                <span>Icons</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../logos.html" data-pjax>
+                <span>Logos</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../standards.html" data-pjax>
+                <span>Standards</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../sassdoc.html" data-pjax>
+                <span>Sassdoc</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-sass-tools">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Sass Tools</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a class="Tree-entityLink" href="" data-pjax>
+                <span>colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="components.html" data-pjax>
+                <span>components</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="undefined.html" data-pjax>
+                <span>include-media</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="utilities.html" data-pjax>
+                <span>utilities</span>
+                
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+    
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <h3 class="Tree-title">components</h3>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/accordion.html" data-pjax>
+                <span>Accordion</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-audioplayer">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Audioplayer</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/audioplayer--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/audioplayer--no-img.html" data-pjax>
+                <span>No Img</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/button.html" data-pjax>
+                <span>Button</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-card">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Card</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/card--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/card--list-view.html" data-pjax>
+                <span>List View</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/illuminate.html" data-pjax>
+                <span>Illuminate</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/lists.html" data-pjax>
+                <span>Lists</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/loading.html" data-pjax>
+                <span>Loading</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-page">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Page</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-masthead">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Masthead</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--smg.html" data-pjax>
+                <span>Smg</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--scm.html" data-pjax>
+                <span>Scm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--nrm.html" data-pjax>
+                <span>Nrm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--sim.html" data-pjax>
+                <span>Sim</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--nsmm.html" data-pjax>
+                <span>Nsmm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/masthead--loco.html" data-pjax>
+                <span>Loco</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-menu">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Menu</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--blog.html" data-pjax>
+                <span>Blog</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/menu--sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/sitenav.html" data-pjax>
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Grid</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/grid--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/grid--page.html" data-pjax>
+                <span>Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/logo-panel.html" data-pjax>
+                <span>Logo Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/searchmenu.html" data-pjax>
+                <span>Searchmenu</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/textstyles.html" data-pjax>
+                <span>Textstyles</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-pagination">
+            <h4 class="Tree-collectionLabel" data-role="toggle">
+                <span>Pagination</span>
+            </h4>
+            <ul class="Tree-collectionItems" data-role="items">
+            
+            
+            
+            
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--default.html" data-pjax>
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--short.html" data-pjax>
+                <span>Short</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--last-page.html" data-pjax>
+                <span>Last Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/pagination--wordpress.html" data-pjax>
+                <span>Wordpress</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+            </ul>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/panel.html" data-pjax>
+                <span>Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a class="Tree-entityLink" href="../../components/detail/utilities.html" data-pjax>
+                <span>Utilities</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.2.1"></script>
+
+
+
+</body>
+</html>
