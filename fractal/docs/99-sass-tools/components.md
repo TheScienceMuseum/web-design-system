@@ -75,6 +75,24 @@ $logo-panel-color: white
 
 ---
 
+## menu-width
+
+### Description
+
+Set mobile-collapse point, as media query
+
+### Type
+
+`String`
+
+### Source
+
+```scss
+$menu-width: ">=" + (600px + 50px + 130px)
+```
+
+---
+
 ## pagination-base-selector
 
 ### Description
@@ -106,7 +124,7 @@ defines the selector for page items
 ### Source
 
 ```scss
-$pagination-page-selector: ".page-numbers"
+$pagination-page-selector: ".c-pagination__page"
 ```
 
 ---

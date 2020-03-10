@@ -326,6 +326,25 @@ $im-no-media-expressions: ('screen', 'portrait', 'landscape')
 
 ---
 
+## nav-panel-gradient
+
+### Description
+
+Include SMG-type gradient background.
+It might well be the same as $logo-panel-gradient.
+
+### Type
+
+`List`
+
+### Source
+
+```scss
+$nav-panel-gradient: $c-green $c-blue $c-purple
+```
+
+---
+
 ## im-log
 
 ### Description
