@@ -167,6 +167,10 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
 
         & > a {
           @include toplink;
+          &[aria-current="true"]:before {
+            visibility: visible;
+            transform: scaleX(1);
+          }
         }
       }
     }

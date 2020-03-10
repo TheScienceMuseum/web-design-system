@@ -11,7 +11,8 @@ module.exports = {
       },
       {
         url: "https://collection.sciencemuseumgroup.org.uk/",
-        name: "Collections"
+        name: "Collections",
+        current: true
       },
       {
         url: "https://www.sciencemuseumgroup.org.uk/",

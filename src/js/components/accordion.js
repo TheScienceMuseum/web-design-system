@@ -7,7 +7,7 @@ export default function accordion() {
           var content = document.querySelector(
             "#" + e.target.getAttribute("aria-controls")
           );
-          console.log(content);
+          // console.log(content);
           // e.target.classList.toggle("-is-active");
           e.target.setAttribute(
             "aria-expanded",

@@ -14,7 +14,7 @@
     </ul>
   </li>
   {{else}}
-  <li class="c-menu__item"><a href="{{url}}">{{name}}</a></li>
+  <li class="c-menu__item"><a href="{{url}}" {{#if current}}aria-current="true" {{/if}}>{{name}}</a></li>
   {{/if}}
   {{/each}}
 </ul>
