@@ -23,6 +23,29 @@ $nav-panel-gradient: $c-green $c-blue $c-purple !default;
     @include type-h2;
     line-height: 1;
     margin: 1rem 0;
+    a {
+      text-decoration: none;
+      position: relative;
+      &:before {
+        content: "";
+        position: absolute;
+        height: 3px;
+        bottom: 1px;
+        background: white;
+        left: 0;
+        right: 0;
+        visibility: hidden;
+        transform: scaleX(0);
+        transform-origin: 0 center;
+        transition: transform 0.3s ease-in-out 0s;
+        margin: 0 auto;
+      }
+
+      &:hover:before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
   }
 
   &__right {
