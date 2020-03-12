@@ -3,7 +3,7 @@ $plyr-color-main: $c-teal;
 
 $plyr-control-radius: 0;
 
-$plyr-audio-controls-bg: grey(80);
+$plyr-audio-controls-bg: grey(85);
 $plyr-audio-control-color: grey(30);
 $plyr-audio-control-color-hover: white;
 $plyr-audio-control-bg-hover: inherit;
@@ -40,7 +40,7 @@ $plyr-range-thumb-height: 16px;
 }
 
 .c-audioplayer {
-  background-color: grey(80);
+  background-color: grey(85);
   color: white;
   @include media(">medium") {
     display: flex;
@@ -64,7 +64,7 @@ $plyr-range-thumb-height: 16px;
       margin-right: 0;
       margin-bottom: 0;
     }
-    background-color: grey(90);
+    background-color: black;
     flex-shrink: 0;
     width: 20%;
     img {
