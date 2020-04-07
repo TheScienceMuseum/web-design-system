@@ -9,6 +9,11 @@
   width: $searchmenu-width;
   height: 100%;
 
+  &--resultspage {
+    // is bigger and reverse colours
+    width: auto;
+  }
+
   &__menuitem {
     text-transform: uppercase;
     font-weight: bold;
@@ -62,6 +67,11 @@
       transform: scaleY(1);
       transform: none; // FF won't combine background-attach with transform, so remove after we're done transitioning.
     }
+
+    &--resultspage & {
+      background-color: white;
+      color: black;
+    }
   }
 
   &__form {
@@ -83,7 +93,18 @@
       color: white;
     }
   }
-
+  &--resultspage &__input {
+    @include type-h2(lc);
+    padding-bottom: 0.5rem;
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      border-width: 0 0 3px 0;
+      border-color: black;
+      color: black;
+    }
+  }
   &__submit {
     border-width: 0 0 2px 0;
     border-color: white;
@@ -92,5 +113,12 @@
     stroke: white;
     color: white;
     padding: 0.5rem 0 0 0.5rem;
+  }
+  &--resultspage &__submit {
+    border-width: 0 0 3px 0;
+    @include between(font-size, rem(20), rem(30));
+    border-color: black;
+    stroke: black;
+    color: black;
   }
 }
