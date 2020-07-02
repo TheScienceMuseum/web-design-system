@@ -4,11 +4,12 @@ $plyr-color-main: $c-teal;
 $plyr-control-radius: 0;
 
 $plyr-audio-controls-bg: grey(85);
+$plyr-audio-controls-background: grey(85);
 $plyr-audio-control-color: grey(30);
 $plyr-audio-control-color-hover: white;
 $plyr-audio-control-bg-hover: inherit;
 $plyr-control-padding: 8px;
-
+$plyr-range-fill-background: $c-teal;
 $plyr-font-family: $base-font-family;
 
 $plyr-range-track-height: 4px;
