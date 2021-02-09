@@ -413,6 +413,9 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+  @media (prefers-reduced-motion) {
+    animation: none;
+  }
 
   @at-root {
     @keyframes #{$name} {
