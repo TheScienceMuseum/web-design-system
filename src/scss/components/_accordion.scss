@@ -80,7 +80,9 @@
     &[aria-expanded="true"] {
       background: black;
       color: white;
-      outline: 0;
+      &:focus:not(:focus-visible) {
+        outline: 0;
+      }
     }
 
     &[aria-expanded="true"]:after {
@@ -88,7 +90,7 @@
     }
 
     &:not([aria-expanded="true"]):hover,
-    &:not([aria-expanded="true"]):focus {
+    &:not([aria-expanded="true"]):focus:not(:focus-visible) {
       outline: 0;
       text-decoration: none;
       background: grey(6);
