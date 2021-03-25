@@ -1,4 +1,5 @@
 // this gets used by fractal only, includes the polyfills that would need to be done elsewhere
+import "../../fractal/theme/scss/fractal.scss";
 
 import accordions from "./components/accordion.js";
 import audioplayer from "./components/audioplayer.js";
@@ -9,7 +10,7 @@ export default {
   accordions,
   audioplayer,
   illuminate,
-  menu
+  menu,
 };
 
 import svg4everybody from "svg4everybody";

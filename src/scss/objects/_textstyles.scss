@@ -56,12 +56,12 @@
 
   a[href$="pdf"]:after {
     @include href-icon;
-    background-image: url("../assets/icons/pdf.svg");
+    background-image: url("#{$asset-path}icons/pdf.svg");
   }
 
   // a[href^=mailto]:after {
   //    @include href-icon;
-  //    background-image: url(../assets/img/icn/mail.svg);
+  //    background-image: url(#{$asset-path}img/icn/mail.svg);
   //  }
 
   hr {

@@ -25,5 +25,9 @@ $mq-breakpoints: (
   navCollapse: 500px,
   small: 450px,
   medium: 600px,
-  large: 800px
+  large: 800px,
 );
+
+html {
+  font-family: $font-family-sans-serif;
+}

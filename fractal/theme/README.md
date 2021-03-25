@@ -1,7 +1,7 @@
 #Fractal theme
 
-A subtheme, based on Mandelbrot.
+Hacks on Mandelbrot.
 
-Currently, only used to regenerate the scss, templates are the same.
+https://fractal.build/guide/web/default-theme.html#template-customisation
 
-It's not needed to rebuild the theme to use the main fractal project, hence this subfolder has its own package with the dev dependencies needed to edit this theme only.
+see fractal.config.js > myCustomisedTheme

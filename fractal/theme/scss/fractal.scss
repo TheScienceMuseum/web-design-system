@@ -1,0 +1,18 @@
+@charset 'utf-8';
+
+@import "../../../src/scss/lib";
+
+// These styles are added to the default Mandelbrot theme,
+@import "settings";
+
+@import "document";
+@import "frame";
+@import "meta";
+@import "prose";
+@import "tree";
+@import "examplegrid";
+
+$asset-path: "../../../src/assets/";
+.Document {
+  @import "../../../src/scss/main";
+}
