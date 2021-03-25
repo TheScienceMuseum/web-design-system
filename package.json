@@ -46,8 +46,8 @@
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
-    "@frctl/fractal": "1.2.1",
-    "@frctl/handlebars": "^1.1.5",
+    "@frctl/fractal": "1.5.6",
+    "@frctl/handlebars": "^1.2.9",
     "@frctl/mandelbrot": "^1.2.1",
     "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
@@ -63,7 +63,7 @@
     "postcss": "^7.0.17",
     "postcss-cli": "^6.1.2",
     "postcss-loader": "^3.0.0",
-    "sass": "^1.22.12",
+    "sass": "^1.32.8",
     "sass-loader": "^8.0.0",
     "sassdoc": "^2.7.0",
     "sassdoc-theme-md": "github:TheScienceMuseum/sassdoc-theme-md#1.0.3",
@@ -71,9 +71,9 @@
     "svg-sprite": "^1.5.0",
     "svg4everybody": "^2.1.9",
     "svgo": "^1.2.2",
-    "webpack": "^4.33.0",
-    "webpack-cli": "^3.3.2",
-    "webpack-dev-server": "^3.7.0"
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.2"
   },
   "jshintConfig": {
     "esversion": 6
