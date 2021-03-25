@@ -1,0 +1,8 @@
+<div class="c-choices {{#if inline}}c-choices--inline{{/if}}">
+  {{#each choices}}
+  <div class="c-choice">
+    <input type="{{input}}" id="choice{{@index}}" class="c-{{input}}" name="{{group}}">
+    <label for="choice{{@index}}">{{label}}</label>
+  </div>
+  {{/each}}
+</div>

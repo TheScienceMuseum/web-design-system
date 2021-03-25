@@ -1,0 +1,22 @@
+@mixin input-base {
+  appearance: none;
+  @include form-focus;
+  @include between(font-size, rem(16), rem(24));
+  padding: 0.5em;
+}
+
+.c-textinput[type] {
+  @include input-base;
+}
+.c-select {
+  @include input-base;
+  background-image: svg-uri(
+    '<svg height="10" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m5 9.33-5-8.66h10z" fill="#000"/></svg>'
+  );
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.c-textarea {
+  @include input-base;
+}

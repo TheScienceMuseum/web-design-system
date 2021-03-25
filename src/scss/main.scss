@@ -25,13 +25,14 @@
 @import "components/audioplayer";
 @import "components/button";
 @import "components/card";
+@import "components/choice";
 // @import "components/carousel";
 // @import "components/category";
 // @import "components/collection";
 // @import "components/comments";
 // @import "components/filter";
 // @import "components/footersection";
-// @import "components/forms";
+@import "components/formfield";
 // @import "components/gallery";
 // @import "components/hero";
 // @import "components/info-block";
@@ -49,6 +50,6 @@
 // @import "components/smartphoto";
 // @import "components/smg-map";
 // @import "components/tags";
-
+@import "components/textinput";
 // reference:
 // BEMIT naming:  https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/

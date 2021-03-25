@@ -12,3 +12,15 @@ $text-inputs: 'input[type="color"]', 'input[type="date"]',
   'input[type="week"]', "input:not([type])", "textarea";
 
 $asset-path: "../assets/" !default;
+
+$focus-color: $c-green !default;
+
+@mixin form-focus() {
+  &:focus,
+  &:focus-visible {
+    // outline: 3px $focus-color solid;
+    // outline doesn't go nicely round border-radius etc
+    outline: none;
+    box-shadow: 0 0 0 3px $focus-color;
+  }
+}

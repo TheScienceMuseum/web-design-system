@@ -1,0 +1,80 @@
+.c-choice {
+  display: flex;
+  input {
+    margin-right: 1rem;
+    flex-shrink: 0;
+  }
+  label {
+    margin: 0;
+  }
+}
+.c-choices {
+  // optional wrapper to space
+  .c-choice + .c-choice {
+    margin-top: 1rem;
+  }
+}
+
+.c-choices--inline {
+  // optional wrapper to space
+  display: inline;
+  .c-choice {
+    display: inline-flex;
+    margin-right: 1rem;
+    input {
+      margin-right: 0.5rem;
+    }
+  }
+  .c-choice:last-child {
+    margin-right: 0;
+  }
+}
+
+// base for checkbox and radio
+@mixin input-choice {
+  appearance: none;
+  border: 1px grey(80) solid;
+  box-sizing: content-box;
+  background-color: grey(0);
+  background-size: 100% 100%;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle; // it's a start but it's not the bloody middle.
+  position: relative;
+  top: 0.125em;
+
+  &:checked {
+    border-color: grey(100);
+    background-color: grey(100);
+    background-size: 100%;
+  }
+
+  @include form-focus;
+
+  &[disabled],
+  &[disabled] + &__label {
+    // @include disabled;
+  }
+}
+
+.c-checkbox {
+  @include input-choice;
+  border-radius: 1px;
+  &:checked {
+    background-image: svg-uri(
+      '<svg height="12" viewBox="0 0 12 12" width="12" xmlns="http://www.w3.org/2000/svg"><path d="m4.75 9.28125-3.125-3.1.99375-.98125 2.13125 2.1125 4.63125-4.59375.99375.9875z" fill="#fff"/></svg>'
+    );
+  }
+}
+
+.c-radio {
+  @include input-choice;
+  border-radius: 50%;
+
+  &:checked {
+    background-image: svg-uri(
+      '<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><circle cx="6" cy="6" r="3" fill="#fff"/></svg>'
+    );
+  }
+}
