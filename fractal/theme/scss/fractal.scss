@@ -13,6 +13,5 @@
 @import "examplegrid";
 
 $asset-path: "../../../src/assets/";
-.Document {
-  @import "../../../src/scss/main";
-}
+
+@import "../../../src/scss/main";

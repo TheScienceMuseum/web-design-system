@@ -1,21 +1,8 @@
 .Document {
-  // padding: 1.5rem 2rem;
-  //
-  // @include mq($until: navCollapse) {
-  //     padding: 1.25rem 1rem;
-  // }
+  color: black;
 }
 
 .Document-header {
-  // display: flex;
-  // width: 100%;
-  // margin-bottom: 1.5rem;
-  // border-bottom: 1px solid $color-frame-border;
-  // padding-bottom: 0.5rem;
-  //
-  // .Status {
-  //     @include margin-inline(start, auto);
-  // }
   margin: -1.5rem -2rem 1.5rem -2rem; // opposite of .Document padding
   @include sm-gradient($c-teal $c-blue $c-purple);
   @include sm-gradient-animated;
