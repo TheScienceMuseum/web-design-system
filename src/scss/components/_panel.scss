@@ -93,6 +93,9 @@
     background-color: grey(85);
   }
   &--lighter + &--lighter {
+    background-color: grey(77);
+  }
+  &--lighter + &--lighter + &--lighter {
     background-color: grey(70);
   }
 

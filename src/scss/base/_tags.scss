@@ -71,3 +71,7 @@ a {
 svg {
   fill: currentColor;
 }
+
+code {
+  text-transform: initial; //in case used inside SMG elements that like to be upper
+}

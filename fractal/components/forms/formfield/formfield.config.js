@@ -1,5 +1,6 @@
 module.exports = {
   status: "wip",
+  collated: true, // show all variants on one page
 
   context: {
     label: "Field label",
