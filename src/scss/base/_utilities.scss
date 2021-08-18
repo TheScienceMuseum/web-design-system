@@ -37,8 +37,8 @@ $colournames: "red" "orange" "yellow" "green" "teal" "blue" "purple" "red"
 $colourvars: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple
   $c-red $c-orange;
 
-* {
-  // slight selector bump. BUT WHY??
+html {
+  // slight selector bump, to override later classes that may also specify a default background-image
   @for $i from 1 through length($colournames) - 1 {
     .u-grad-#{nth($colournames, $i)}-#{nth($colournames, $i+1)} {
       @include sm-gradient(nth($colourvars, $i) nth($colourvars, $i + 1));
