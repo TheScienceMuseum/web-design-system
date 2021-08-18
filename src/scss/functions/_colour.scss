@@ -209,3 +209,19 @@
     @return $light;
   }
 }
+
+@function relativeluminance($color) {
+  // another attempt, to use same method WCAG a11y tooling uses
+  // https://twitter.com/DanHollick/status/1417895175494373381
+  // https://www.w3.org/TR/WCAG20-TECHS/G17.html%23G17-tests
+
+  // Extract color components
+  $red-component: red($color);
+  $green-component: green($color);
+  $blue-component: blue($color);
+
+  $number: 0.2126 * $red-component + 0.7152 * $green-component + 0.0722 *
+    $blue-component;
+
+  @return $number;
+}
