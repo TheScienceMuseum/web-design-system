@@ -37,44 +37,44 @@ $colourwheel: $c-red $c-orange $c-yellow $c-green $c-teal $c-blue $c-purple;
 $palettes: (
   "red": (
     base: $c-red,
-    text: contrasting-text-color($c-red),
+    text: choose-contrast-color($c-red),
     light: blend-normal(rgba($c-red, 0.66), white),
-    dark: blend-multiply($c-red, $c-red)
+    dark: blend-multiply($c-red, $c-red),
   ),
   "orange": (
     base: $c-orange,
-    text: contrasting-text-color($c-orange),
+    text: choose-contrast-color($c-orange),
     light: blend-normal(rgba($c-orange, 0.66), white),
-    dark: blend-multiply($c-orange, $c-orange)
+    dark: blend-multiply($c-orange, $c-orange),
   ),
   "yellow": (
     base: $c-yellow,
-    text: contrasting-text-color($c-yellow),
+    text: choose-contrast-color($c-yellow),
     light: blend-normal(rgba($c-yellow, 0.66), white),
-    dark: blend-multiply($c-yellow, $c-yellow)
+    dark: blend-multiply($c-yellow, $c-yellow),
   ),
   "green": (
     base: $c-green,
-    text: contrasting-text-color($c-green),
+    text: choose-contrast-color($c-green),
     light: blend-normal(rgba($c-green, 0.66), white),
-    dark: blend-multiply($c-green, $c-green)
+    dark: blend-multiply($c-green, $c-green),
   ),
   "teal": (
     base: $c-teal,
-    text: contrasting-text-color($c-teal),
+    text: choose-contrast-color($c-teal),
     light: blend-normal(rgba($c-teal, 0.66), white),
-    dark: blend-multiply($c-teal, $c-teal)
+    dark: blend-multiply($c-teal, $c-teal),
   ),
   "blue": (
     base: $c-blue,
-    text: contrasting-text-color($c-blue),
+    text: choose-contrast-color($c-blue),
     light: blend-normal(rgba($c-blue, 0.66), white),
-    dark: blend-multiply($c-blue, $c-blue)
+    dark: blend-multiply($c-blue, $c-blue),
   ),
   "purple": (
     base: $c-purple,
-    text: contrasting-text-color($c-purple),
+    text: choose-contrast-color($c-purple),
     light: blend-normal(rgba($c-purple, 0.66), white),
-    dark: blend-multiply($c-purple, $c-purple)
-  )
+    dark: blend-multiply($c-purple, $c-purple),
+  ),
 );

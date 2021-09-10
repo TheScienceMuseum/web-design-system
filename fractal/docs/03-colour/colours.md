@@ -7,7 +7,7 @@ The foundation of our group identity is the careful use of black and white to cr
 Supported by a vibrant secondary set of colours:
 
 Note that if used as a background, colours have different text colour, to ensure sufficient contrast to meet a11y standards.
-you can use the `contrasting-text-color` scss function to return either white or black for any colour.
+you can use the `choose-contrast-color` scss function to return either white or black for any colour.
 
 {{> fullwidth }}
 

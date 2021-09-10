@@ -4,43 +4,43 @@ var palettes = {
   red: {
     name: "$c-red",
     hex: "#e60060",
-    text: "white"
+    text: "white",
   },
   orange: {
     name: "$c-orange",
     hex: "#ec6408",
-    text: "white"
+    text: "black",
   },
   yellow: {
     name: "$c-yellow",
     hex: "#ffee00",
-    text: "black"
+    text: "black",
   },
   green: {
     name: "$c-green",
     hex: "#95c11f",
-    text: "black"
+    text: "black",
   },
   teal: {
     name: "$c-teal",
     hex: "#4bbecf",
-    text: "black"
+    text: "black",
   },
   blue: {
     name: "$c-blue",
     hex: "#004899",
-    text: "white"
+    text: "white",
   },
   purple: {
     name: "$c-purple",
     hex: "#af1280",
-    text: "white"
-  }
+    text: "white",
+  },
 };
 
 var colorableOptions = {
   compact: true,
-  threshold: 0
+  threshold: 0,
 };
 
 for (var palette in palettes) {
@@ -56,8 +56,8 @@ module.exports = {
     greys: {
       black: {
         name: "Black",
-        hex: "#000"
-      }
-    }
-  }
+        hex: "#000",
+      },
+    },
+  },
 };

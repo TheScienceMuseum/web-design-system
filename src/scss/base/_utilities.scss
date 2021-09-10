@@ -53,14 +53,14 @@ html {
       @include sm-gradient(
         nth($colourvars, $i) nth($colourvars, $i + 1) nth($colourvars, $i + 2)
       );
-      color: contrasting-text-color(nth($colourvars, $i + 1));
+      color: choose-contrast-color(nth($colourvars, $i + 1));
     }
 
     .u-grad-#{nth($colournames, $i+2)}-#{nth($colournames, $i+1)}-#{nth($colournames, $i)} {
       @include sm-gradient(
         nth($colourvars, $i + 2) nth($colourvars, $i + 1) nth($colourvars, $i)
       );
-      color: contrasting-text-color(nth($colourvars, $i + 1));
+      color: choose-contrast-color(nth($colourvars, $i + 1));
     }
   }
   .u-grad-clear {

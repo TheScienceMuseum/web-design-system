@@ -15,5 +15,5 @@
   // @include font(title);
   @include type-h1;
   text-transform: uppercase;
-  color: contrasting-text-color($c-blue);
+  color: choose-contrast-color($c-blue);
 }

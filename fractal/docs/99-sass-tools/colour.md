@@ -263,10 +263,12 @@ Returns the perceived brightness of a colour.
 
 ## contrasting-text-color
 
+**Deprecated!** use choose-contrast-color() instead
+
 ### Description
 
 Returns a contrasting text color, based on the brightness of the original color.
-Assuming your original color is applied as a background-color, this will ensure that there is sufficient contrast for a11y guidelines.
+Assuming your original color is applied as a background-color, this will ensure that there is sufficient contrast ~~for a11y guidelines.~~ NOTE: no it doesn't return same results as W3C method!
 
 ### Parameters
 
@@ -306,6 +308,55 @@ black
     @return $dark;
   } @else {
     @return $light;
+  }
+}
+```
+
+---
+
+## choose-contrast-color
+
+### Parameters
+
+| Name  | Description               | Type  | Default Value |
+| ----- | ------------------------- | ----- | ------------- |
+| color | color to test             | Color |               |
+| light | The light color to return | Color | white         |
+| dark  | The dark color to return  | Color | dark          |
+
+### Returns
+
+`Color`
+
+### Example
+
+```scss
+background-color: $c-orange;
+color: choose-contrast-color($c-orange);
+black
+```
+
+### Links
+
+[https://twitter.com/DanHollick/status/1417895175494373381](https://twitter.com/DanHollick/status/1417895175494373381>)
+
+[https://gist.github.com/sgomes/9c03a58976b90e00f4172a510b9807fa](https://gist.github.com/sgomes/9c03a58976b90e00f4172a510b9807fa>)
+
+### Source
+
+```scss
+@function choose-contrast-color($color, $light: white, $dark: dark) { safe: 
+  $lightContrast: contrast($color, $light);
+  $darkContrast: contrast($color, $dark);
+  @if (max($lightContrast, $darkContrast) < 4.5) {
+    @debug $color "$darkContrast" $darkContrast;
+    @debug $color "$lightContrast" $lightContrast;
+    @warn "contrast less than 4.5:1 WCAG 2 AA contrast ratio threshold";
+  }
+  @if ($lightContrast > $darkContrast) {
+    @return $light;
+  } @else {
+    @return $dark;
   }
 }
 ```
@@ -588,46 +639,46 @@ color: palette(blue, text)
 $palettes: (
   "red": (
     base: $c-red,
-    text: contrasting-text-color($c-red),
+    text: choose-contrast-color($c-red),
     light: blend-normal(rgba($c-red, 0.66), white),
-    dark: blend-multiply($c-red, $c-red)
+    dark: blend-multiply($c-red, $c-red),
   ),
   "orange": (
     base: $c-orange,
-    text: contrasting-text-color($c-orange),
+    text: choose-contrast-color($c-orange),
     light: blend-normal(rgba($c-orange, 0.66), white),
-    dark: blend-multiply($c-orange, $c-orange)
+    dark: blend-multiply($c-orange, $c-orange),
   ),
   "yellow": (
     base: $c-yellow,
-    text: contrasting-text-color($c-yellow),
+    text: choose-contrast-color($c-yellow),
     light: blend-normal(rgba($c-yellow, 0.66), white),
-    dark: blend-multiply($c-yellow, $c-yellow)
+    dark: blend-multiply($c-yellow, $c-yellow),
   ),
   "green": (
     base: $c-green,
-    text: contrasting-text-color($c-green),
+    text: choose-contrast-color($c-green),
     light: blend-normal(rgba($c-green, 0.66), white),
-    dark: blend-multiply($c-green, $c-green)
+    dark: blend-multiply($c-green, $c-green),
   ),
   "teal": (
     base: $c-teal,
-    text: contrasting-text-color($c-teal),
+    text: choose-contrast-color($c-teal),
     light: blend-normal(rgba($c-teal, 0.66), white),
-    dark: blend-multiply($c-teal, $c-teal)
+    dark: blend-multiply($c-teal, $c-teal),
   ),
   "blue": (
     base: $c-blue,
-    text: contrasting-text-color($c-blue),
+    text: choose-contrast-color($c-blue),
     light: blend-normal(rgba($c-blue, 0.66), white),
-    dark: blend-multiply($c-blue, $c-blue)
+    dark: blend-multiply($c-blue, $c-blue),
   ),
   "purple": (
     base: $c-purple,
-    text: contrasting-text-color($c-purple),
+    text: choose-contrast-color($c-purple),
     light: blend-normal(rgba($c-purple, 0.66), white),
-    dark: blend-multiply($c-purple, $c-purple)
-  )
+    dark: blend-multiply($c-purple, $c-purple),
+  ),
 )
 ```
 

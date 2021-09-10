@@ -32,7 +32,7 @@ $button-theme: false !default;
     }
   } @else if type-of($button-theme) == color {
     background-color: $button-theme;
-    color: contrasting-text-color($button-theme);
+    color: choose-contrast-color($button-theme);
   } @else {
     color: white; //default
     background-color: grey(80); //default
