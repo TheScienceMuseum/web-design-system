@@ -125,7 +125,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     background: black;
 
     .c-masthead & {
-      // z-index: 10; //?
+      z-index: 10;
       position: absolute;
       top: 100%;
       left: -0.5rem;
