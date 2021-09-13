@@ -75,6 +75,7 @@ $logo-panel-color: white !default;
 
     @include media(">small") {
       display: block;
+      padding-right: 1px; // prevents rounding issues in Safari croppping off right
     }
   }
 
