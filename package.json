@@ -19,7 +19,7 @@
     "include-media": "^1.4.9",
     "normalize-scss": "^7.0.1",
     "plyr": "^3.6.2",
-    "sass-between": "^0.3.2"
+    "sass-between": "^0.4.1"
   },
   "scripts": {
     "start": "npm run watch",
