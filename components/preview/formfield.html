@@ -1,0 +1,101 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link media="all" rel="stylesheet" href="../../css/main.css">
+  <title>Preview Layout</title>
+</head>
+
+<body class="t-btn--xgreen"
+  >
+<div class="o-main o-container">
+
+  <!-- Start: @formfield--default -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Field label</label>
+  <input type="text" value="optional passed context" class="c-textinput">
+
+  
+  
+</div>
+<!-- End: @formfield--default -->
+
+<!-- Start: @formfield--with-select -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Select Field label</label>
+  <select class="c-select">
+  <option value="optval1" >Option one</option>
+  <option value="optval2" selected>Option two</option>
+  <option value="optval3" >Option three</option>
+  <option value="optval4" >Option four</option>
+</select>
+
+  
+  
+</div>
+<!-- End: @formfield--with-select -->
+
+<!-- Start: @formfield--with-description -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Field label</label>
+  <input type="text" value="optional passed context" class="c-textinput">
+
+  <div class="c-formfield__description">This field has some useful description text</div>
+  
+</div>
+<!-- End: @formfield--with-description -->
+
+<!-- Start: @formfield--with-error -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Field label</label>
+  <input type="text" value="optional passed context" class="c-textinput">
+
+  
+  <div class="c-formfield__error">That&#x27;s not an acceptable value</div>
+</div>
+<!-- End: @formfield--with-error -->
+
+<!-- Start: @formfield--with-error-and-description -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Field label</label>
+  <input type="text" value="optional passed context" class="c-textinput">
+
+  <div class="c-formfield__description">This field has some useful description text</div>
+  <div class="c-formfield__error">But it&#x27;s all gone terribly wrong</div>
+</div>
+<!-- End: @formfield--with-error-and-description -->
+
+<!-- Start: @formfield--with-choices -->
+<div class="c-formfield">
+  <label class="c-formfield__label">Field label</label>
+  <div class="c-choices ">
+  <div class="c-choice">
+    <input type="checkbox" id="choice0" class="c-checkbox" name="">
+    <label for="choice0">The choice thing is useful for when there is a long label, so long the text might possibly wrap.</label>
+  </div>
+  <div class="c-choice">
+    <input type="radio" id="choice1" class="c-radio" name="radiogroupname">
+    <label for="choice1">It can contain radios or checkboxes</label>
+  </div>
+  <div class="c-choice">
+    <input type="radio" id="choice2" class="c-radio" name="radiogroupname">
+    <label for="choice2">It can contain radios or checkboxes</label>
+  </div>
+</div>
+
+  
+  
+</div>
+<!-- End: @formfield--with-choices -->
+
+
+</div>
+
+<script src="../../js/fractal.js"></script>
+</body>
+
+</html>
+

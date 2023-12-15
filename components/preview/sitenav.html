@@ -1,0 +1,81 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link media="all" rel="stylesheet" href="../../css/main.css">
+  <title>Preview Layout</title>
+</head>
+
+<body class="t-btn--xgreen"
+  >
+
+<header class="c-nav-site">
+  <div class="o-flex-container">
+    <h1 class="c-nav-site__title"><a href="#"">Site name</a></h1>
+    <div class=" c-nav-site__right c-menu">
+        <nav class="c-menu__nav" aria-expanded="false">
+          <ul class="c-menu__list c-menu--site">
+  <li class="c-menu__item"><a href="https://www.sciencemuseumgroup.org.uk/" >A single link</a></li>
+  <li class="c-menu__item c-menu__item--has-children" aria-haspopup="true">
+    <a href="https://www.sciencemuseumgroup.org.uk/">Another link</a>
+    <button aria-expanded="false" class="c-menu__toggle">
+      <span class="screen-readers">Expand child
+        menu</span>
+    </button>
+    <ul class="c-menu__submenu" aria-expanded="false">
+      <li class="c-menu__item"><a href="https://www.sciencemuseumgroup.org.uk/">A child link with a long title that wraps</a></li>
+      <li class="c-menu__item"><a href="https://www.sciencemuseumgroup.org.uk/">Another child link</a></li>
+      <li class="c-menu__item"><a href="https://www.sciencemuseumgroup.org.uk/">Another child link</a></li>
+    </ul>
+  </li>
+  <li class="c-menu__item"><a href="https://www.sciencemuseumgroup.org.uk/" >A single link</a></li>
+</ul>
+
+        </nav>
+        <div class="c-searchmenu">
+  <div class="c-searchmenu__menuitem">
+    <a href="#js-searchmenu__panel">
+      <svg role="img" aria-labelledby="search1" class="u-icon" tabindex="-1" focusable="false">
+        <title id="search1">Open search</title>
+        <use xlink:href="../../assets/icons/sprite.symbol.svg#search" />
+      </svg>
+    </a>
+  </div>
+  <div class="c-searchmenu__target" id="js-searchmenu__panel"></div>
+  <div class="c-searchmenu__panel">
+    <form method="get" class="c-searchmenu__form" action="search" autocomplete="off">
+      <label for="js-searchmenu--input" class="u-visually-hidden">Search for:</label>
+      <input type="search" id="js-searchmenu--input" class="c-searchmenu__input" placeholder="Search …" value=""
+        name="s" />
+      <button type="submit" class="c-searchmenu__submit">
+        <svg role="img" aria-labelledby="search2" class="u-icon" tabindex="-1" focusable="false">
+          <title id="search2">Submit search query</title>
+          <use xlink:href="../../assets/icons/sprite.symbol.svg#search" />
+        </svg>
+      </button>
+    </form>
+  </div>
+  <div class="c-searchmenu__menuitem c-searchmenu__menuitem--close">
+    <a href="#elsewhere">
+      <svg role="img" aria-labelledby="close" class="u-icon">
+        <title id="close">Close search</title>
+        <use xlink:href="../../assets/icons/sprite.symbol.svg#dismiss" />
+      </svg>
+    </a>
+  </div>
+</div>
+</div>
+
+  </div>
+  </div>
+</header>
+
+
+<script src="../../js/fractal.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,2991 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    window.frctl = {
+        env: 'static'
+    };
+    </script>
+    <script>var cl = document.querySelector('html').classList; cl.remove('no-js'); cl.add('has-js');</script>
+    <link rel="shortcut icon" href="../../themes/mandelbrot/favicon.ico" type="image/ico">
+<style>
+    :root {
+        
+        
+        
+    }
+</style>
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/black.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="../../css/fractal.css?cachebust=1.10.3" type="text/css">
+
+<link rel="stylesheet" href="../../themes/mandelbrot/css/highlight.css?cachebust=1.10.3" type="text/css">
+
+
+<title>include-media | Science Museum Group: Web Design System</title>
+
+</head>
+<body>
+
+
+
+<div class="Frame" id="frame">
+
+    <div class="Frame-header">
+        <div class="Header">
+    <button class="Header-button Header-navToggle" data-action="toggle-sidebar">
+        <div class="Header-navToggleIcon Header-navToggleIcon--open">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </div>
+        <div class="Header-navToggleIcon Header-navToggleIcon--closed">
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+</svg>
+
+        </div>
+    </button>
+    <a href="../../index.html" class="Header-title" data-pjax>Science Museum Group: Web Design System</a>
+</div>
+
+    </div>
+
+    <div class="Frame-body" data-role="body">
+
+        <div class="Frame-panel Frame-panel--main" data-role="main">
+            <div class="Frame-inner" id="pjax-container">
+            
+
+<div class="Document">
+
+    <div class="Document-header">
+        
+        <h1 class="Document-title">include-media</h1>
+        
+
+
+        
+    </div>
+
+    <div class="Document-content">
+
+    
+
+<div class="o-main">
+  <div class="o-textstyles Prose">
+    
+      
+      
+          
+          
+          <h1 id="include-media">include-media</h1>
+<h2 id="breakpoints">breakpoints</h2>
+<h3 id="description">Description</h3>
+<p>Creates a list of global breakpoints</p>
+<h3 id="example">Example</h3>
+<p>Creates a single breakpoint with the label <code>phone</code></p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$breakpoints</span>: (<span class="hljs-string">&#x27;phone&#x27;</span>: <span class="hljs-number">320px</span>);</code></pre><h3 id="used-by">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>get-expression-value</code></p>
+</li>
+<li><p>[function] <code>get-expression-value</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+</ul>
+<h3 id="author">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$breakpoints</span>: (
+  <span class="hljs-string">&#x27;phone&#x27;</span>: <span class="hljs-number">320px</span>,
+  <span class="hljs-string">&#x27;tablet&#x27;</span>: <span class="hljs-number">768px</span>,
+  <span class="hljs-string">&#x27;desktop&#x27;</span>: <span class="hljs-number">1024px</span>
+)</code></pre><hr>
+<h2 id="media-expressions">media-expressions</h2>
+<h3 id="description-1">Description</h3>
+<p>Creates a list of static expressions or media types</p>
+<h3 id="example-1">Example</h3>
+<p>Creates a single media type (screen)</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$media-expressions</span>: (<span class="hljs-string">&#x27;screen&#x27;</span>: <span class="hljs-string">&#x27;screen&#x27;</span>);</code></pre><p>Creates a static expression with logical disjunction (OR operator)</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$media-expressions</span>: (
+  <span class="hljs-string">&#x27;retina2x&#x27;</span>: <span class="hljs-string">&#x27;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)&#x27;</span>
+);</code></pre><h3 id="used-by-1">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+<li><p>[mixin] <code>media-context</code></p>
+</li>
+</ul>
+<h3 id="author-1">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-1">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$media-expressions</span>: (
+  <span class="hljs-string">&#x27;screen&#x27;</span>: <span class="hljs-string">&#x27;screen&#x27;</span>,
+  <span class="hljs-string">&#x27;print&#x27;</span>: <span class="hljs-string">&#x27;print&#x27;</span>,
+  <span class="hljs-string">&#x27;handheld&#x27;</span>: <span class="hljs-string">&#x27;handheld&#x27;</span>,
+  <span class="hljs-string">&#x27;landscape&#x27;</span>: <span class="hljs-string">&#x27;(orientation: landscape)&#x27;</span>,
+  <span class="hljs-string">&#x27;portrait&#x27;</span>: <span class="hljs-string">&#x27;(orientation: portrait)&#x27;</span>,
+  <span class="hljs-string">&#x27;retina2x&#x27;</span>: <span class="hljs-string">&#x27;(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)&#x27;</span>,
+  <span class="hljs-string">&#x27;retina3x&#x27;</span>: <span class="hljs-string">&#x27;(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)&#x27;</span>
+)</code></pre><hr>
+<h2 id="unit-intervals">unit-intervals</h2>
+<h3 id="description-2">Description</h3>
+<p>Defines a number to be added or subtracted from each unit when declaring breakpoints with exclusive intervals</p>
+<h3 id="example-2">Example</h3>
+<p>Interval for pixels is defined as <code>1</code> by default</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;128px&#x27;</span>) {}
+
+<span class="hljs-comment">/* Generates: */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">129px</span>) {}</code></pre><p>Interval for ems is defined as <code>0.01</code> by default</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;20em&#x27;</span>) {}
+
+<span class="hljs-comment">/* Generates: */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">20.01em</span>) {}</code></pre><p>Interval for rems is defined as <code>0.1</code> by default, to be used with <code>font-size: 62.5%;</code></p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;2.0rem&#x27;</span>) {}
+
+<span class="hljs-comment">/* Generates: */</span>
+<span class="hljs-keyword">@media</span> (<span class="hljs-attribute">min-width</span>: <span class="hljs-number">2.1rem</span>) {}</code></pre><h3 id="used-by-2">Used By</h3>
+<ul>
+<li>[function] <code>get-expression-value</code></li>
+</ul>
+<h3 id="author-2">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-2">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$unit-intervals</span>: (
+  <span class="hljs-string">&#x27;px&#x27;</span>: <span class="hljs-number">1</span>,
+  <span class="hljs-string">&#x27;em&#x27;</span>: <span class="hljs-number">0.01</span>,
+  <span class="hljs-string">&#x27;rem&#x27;</span>: <span class="hljs-number">0.1</span>,
+  <span class="hljs-string">&#x27;&#x27;</span>: <span class="hljs-number">0</span>
+)</code></pre><hr>
+<h2 id="im-media-support">im-media-support</h2>
+<h3 id="description-3">Description</h3>
+<p>Defines whether support for media queries is available, useful for creating separate stylesheets
+for browsers that don’t support media queries.</p>
+<h3 id="example-3">Example</h3>
+<p>Disables support for media queries</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: false;
+<span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=tablet&#x27;</span>) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: tomato;
+  }
+}
+
+<span class="hljs-comment">/* Generates: */</span>
+<span class="hljs-selector-class">.foo</span> {
+  <span class="hljs-attribute">color</span>: tomato;
+}</code></pre><h3 id="used-by-3">Used By</h3>
+<ul>
+<li><p>[mixin] <code>media</code></p>
+</li>
+<li><p>[mixin] <code>media</code></p>
+</li>
+<li><p>[mixin] <code>media</code></p>
+</li>
+</ul>
+<h3 id="author-3">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-3">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: true</code></pre><hr>
+<h2 id="im-no-media-breakpoint">im-no-media-breakpoint</h2>
+<h3 id="description-4">Description</h3>
+<p>Selects which breakpoint to emulate when support for media queries is disabled. Media queries that start at or
+intercept the breakpoint will be displayed, any others will be ignored.</p>
+<h3 id="example-4">Example</h3>
+<p>This media query will show because it intercepts the static breakpoint</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: false;
+<span class="hljs-variable">$im-no-media-breakpoint</span>: <span class="hljs-string">&#x27;desktop&#x27;</span>;
+<span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=tablet&#x27;</span>) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: tomato;
+  }
+}
+
+<span class="hljs-comment">/* Generates: */</span>
+<span class="hljs-selector-class">.foo</span> {
+  <span class="hljs-attribute">color</span>: tomato;
+}</code></pre><p>This media query will NOT show because it does not intercept the desktop breakpoint</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: false;
+<span class="hljs-variable">$im-no-media-breakpoint</span>: <span class="hljs-string">&#x27;tablet&#x27;</span>;
+<span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=desktop&#x27;</span>) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: tomato;
+  }
+}
+
+<span class="hljs-comment">/* No output */</span></code></pre><h3 id="used-by-4">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+</ul>
+<h3 id="author-4">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-4">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-no-media-breakpoint</span>: <span class="hljs-string">&#x27;desktop&#x27;</span></code></pre><hr>
+<h2 id="im-no-media-expressions">im-no-media-expressions</h2>
+<h3 id="description-5">Description</h3>
+<p>Selects which media expressions are allowed in an expression for it to be used when media queries
+are not supported.</p>
+<h3 id="example-5">Example</h3>
+<p>This media query will show because it intercepts the static breakpoint and contains only accepted media expressions</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: false;
+<span class="hljs-variable">$im-no-media-breakpoint</span>: <span class="hljs-string">&#x27;desktop&#x27;</span>;
+<span class="hljs-variable">$im-no-media-expressions</span>: (<span class="hljs-string">&#x27;screen&#x27;</span>);
+<span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=tablet&#x27;</span>, <span class="hljs-string">&#x27;screen&#x27;</span>) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: tomato;
+  }
+}
+
+ <span class="hljs-comment">/* Generates: */</span>
+ <span class="hljs-selector-class">.foo</span> {
+   <span class="hljs-attribute">color</span>: tomato;
+ }</code></pre><p>This media query will NOT show because it intercepts the static breakpoint but contains a media expression that is not accepted</p>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-media-support</span>: false;
+<span class="hljs-variable">$im-no-media-breakpoint</span>: <span class="hljs-string">&#x27;desktop&#x27;</span>;
+<span class="hljs-variable">$im-no-media-expressions</span>: (<span class="hljs-string">&#x27;screen&#x27;</span>);
+<span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=tablet&#x27;</span>, <span class="hljs-string">&#x27;retina2x&#x27;</span>) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-attribute">color</span>: tomato;
+  }
+}
+
+<span class="hljs-comment">/* No output */</span></code></pre><h3 id="used-by-5">Used By</h3>
+<ul>
+<li>[function] <code>im-intercepts-static-breakpoint</code></li>
+</ul>
+<h3 id="author-5">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-5">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-variable">$im-no-media-expressions</span>: (<span class="hljs-string">&#x27;screen&#x27;</span>, <span class="hljs-string">&#x27;portrait&#x27;</span>, <span class="hljs-string">&#x27;landscape&#x27;</span>)</code></pre><hr>
+<h2 id="im-log">im-log</h2>
+<h3 id="description-6">Description</h3>
+<p>Log a message either with <code>@error</code> if supported
+else with <code>@warn</code>, using <code>feature-exists(&#39;at-error&#39;)</code>
+to detect support.</p>
+<h3 id="parameters">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>message</td>
+<td>Message to log</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="requires">Requires</h3>
+<ul>
+<li>[function] <code>noop</code> </li>
+</ul>
+<h3 id="used-by-6">Used By</h3>
+<ul>
+<li><p>[mixin] <code>log</code></p>
+</li>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>get-expression-operator</code></p>
+</li>
+<li><p>[function] <code>get-expression-operator</code></p>
+</li>
+<li><p>[function] <code>get-expression-operator</code></p>
+</li>
+<li><p>[function] <code>get-expression-value</code></p>
+</li>
+<li><p>[function] <code>get-expression-value</code></p>
+</li>
+<li><p>[function] <code>get-expression-value</code></p>
+</li>
+<li><p>[function] <code>to-number</code></p>
+</li>
+<li><p>[function] <code>to-length</code></p>
+</li>
+</ul>
+<h3 id="author-6">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-6">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> im-log(<span class="hljs-variable">$message</span>) { safe: 
+  @if feature-exists(<span class="hljs-string">&#x27;at-error&#x27;</span>) {
+    @error <span class="hljs-variable">$message</span>;
+  } <span class="hljs-keyword">@else</span> {
+    <span class="hljs-keyword">@warn</span> <span class="hljs-variable">$message</span>;
+    $_: noop();
+  }
+
+  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$message</span>;
+}</code></pre><hr>
+<h2 id="noop">noop</h2>
+<h3 id="description-7">Description</h3>
+<p>Function with no <code>@return</code> called next to <code>@warn</code> in Sass 3.3
+to trigger a compiling error and stop the process.</p>
+<h3 id="used-by-7">Used By</h3>
+<ul>
+<li>[function] <code>im-log</code></li>
+</ul>
+<h3 id="author-7">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-7">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> noop() { safe: }</code></pre><hr>
+<h2 id="im-intercepts-static-breakpoint">im-intercepts-static-breakpoint</h2>
+<h3 id="description-8">Description</h3>
+<p>Determines whether a list of conditions is intercepted by the static breakpoint.</p>
+<h3 id="parameters-1">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>conditions</td>
+<td>Media query conditions</td>
+<td>Arglist</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns">Returns</h3>
+<p><code>Boolean</code> — Returns true if the conditions are intercepted by the static breakpoint</p>
+<h3 id="requires-1">Requires</h3>
+<ul>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>get-expression-operator</code> </p>
+</li>
+<li><p>[function] <code>get-expression-prefix</code> </p>
+</li>
+<li><p>[function] <code>get-expression-value</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>im-no-media-breakpoint</code> </p>
+</li>
+<li><p>[variable] <code>im-no-media-breakpoint</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>im-no-media-expressions</code> </p>
+</li>
+</ul>
+<h3 id="used-by-8">Used By</h3>
+<ul>
+<li>[mixin] <code>media</code></li>
+</ul>
+<h3 id="author-8">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-8">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> im-intercepts-static-breakpoint(<span class="hljs-variable">$conditions</span>...) { safe: 
+  <span class="hljs-variable">$no-media-breakpoint-value</span>: map-get(<span class="hljs-variable">$breakpoints</span>, <span class="hljs-variable">$im-no-media-breakpoint</span>);
+
+  <span class="hljs-keyword">@if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable">$no-media-breakpoint-value</span> {
+    <span class="hljs-keyword">@if</span> im-log(<span class="hljs-string">&#x27;`#{$im-no-media-breakpoint}` is not a valid breakpoint.&#x27;</span>) {}
+  }
+
+  <span class="hljs-keyword">@each</span> <span class="hljs-variable">$condition</span> in <span class="hljs-variable">$conditions</span> {
+    <span class="hljs-keyword">@if</span> <span class="hljs-keyword">not</span> map-has-key(<span class="hljs-variable">$media-expressions</span>, <span class="hljs-variable">$condition</span>) {
+      <span class="hljs-variable">$operator</span>: get-expression-operator(<span class="hljs-variable">$condition</span>);
+      <span class="hljs-variable">$prefix</span>: get-expression-prefix(<span class="hljs-variable">$operator</span>);
+      <span class="hljs-variable">$value</span>: get-expression-value(<span class="hljs-variable">$condition</span>, <span class="hljs-variable">$operator</span>);
+
+      <span class="hljs-comment">// scss-lint:disable SpaceAroundOperator</span>
+      <span class="hljs-keyword">@if</span> (<span class="hljs-variable">$prefix</span> == <span class="hljs-string">&#x27;max&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-variable">$value</span> &lt;= <span class="hljs-variable">$no-media-breakpoint-value</span>) <span class="hljs-keyword">or</span>
+          (<span class="hljs-variable">$prefix</span> == <span class="hljs-string">&#x27;min&#x27;</span> <span class="hljs-keyword">and</span> <span class="hljs-variable">$value</span> &gt; <span class="hljs-variable">$no-media-breakpoint-value</span>) {
+        <span class="hljs-keyword">@return</span> false;
+      }
+    } <span class="hljs-keyword">@else</span> if <span class="hljs-keyword">not</span> index(<span class="hljs-variable">$im-no-media-expressions</span>, <span class="hljs-variable">$condition</span>) {
+      <span class="hljs-keyword">@return</span> false;
+    }
+  }
+
+  <span class="hljs-keyword">@return</span> true;
+}</code></pre><hr>
+<h2 id="get-expression-operator">get-expression-operator</h2>
+<h3 id="description-9">Description</h3>
+<p>Get operator of an expression</p>
+<h3 id="parameters-2">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>expression</td>
+<td>Expression to extract operator from</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-1">Returns</h3>
+<p><code>String</code> — Any of <code>&gt;=</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&lt;</code>, <code>≥</code>, <code>≤</code></p>
+<h3 id="requires-2">Requires</h3>
+<ul>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+</ul>
+<h3 id="used-by-9">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+</ul>
+<h3 id="author-9">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-9">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> get-expression-operator(<span class="hljs-variable">$expression</span>) { safe: 
+  @each <span class="hljs-variable">$operator</span> in (<span class="hljs-string">&#x27;&gt;=&#x27;</span>, <span class="hljs-string">&#x27;&gt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;=&#x27;</span>, <span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;≥&#x27;</span>, <span class="hljs-string">&#x27;≤&#x27;</span>) {
+    @if str-index(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>) {
+      @return <span class="hljs-variable">$operator</span>;
+    }
+  }
+
+  <span class="hljs-comment">// It is not possible to include a mixin inside a function, so we have to</span>
+  <span class="hljs-comment">// rely on the `im-log(..)` function rather than the `log(..)` mixin. Because</span>
+  <span class="hljs-comment">// functions cannot be called anywhere in Sass, we need to hack the call in</span>
+  <span class="hljs-comment">// a dummy variable, such as `$_`. If anybody ever raise a scoping issue with</span>
+  <span class="hljs-comment">// Sass 3.3, change this line in `@if im-log(..) {}` instead.</span>
+  $_: im-log(<span class="hljs-string">&#x27;No operator found in `#{$expression}`.&#x27;</span>);
+}</code></pre><hr>
+<h2 id="get-expression-dimension">get-expression-dimension</h2>
+<h3 id="description-10">Description</h3>
+<p>Get dimension of an expression, based on a found operator</p>
+<h3 id="parameters-3">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>expression</td>
+<td>Expression to extract dimension from</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>operator</td>
+<td>Operator from <code>$expression</code></td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-2">Returns</h3>
+<p><code>String</code> — <code>width</code> or <code>height</code> (or potentially anything else)</p>
+<h3 id="used-by-10">Used By</h3>
+<ul>
+<li>[function] <code>parse-expression</code></li>
+</ul>
+<h3 id="author-10">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-10">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> get-expression-dimension(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>) { safe: 
+  <span class="hljs-variable">$operator-index</span>: str-index(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>);
+  <span class="hljs-variable">$parsed-dimension</span>: str-slice(<span class="hljs-variable">$expression</span>, <span class="hljs-number">0</span>, <span class="hljs-variable">$operator-index</span> - <span class="hljs-number">1</span>);
+  <span class="hljs-variable">$dimension</span>: <span class="hljs-string">&#x27;width&#x27;</span>;
+
+  <span class="hljs-keyword">@if</span> str-length(<span class="hljs-variable">$parsed-dimension</span>) &gt; <span class="hljs-number">0</span> {
+    <span class="hljs-variable">$dimension</span>: <span class="hljs-variable">$parsed-dimension</span>;
+  }
+
+  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$dimension</span>;
+}</code></pre><hr>
+<h2 id="get-expression-prefix">get-expression-prefix</h2>
+<h3 id="description-11">Description</h3>
+<p>Get dimension prefix based on an operator</p>
+<h3 id="parameters-4">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>operator</td>
+<td>Operator</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-3">Returns</h3>
+<p><code>String</code> — <code>min</code> or <code>max</code></p>
+<h3 id="used-by-11">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+</ul>
+<h3 id="author-11">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-11">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> get-expression-prefix(<span class="hljs-variable">$operator</span>) { safe: 
+  @return if(index((<span class="hljs-string">&#x27;&lt;&#x27;</span>, <span class="hljs-string">&#x27;&lt;=&#x27;</span>, <span class="hljs-string">&#x27;≤&#x27;</span>), <span class="hljs-variable">$operator</span>), <span class="hljs-string">&#x27;max&#x27;</span>, <span class="hljs-string">&#x27;min&#x27;</span>);
+}</code></pre><hr>
+<h2 id="get-expression-value">get-expression-value</h2>
+<h3 id="description-12">Description</h3>
+<p>Get value of an expression, based on a found operator</p>
+<h3 id="parameters-5">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>expression</td>
+<td>Expression to extract value from</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>operator</td>
+<td>Operator from <code>$expression</code></td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-4">Returns</h3>
+<p><code>Number</code> — A numeric value</p>
+<h3 id="requires-3">Requires</h3>
+<ul>
+<li><p>[function] <code>to-number</code> </p>
+</li>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>unit-intervals</code> </p>
+</li>
+</ul>
+<h3 id="used-by-12">Used By</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code></p>
+</li>
+<li><p>[function] <code>parse-expression</code></p>
+</li>
+</ul>
+<h3 id="author-12">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-12">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> get-expression-value(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>) { safe: 
+  <span class="hljs-variable">$operator-index</span>: str-index(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>);
+  <span class="hljs-variable">$value</span>: str-slice(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator-index</span> + str-length(<span class="hljs-variable">$operator</span>));
+
+  <span class="hljs-keyword">@if</span> map-has-key(<span class="hljs-variable">$breakpoints</span>, <span class="hljs-variable">$value</span>) {
+    <span class="hljs-variable">$value</span>: map-get(<span class="hljs-variable">$breakpoints</span>, <span class="hljs-variable">$value</span>);
+  } <span class="hljs-keyword">@else</span> {
+    <span class="hljs-variable">$value</span>: to-number(<span class="hljs-variable">$value</span>);
+  }
+
+  <span class="hljs-variable">$interval</span>: map-get(<span class="hljs-variable">$unit-intervals</span>, unit(<span class="hljs-variable">$value</span>));
+
+  <span class="hljs-keyword">@if</span> <span class="hljs-keyword">not</span> <span class="hljs-variable">$interval</span> {
+    <span class="hljs-comment">// It is not possible to include a mixin inside a function, so we have to</span>
+    <span class="hljs-comment">// rely on the `im-log(..)` function rather than the `log(..)` mixin. Because</span>
+    <span class="hljs-comment">// functions cannot be called anywhere in Sass, we need to hack the call in</span>
+    <span class="hljs-comment">// a dummy variable, such as `$_`. If anybody ever raise a scoping issue with</span>
+    <span class="hljs-comment">// Sass 3.3, change this line in `@if im-log(..) {}` instead.</span>
+    $_: im-log(<span class="hljs-string">&#x27;Unknown unit `#{unit($value)}`.&#x27;</span>);
+  }
+
+  <span class="hljs-keyword">@if</span> <span class="hljs-variable">$operator</span> == <span class="hljs-string">&#x27;&gt;&#x27;</span> {
+    <span class="hljs-variable">$value</span>: <span class="hljs-variable">$value</span> + <span class="hljs-variable">$interval</span>;
+  } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$operator</span> == <span class="hljs-string">&#x27;&lt;&#x27;</span> {
+    <span class="hljs-variable">$value</span>: <span class="hljs-variable">$value</span> - <span class="hljs-variable">$interval</span>;
+  }
+
+  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$value</span>;
+}</code></pre><hr>
+<h2 id="parse-expression">parse-expression</h2>
+<h3 id="description-13">Description</h3>
+<p>Parse an expression to return a valid media-query expression</p>
+<h3 id="parameters-6">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>expression</td>
+<td>Expression to parse</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-5">Returns</h3>
+<p><code>String</code> — Valid media query</p>
+<h3 id="requires-4">Requires</h3>
+<ul>
+<li><p>[function] <code>get-expression-operator</code> </p>
+</li>
+<li><p>[function] <code>get-expression-dimension</code> </p>
+</li>
+<li><p>[function] <code>get-expression-prefix</code> </p>
+</li>
+<li><p>[function] <code>get-expression-value</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+</ul>
+<h3 id="used-by-13">Used By</h3>
+<ul>
+<li>[mixin] <code>media</code></li>
+</ul>
+<h3 id="author-13">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-13">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> parse-expression(<span class="hljs-variable">$expression</span>) { safe: 
+  // If it is part of <span class="hljs-variable">$media-expressions</span>, it has no operator
+  // then there is no need to go any further, just return the value
+  @if map-has-key(<span class="hljs-variable">$media-expressions</span>, <span class="hljs-variable">$expression</span>) {
+    @return map-get(<span class="hljs-variable">$media-expressions</span>, <span class="hljs-variable">$expression</span>);
+  }
+
+  <span class="hljs-variable">$operator</span>: get-expression-operator(<span class="hljs-variable">$expression</span>);
+  <span class="hljs-variable">$dimension</span>: get-expression-dimension(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>);
+  <span class="hljs-variable">$prefix</span>: get-expression-prefix(<span class="hljs-variable">$operator</span>);
+  <span class="hljs-variable">$value</span>: get-expression-value(<span class="hljs-variable">$expression</span>, <span class="hljs-variable">$operator</span>);
+
+  <span class="hljs-keyword">@return</span> <span class="hljs-string">&#x27;(#{$prefix}-#{$dimension}: #{$value})&#x27;</span>;
+}</code></pre><hr>
+<h2 id="to-number">to-number</h2>
+<h3 id="description-14">Description</h3>
+<p>Casts a string into a number</p>
+<h3 id="parameters-7">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>Value to be parsed</td>
+<td>String , Number</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-6">Returns</h3>
+<p><code>Number</code></p>
+<h3 id="requires-5">Requires</h3>
+<ul>
+<li><p>[function] <code>im-log</code> </p>
+</li>
+<li><p>[function] <code>to-length</code> </p>
+</li>
+</ul>
+<h3 id="used-by-14">Used By</h3>
+<ul>
+<li>[function] <code>get-expression-value</code></li>
+</ul>
+<h3 id="author-14">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-14">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> to-number(<span class="hljs-variable">$value</span>) { safe: 
+  @if type-of(<span class="hljs-variable">$value</span>) == <span class="hljs-string">&#x27;number&#x27;</span> {
+    @return <span class="hljs-variable">$value</span>;
+  } <span class="hljs-keyword">@else</span> if type-of(<span class="hljs-variable">$value</span>) != <span class="hljs-string">&#x27;string&#x27;</span> {
+    $_: im-log(<span class="hljs-string">&#x27;Value for `to-number` should be a number or a string.&#x27;</span>);
+  }
+
+  <span class="hljs-variable">$first-character</span>: str-slice(<span class="hljs-variable">$value</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>);
+  <span class="hljs-variable">$result</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-variable">$digits</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-variable">$minus</span>: (<span class="hljs-variable">$first-character</span> == <span class="hljs-string">&#x27;-&#x27;</span>);
+  <span class="hljs-variable">$numbers</span>: (<span class="hljs-string">&#x27;0&#x27;</span>: <span class="hljs-number">0</span>, <span class="hljs-string">&#x27;1&#x27;</span>: <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;2&#x27;</span>: <span class="hljs-number">2</span>, <span class="hljs-string">&#x27;3&#x27;</span>: <span class="hljs-number">3</span>, <span class="hljs-string">&#x27;4&#x27;</span>: <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;5&#x27;</span>: <span class="hljs-number">5</span>, <span class="hljs-string">&#x27;6&#x27;</span>: <span class="hljs-number">6</span>, <span class="hljs-string">&#x27;7&#x27;</span>: <span class="hljs-number">7</span>, <span class="hljs-string">&#x27;8&#x27;</span>: <span class="hljs-number">8</span>, <span class="hljs-string">&#x27;9&#x27;</span>: <span class="hljs-number">9</span>);
+
+  <span class="hljs-comment">// Remove +/- sign if present at first character</span>
+  <span class="hljs-keyword">@if</span> (<span class="hljs-variable">$first-character</span> == <span class="hljs-string">&#x27;+&#x27;</span> <span class="hljs-keyword">or</span> <span class="hljs-variable">$first-character</span> == <span class="hljs-string">&#x27;-&#x27;</span>) {
+    <span class="hljs-variable">$value</span>: str-slice(<span class="hljs-variable">$value</span>, <span class="hljs-number">2</span>);
+  }
+
+  <span class="hljs-keyword">@for</span> <span class="hljs-variable">$i</span> from <span class="hljs-number">1</span> through str-length(<span class="hljs-variable">$value</span>) {
+    <span class="hljs-variable">$character</span>: str-slice(<span class="hljs-variable">$value</span>, <span class="hljs-variable">$i</span>, <span class="hljs-variable">$i</span>);
+
+    <span class="hljs-keyword">@if</span> <span class="hljs-keyword">not</span> (index(map-keys(<span class="hljs-variable">$numbers</span>), <span class="hljs-variable">$character</span>) <span class="hljs-keyword">or</span> <span class="hljs-variable">$character</span> == <span class="hljs-string">&#x27;.&#x27;</span>) {
+      <span class="hljs-keyword">@return</span> to-length(if(<span class="hljs-variable">$minus</span>, -<span class="hljs-variable">$result</span>, <span class="hljs-variable">$result</span>), str-slice(<span class="hljs-variable">$value</span>, <span class="hljs-variable">$i</span>))
+    }
+
+    <span class="hljs-keyword">@if</span> <span class="hljs-variable">$character</span> == <span class="hljs-string">&#x27;.&#x27;</span> {
+      <span class="hljs-variable">$digits</span>: <span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">@else</span> if <span class="hljs-variable">$digits</span> == <span class="hljs-number">0</span> {
+      <span class="hljs-variable">$result</span>: <span class="hljs-variable">$result</span> * <span class="hljs-number">10</span> + map-get(<span class="hljs-variable">$numbers</span>, <span class="hljs-variable">$character</span>);
+    } <span class="hljs-keyword">@else</span> {
+      <span class="hljs-variable">$digits</span>: <span class="hljs-variable">$digits</span> * <span class="hljs-number">10</span>;
+      <span class="hljs-variable">$result</span>: <span class="hljs-variable">$result</span> + map-get(<span class="hljs-variable">$numbers</span>, <span class="hljs-variable">$character</span>) / <span class="hljs-variable">$digits</span>;
+    }
+  }
+
+  <span class="hljs-keyword">@return</span> if(<span class="hljs-variable">$minus</span>, -<span class="hljs-variable">$result</span>, <span class="hljs-variable">$result</span>);
+}</code></pre><hr>
+<h2 id="to-length">to-length</h2>
+<h3 id="description-15">Description</h3>
+<p>Add <code>$unit</code> to <code>$value</code></p>
+<h3 id="parameters-8">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td>Value to add unit to</td>
+<td>Number</td>
+<td></td>
+</tr>
+<tr>
+<td>unit</td>
+<td>String representation of the unit</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="returns-7">Returns</h3>
+<p><code>Number</code> — <code>$value</code> expressed in <code>$unit</code></p>
+<h3 id="requires-6">Requires</h3>
+<ul>
+<li>[function] <code>im-log</code> </li>
+</ul>
+<h3 id="used-by-15">Used By</h3>
+<ul>
+<li>[function] <code>to-number</code></li>
+</ul>
+<h3 id="author-15">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-15">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@function</span> to-length(<span class="hljs-variable">$value</span>, <span class="hljs-variable">$unit</span>) { safe: 
+  <span class="hljs-variable">$units</span>: (<span class="hljs-string">&#x27;px&#x27;</span>: <span class="hljs-number">1px</span>, <span class="hljs-string">&#x27;cm&#x27;</span>: <span class="hljs-number">1cm</span>, <span class="hljs-string">&#x27;mm&#x27;</span>: <span class="hljs-number">1mm</span>, <span class="hljs-string">&#x27;%&#x27;</span>: <span class="hljs-number">1%</span>, <span class="hljs-string">&#x27;ch&#x27;</span>: <span class="hljs-number">1ch</span>, <span class="hljs-string">&#x27;pc&#x27;</span>: <span class="hljs-number">1pc</span>, <span class="hljs-string">&#x27;in&#x27;</span>: <span class="hljs-number">1in</span>, <span class="hljs-string">&#x27;em&#x27;</span>: <span class="hljs-number">1em</span>, <span class="hljs-string">&#x27;rem&#x27;</span>: <span class="hljs-number">1rem</span>, <span class="hljs-string">&#x27;pt&#x27;</span>: <span class="hljs-number">1pt</span>, <span class="hljs-string">&#x27;ex&#x27;</span>: <span class="hljs-number">1ex</span>, <span class="hljs-string">&#x27;vw&#x27;</span>: <span class="hljs-number">1vw</span>, <span class="hljs-string">&#x27;vh&#x27;</span>: <span class="hljs-number">1vh</span>, <span class="hljs-string">&#x27;vmin&#x27;</span>: <span class="hljs-number">1vmin</span>, <span class="hljs-string">&#x27;vmax&#x27;</span>: <span class="hljs-number">1vmax</span>);
+
+  <span class="hljs-keyword">@if</span> <span class="hljs-keyword">not</span> index(map-keys(<span class="hljs-variable">$units</span>), <span class="hljs-variable">$unit</span>) {
+    $_: im-log(<span class="hljs-string">&#x27;Invalid unit `#{$unit}`.&#x27;</span>);
+  }
+
+  <span class="hljs-keyword">@return</span> <span class="hljs-variable">$value</span> * map-get(<span class="hljs-variable">$units</span>, <span class="hljs-variable">$unit</span>);
+}</code></pre><hr>
+<h2 id="log">log</h2>
+<h3 id="description-16">Description</h3>
+<p>Wrapper mixin for the log function so it can be used with a more friendly
+API than <code>@if im-log(&#39;..&#39;) {}</code> or <code>$_: im-log(&#39;..&#39;)</code>. Basically, use the function
+within functions because it is not possible to include a mixin in a function
+and use the mixin everywhere else because it’s much more elegant.</p>
+<h3 id="parameters-9">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>message</td>
+<td>Message to log</td>
+<td>String</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="requires-7">Requires</h3>
+<ul>
+<li>[function] <code>im-log</code> </li>
+</ul>
+<h3 id="author-16">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-16">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@mixin</span> log(<span class="hljs-variable">$message</span>) { safe: 
+  @if im-log(<span class="hljs-variable">$message</span>) {}
+}</code></pre><hr>
+<h2 id="media-context">media-context</h2>
+<h3 id="description-17">Description</h3>
+<p>This mixin aims at redefining the configuration just for the scope of
+the call. It is helpful when having a component needing an extended
+configuration such as custom breakpoints (referred to as tweakpoints)
+for instance.</p>
+<h3 id="parameters-10">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>tweakpoints</td>
+<td>Map of tweakpoints to be merged with <code>$breakpoints</code></td>
+<td>Map</td>
+<td>()</td>
+</tr>
+<tr>
+<td>tweak-media-expressions</td>
+<td>Map of tweaked media expressions to be merged with <code>$media-expression</code></td>
+<td>Map</td>
+<td>()</td>
+</tr>
+</tbody></table>
+<h3 id="content">Content</h3>
+<p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p>
+<h3 id="example-6">Example</h3>
+<p>Extend the global breakpoints with a tweakpoint</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media-context((<span class="hljs-string">&#x27;custom&#x27;</span>: <span class="hljs-number">678px</span>)) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;phone&#x27;</span>, <span class="hljs-string">&#x27;&lt;=custom&#x27;</span>) {
+     <span class="hljs-comment">// ...</span>
+    }
+  }
+}</code></pre><p>Extend the global media expressions with a custom one</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media-context(<span class="hljs-variable">$tweak-media-expressions</span>: (<span class="hljs-string">&#x27;all&#x27;</span>: <span class="hljs-string">&#x27;all&#x27;</span>)) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;all&#x27;</span>, <span class="hljs-string">&#x27;&gt;phone&#x27;</span>) {
+     <span class="hljs-comment">// ...</span>
+    }
+  }
+}</code></pre><p>Extend both configuration maps</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media-context((<span class="hljs-string">&#x27;custom&#x27;</span>: <span class="hljs-number">678px</span>), (<span class="hljs-string">&#x27;all&#x27;</span>: <span class="hljs-string">&#x27;all&#x27;</span>)) {
+  <span class="hljs-selector-class">.foo</span> {
+    <span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;all&#x27;</span>, <span class="hljs-string">&#x27;&gt;phone&#x27;</span>, <span class="hljs-string">&#x27;&lt;=custom&#x27;</span>) {
+     <span class="hljs-comment">// ...</span>
+    }
+  }
+}</code></pre><h3 id="requires-8">Requires</h3>
+<ul>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+<li><p>[variable] <code>breakpoints</code> </p>
+</li>
+<li><p>[variable] <code>media-expressions</code> </p>
+</li>
+</ul>
+<h3 id="author-17">Author</h3>
+<ul>
+<li>Hugo Giraudel</li>
+</ul>
+<h3 id="source-17">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@mixin</span> media-context(<span class="hljs-variable">$tweakpoints</span>: (), <span class="hljs-variable">$tweak-media-expressions</span>: ()) { safe: 
+  // Save global configuration
+  <span class="hljs-variable">$global-breakpoints</span>: <span class="hljs-variable">$breakpoints</span>;
+  <span class="hljs-variable">$global-media-expressions</span>: <span class="hljs-variable">$media-expressions</span>;
+
+  <span class="hljs-comment">// Update global configuration</span>
+  <span class="hljs-variable">$breakpoints</span>: map-merge(<span class="hljs-variable">$breakpoints</span>, <span class="hljs-variable">$tweakpoints</span>) !global;
+  <span class="hljs-variable">$media-expressions</span>: map-merge(<span class="hljs-variable">$media-expressions</span>, <span class="hljs-variable">$tweak-media-expressions</span>) !global;
+
+  <span class="hljs-keyword">@content</span>;
+
+  <span class="hljs-comment">// Restore global configuration</span>
+  <span class="hljs-variable">$breakpoints</span>: <span class="hljs-variable">$global-breakpoints</span> !global;
+  <span class="hljs-variable">$media-expressions</span>: <span class="hljs-variable">$global-media-expressions</span> !global;
+}</code></pre><hr>
+<h2 id="media">media</h2>
+<h3 id="description-18">Description</h3>
+<p>Generates a media query based on a list of conditions</p>
+<h3 id="parameters-11">Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Type</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>conditions</td>
+<td>Media query conditions</td>
+<td>Arglist</td>
+<td></td>
+</tr>
+</tbody></table>
+<h3 id="content-1">Content</h3>
+<p>This mixin allows extra content to be passed (through the <code>@content</code> directive).</p>
+<h3 id="example-7">Example</h3>
+<p>With a single set breakpoint</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;phone&#x27;</span>) { }</code></pre><p>With two set breakpoints</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;phone&#x27;</span>, <span class="hljs-string">&#x27;&lt;=tablet&#x27;</span>) { }</code></pre><p>With custom values</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=358px&#x27;</span>, <span class="hljs-string">&#x27;&lt;850px&#x27;</span>) { }</code></pre><p>With set breakpoints with custom values</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;desktop&#x27;</span>, <span class="hljs-string">&#x27;&lt;=1350px&#x27;</span>) { }</code></pre><p>With a static expression</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;retina2x&#x27;</span>) { }</code></pre><p>Mixing everything</p>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@include</span> media(<span class="hljs-string">&#x27;&gt;=350px&#x27;</span>, <span class="hljs-string">&#x27;&lt;tablet&#x27;</span>, <span class="hljs-string">&#x27;retina3x&#x27;</span>) { }</code></pre><h3 id="requires-9">Requires</h3>
+<ul>
+<li><p>[function] <code>im-intercepts-static-breakpoint</code> </p>
+</li>
+<li><p>[function] <code>parse-expression</code> </p>
+</li>
+<li><p>[variable] <code>im-media-support</code> </p>
+</li>
+<li><p>[variable] <code>im-media-support</code> </p>
+</li>
+<li><p>[variable] <code>im-media-support</code> </p>
+</li>
+</ul>
+<h3 id="author-18">Author</h3>
+<ul>
+<li>Eduardo Boucas</li>
+</ul>
+<h3 id="source-18">Source</h3>
+<pre><code class="hljs language-scss"><span class="hljs-keyword">@mixin</span> media(<span class="hljs-variable">$conditions</span>...) { safe: 
+  // scss-lint:disable SpaceAroundOperator
+  @if (<span class="hljs-variable">$im-media-support</span> and length(<span class="hljs-variable">$conditions</span>) == <span class="hljs-number">0</span>) or
+      (not <span class="hljs-variable">$im-media-support</span> and im-intercepts-static-breakpoint(<span class="hljs-variable">$conditions</span>...)) {
+    @content;
+  } <span class="hljs-keyword">@else</span> if (<span class="hljs-variable">$im-media-support</span> <span class="hljs-keyword">and</span> length(<span class="hljs-variable">$conditions</span>) &gt; <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">@media</span> #{unquote(parse-expression(nth($conditions, <span class="hljs-number">1</span>)))} {
+      <span class="hljs-comment">// Recursive call</span>
+      <span class="hljs-keyword">@include</span> media(slice(<span class="hljs-variable">$conditions</span>, <span class="hljs-number">2</span>)...) {
+        <span class="hljs-keyword">@content</span>;
+      }
+    }
+  }
+}</code></pre><hr>
+
+          
+      
+    
+  </div>
+</div>
+
+
+
+    </div>
+
+</div>
+
+
+            </div>
+        </div>
+
+        <div class="Frame-panel Frame-panel--sidebar" data-role="sidebar">
+            
+
+
+<nav class="Navigation" data-behaviour="navigation">
+    <div class="Navigation-panel Navigation-panel--main" data-role="main-panel">
+    
+        <div class="Navigation-group Navigation-search">
+    <form action="" class="Search" data-behaviour="search">
+        <label class="Search-label" for="search-input">Search</label>
+        <input class="Search-input" id="search-input" type="search" placeholder="Search…" data-role="input" autocomplete="off">
+        <button type="button" data-behaviour="clear-search" class="Search-clearButton" aria-label="Clear search" hidden>
+            <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 0h24v24H0z" fill="none"/>
+    <path d="M19 6.4L17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12z"/>
+</svg>
+
+        </button>
+    </form>
+</div>
+
+    
+        
+<div class="Navigation-group">
+
+<div class="Tree" data-behaviour="tree" id="tree-docs">
+    <div class="Tree-header">
+        <h3 class="Tree-title">documentation</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../index.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="index"
+                data-handle="index"
+            >
+                <span>Overview</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../getting-started.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="getting-started"
+                data-handle="getting-started"
+            >
+                <span>Getting Started</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../principles.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="principles"
+                data-handle="principles"
+            >
+                <span>Principles</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-colour">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-docs-collection-colour-items">
+                    Colour
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-docs-collection-colour-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../colour/colours.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="colours"
+                data-handle="colours"
+            >
+                <span>Colours</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../colour/gradients.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="gradients"
+                data-handle="gradients"
+            >
+                <span>Gradients</span>
+                
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../typography.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="typography"
+                data-handle="typography"
+            >
+                <span>Typography</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../icons.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="icons"
+                data-handle="icons"
+            >
+                <span>Icons</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../logos.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logos"
+                data-handle="logos"
+            >
+                <span>Logos</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../standards.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="standards"
+                data-handle="standards"
+            >
+                <span>Standards</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../sassdoc.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="sassdoc"
+                data-handle="sassdoc"
+            >
+                <span>Sassdoc</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-docs-collection-sass-tools">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-docs-collection-sass-tools-items">
+                    Sass Tools
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-docs-collection-sass-tools-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./colour.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="colour"
+                data-handle="colour"
+            >
+                <span>colour</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./components.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="components"
+                data-handle="components"
+            >
+                <span>components</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity is-current" data-state="current" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./undefined.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="undefined"
+                data-handle="undefined"
+            >
+                <span>include-media</span>
+                
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="./utilities.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="utilities"
+                data-handle="utilities"
+            >
+                <span>utilities</span>
+                
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+
+    </ul>
+</div>
+
+</div>
+
+
+    
+        
+
+    
+    
+    <div class="Navigation-group">
+        
+<div class="Tree" data-behaviour="tree" id="tree-components">
+    <div class="Tree-header">
+        <h3 class="Tree-title">components</h3>
+
+        <button type="button" data-behaviour="collapse-tree" class="Tree-collapse" title="Collapse tree" aria-label="Collapse tree" hidden>
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m9 11c-.6 0-1 .4-1 1s.4 1 1 1h6c.6 0 1-.4 1-1s-.4-1-1-1z"/><path d="m19 21h-14c-1.1 0-2-.9-2-2v-14c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2zm-14-16v14h14v-14z"/></svg>
+
+        </button>
+    </div>
+    <ul class="Tree-items Tree-depth-1">
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/accordion.html"
+                data-role="tree-link"
+                 data-tags="[&quot;js&quot;]"
+                data-pjax
+                data-test="accordion"
+                data-handle="accordion"
+            >
+                <span>Accordion</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-audioplayer">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-audioplayer-items">
+                    Audioplayer
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-audioplayer-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/audioplayer--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="audioplayer--default"
+                data-handle="audioplayer--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/audioplayer--no-img.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="audioplayer--no-img"
+                data-handle="audioplayer--no-img"
+            >
+                <span>No Img</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/button.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="button"
+                data-handle="button"
+            >
+                <span>Button</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-card">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-card-items">
+                    Card
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-card-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/card--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="card--default"
+                data-handle="card--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/card--list-view.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="card--list-view"
+                data-handle="card--list-view"
+            >
+                <span>List View</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-forms">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-forms-items">
+                    Forms
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-forms-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-choice">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-choice-items">
+                    Choice
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-choice-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/choice--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="choice--default"
+                data-handle="choice--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/choice--inline.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="choice--inline"
+                data-handle="choice--inline"
+            >
+                <span>Inline</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/form.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="form"
+                data-handle="form"
+            >
+                <span>Form</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/formfield.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="formfield"
+                data-handle="formfield"
+            >
+                <span>Formfield</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/select.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="select"
+                data-handle="select"
+            >
+                <span>Select</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/textarea.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="textarea"
+                data-handle="textarea"
+            >
+                <span>Textarea</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/textinput.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="textinput"
+                data-handle="textinput"
+            >
+                <span>Textinput</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/illuminate.html"
+                data-role="tree-link"
+                 data-tags="[&quot;js&quot;]"
+                data-pjax
+                data-test="illuminate"
+                data-handle="illuminate"
+            >
+                <span>Illuminate</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/lists.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="lists"
+                data-handle="lists"
+            >
+                <span>Lists</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/loading.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="loading"
+                data-handle="loading"
+            >
+                <span>Loading</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-page">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-page-items">
+                    Page
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-page-items">
+                
+                
+                
+                
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-masthead">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-masthead-items">
+                    Masthead
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-masthead-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--smg.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--smg"
+                data-handle="masthead--smg"
+            >
+                <span>Smg</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--scm.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--scm"
+                data-handle="masthead--scm"
+            >
+                <span>Scm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--nrm.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--nrm"
+                data-handle="masthead--nrm"
+            >
+                <span>Nrm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--sim.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--sim"
+                data-handle="masthead--sim"
+            >
+                <span>Sim</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--nsmm.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--nsmm"
+                data-handle="masthead--nsmm"
+            >
+                <span>Nsmm</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--loco.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--loco"
+                data-handle="masthead--loco"
+            >
+                <span>Loco</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--ncc.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--ncc"
+                data-handle="masthead--ncc"
+            >
+                <span>Ncc</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/masthead--sip.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="masthead--sip"
+                data-handle="masthead--sip"
+            >
+                <span>Sip</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-menu">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-menu-items">
+                    Menu
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-menu-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/menu--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="menu--default"
+                data-handle="menu--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/menu--blog.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="menu--blog"
+                data-handle="menu--blog"
+            >
+                <span>Blog</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/menu--sitenav.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="menu--sitenav"
+                data-handle="menu--sitenav"
+            >
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/sitenav.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="sitenav"
+                data-handle="sitenav"
+            >
+                <span>Sitenav</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-3" data-behaviour="collection" id="tree-components-collection-grid">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-grid-items">
+                    Grid
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-grid-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/grid--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="grid--default"
+                data-handle="grid--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/grid--page.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="grid--page"
+                data-handle="grid--page"
+            >
+                <span>Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/logo-panel.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="logo-panel"
+                data-handle="logo-panel"
+            >
+                <span>Logo Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/searchmenu.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="searchmenu"
+                data-handle="searchmenu"
+            >
+                <span>Searchmenu</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/textstyles.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="textstyles"
+                data-handle="textstyles"
+            >
+                <span>Textstyles</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+            
+            
+            <li class="Tree-item Tree-collection Tree-depth-2" data-behaviour="collection" id="tree-components-collection-pagination">
+                <button class="Tree-collectionLabel" data-role="toggle" aria-expanded="true" aria-controls="tree-components-collection-pagination-items">
+                    Pagination
+                </button>
+                <ul class="Tree-collectionItems" data-role="items" id="tree-components-collection-pagination-items">
+                
+                
+                
+                
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/pagination--default.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="pagination--default"
+                data-handle="pagination--default"
+            >
+                <span>Default</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/pagination--short.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="pagination--short"
+                data-handle="pagination--short"
+            >
+                <span>Short</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/pagination--last-page.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="pagination--last-page"
+                data-handle="pagination--last-page"
+            >
+                <span>Last Page</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/pagination--wordpress.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="pagination--wordpress"
+                data-handle="pagination--wordpress"
+            >
+                <span>Wordpress</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #FF9233;" title="WIP"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+                </ul>
+            </li>
+            
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/panel.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="panel"
+                data-handle="panel"
+            >
+                <span>Panel</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+        
+        
+        
+        
+        <li class="Tree-item Tree-entity" data-role="item">
+            <a
+                class="Tree-entityLink"
+                href="../../components/detail/utilities.html"
+                data-role="tree-link"
+                
+                data-pjax
+                data-test="utilities"
+                data-handle="utilities"
+            >
+                <span>Utilities</span>
+                
+
+<div class="Status Status--unlabelled">
+
+<div class="Status-dots">
+
+
+<span class="Status-dot" style="border-color: #29CC29;" title="Ready"></span>
+
+
+</div>
+
+</div>
+
+
+            </a>
+        </li>
+        
+    
+
+    </ul>
+</div>
+
+    </div>
+    
+
+
+    
+    </div>
+
+    
+</nav>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="../../themes/mandelbrot/js/mandelbrot.js?cachebust=1.10.3"></script>
+
+
+
+</body>
+</html>
