@@ -7,7 +7,7 @@ module.exports = (env, argv) => {
     mode: process.env.NODE_ENV,
     resolve: {
       modules: [path.resolve(__dirname, "src/js"), "node_modules"],
-      extensions: [".js"]
+      extensions: [".js"],
     },
     entry: {
       index: path.resolve(__dirname, "src/js/index.js"),
@@ -16,7 +16,7 @@ module.exports = (env, argv) => {
       illuminate: path.resolve(__dirname, "src/js/components/illuminate.js"),
       audioplayer: path.resolve(__dirname, "src/js/components/audioplayer.js"),
       menu: path.resolve(__dirname, "src/js/components/menu.js"),
-      main: "./src/scss/main.scss"
+      main: "./src/scss/main.scss",
     },
     output: {
       // path: devMode
@@ -27,7 +27,7 @@ module.exports = (env, argv) => {
       filename: "js/[name].js",
       library: "smgwds",
       libraryTarget: "umd",
-      libraryExport: "default"
+      libraryExport: "default",
     },
     module: {
       rules: [
@@ -43,61 +43,59 @@ module.exports = (env, argv) => {
                   {
                     useBuiltIns: "usage",
                     corejs: 3,
-                    debug: false
-                  }
-                ]
-              ]
-            }
-          }
+                    debug: false,
+                  },
+                ],
+              ],
+            },
+          },
         },
         {
           test: /\.scss$/,
           use: [
             {
-              loader: MiniCssExtractPlugin.loader
+              loader: MiniCssExtractPlugin.loader,
             },
             "css-loader",
             {
               loader: "postcss-loader",
               options: {
-                plugins: [require("autoprefixer")(), require("cssnano")()]
-              }
+                postcssOptions: {
+                  plugins: [require("autoprefixer")(), require("cssnano")()],
+                },
+              },
             },
             {
               loader: "sass-loader",
               options: {
                 implementation: require("sass"),
                 sassOptions: {
-                  includePaths: ["./node_modules"]
-                }
-              }
-            }
-          ]
+                  includePaths: ["./node_modules"],
+                },
+              },
+            },
+          ],
         },
         {
           test: /\.(png|svg|jpg|gif)$/,
-          use: ["file-loader"]
-        }
-      ]
+          use: ["file-loader"],
+        },
+      ],
     },
     plugins: [
       new MiniCssExtractPlugin({
-        filename: "css/[name].css"
-      })
+        filename: "css/[name].css",
+      }),
     ],
     devServer: {
       hot: true,
-      disableHostCheck: true,
+      allowedHosts: "all",
       historyApiFallback: true,
       compress: true,
       proxy: {
-        "**": "http://localhost:4000"
+        "**": "http://localhost:4000",
       },
       port: 3000,
-      stats: {
-        colors: true
-      },
-      overlay: true
-    }
+    },
   };
 };

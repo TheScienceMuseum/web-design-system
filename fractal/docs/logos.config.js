@@ -50,6 +50,13 @@ module.exports = {
         height: 236,
         "aligned-height": 236,
       },
+      sip: {
+        name: "Science and Innovation Park",
+        url: "https://hirethescienceinnovationpark.com/",
+        width: 532,
+        height: 236,
+        "aligned-height": 236,
+      },
     },
   },
 };

@@ -470,7 +470,6 @@ Determines whether a list of conditions is intercepted by the static breakpoint.
       $prefix: get-expression-prefix($operator);
       $value: get-expression-value($condition, $operator);
 
-      // scss-lint:disable SpaceAroundOperator
       @if ($prefix == 'max' and $value <= $no-media-breakpoint-value) or
           ($prefix == 'min' and $value > $no-media-breakpoint-value) {
         @return false;
@@ -990,7 +989,7 @@ Extend both configuration maps
 
 ### Author
 
-* Hugo Giraudel
+* Kitty Giraudel
 
 ### Source
 
@@ -1088,7 +1087,6 @@ Mixing everything
 
 ```scss
 @mixin media($conditions...) { safe: 
-  // scss-lint:disable SpaceAroundOperator
   @if ($im-media-support and length($conditions) == 0) or
       (not $im-media-support and im-intercepts-static-breakpoint($conditions...)) {
     @content;
