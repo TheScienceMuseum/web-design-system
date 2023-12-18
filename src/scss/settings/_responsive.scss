@@ -3,9 +3,9 @@ $breakpoints: (
   phone: 375px,
   small: 580px,
   // point of single column layout. Numiko use 580 but too tight here?
-    medium: 768px,
+  medium: 768px,
   // desktop: 1024px,
-    large: 1152px
+  large: 1152px,
 );
 
 $between-min: map-get($breakpoints, tiny);
@@ -16,33 +16,38 @@ $logos: (
   smg: (
     width: 388,
     natural-height: 236,
-    aligned-height: 236
+    aligned-height: 236,
   ),
   scm: (
     width: 398,
     natural-height: 154,
-    aligned-height: 236
+    aligned-height: 236,
   ),
   nrm: (
     width: 379,
     natural-height: 154,
-    aligned-height: 236
+    aligned-height: 236,
   ),
   sim: (
     width: 448,
     natural-height: 236,
-    aligned-height: 236
+    aligned-height: 236,
   ),
   nsmm: (
     width: 448,
     natural-height: 236,
-    aligned-height: 236
+    aligned-height: 236,
   ),
   loco: (
     width: 544,
     natural-height: 70,
-    aligned-height: 236
-  )
+    aligned-height: 236,
+  ),
+  sip: (
+    width: 532,
+    natural-height: 236,
+    aligned-height: 236,
+  ),
 );
 
 @function logo-ratio($key) {
