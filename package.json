@@ -1,6 +1,6 @@
 {
   "name": "smg-web-design-system",
-  "version": "0.10.2",
+  "version": "0.10.3",
   "description": "Science Museum Group: Web Design System > N.B W.I.P - not ready for use yet!",
   "main": "dist/js/index.js",
   "style": "src/scss/main.scss",
