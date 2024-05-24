@@ -46,6 +46,7 @@
   a {
     text-decoration: none;
     color: currentColor;
+
     &:hover {
       text-decoration: underline;
     }
@@ -85,6 +86,7 @@
     padding: 0.25rem;
     display: flex;
     justify-content: flex-start;
+
     img {
       position: relative;
       display: block;
@@ -119,6 +121,7 @@
   &--small &__title {
     @include type-h4;
   }
+
   &--small p,
   &--small &__info {
     font-size: 1rem;
@@ -128,7 +131,7 @@
   @include media(">=small") {
     .o-grid--4-col & #{$text-elements} {
       // override o-main size on small grids
-      @include between(font-size, rem(14), rem(18));
+      font-size: clamp-between(rem(14), rem(18));
     }
   }
 
@@ -154,7 +157,7 @@
   height: auto;
 
   & + & {
-    @include between(margin-top, 1rem, 4rem);
+    margin-top: clamp-between(1rem, 4rem);
   }
 
   .c-card__img {
@@ -182,6 +185,7 @@
     margin-top: 0;
     margin-bottom: 0.5rem;
   }
+
   .c-card__desc {
     :first-child {
       margin-top: 0;

@@ -23,18 +23,23 @@ $plyr-range-thumb-height: 16px;
 
 .plyr--full-ui input[type="range"] {
   border-radius: 0;
+
   &::-webkit-slider-runnable-track {
     border-radius: 0;
   }
+
   &::-moz-range-track {
     border-radius: 0;
   }
+
   &::-ms-track {
     border-radius: 0;
   }
+
   &::-ms-fill-upper {
     border-radius: 0;
   }
+
   &::-ms-fill-lower {
     border-radius: 0;
   }
@@ -43,36 +48,43 @@ $plyr-range-thumb-height: 16px;
 .c-audioplayer {
   background-color: grey(85);
   color: white;
+
   @include media(">medium") {
     display: flex;
   }
 
   &__main {
     width: 100%;
-    @include between(padding, 1rem, 2rem);
+    padding: clamp-between(1rem, 2rem);
+
     @include media(">medium") {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
   }
+
   &__thumb {
     float: left;
-    @include between(margin-right, 1rem, 2rem);
-    @include between(margin-bottom, 1rem, 2rem);
+    margin-right: clamp-between(1rem, 2rem);
+    margin-bottom: clamp-between(1rem, 2rem);
+
     @include media(">medium") {
       float: none;
       margin-right: 0;
       margin-bottom: 0;
     }
+
     background-color: black;
     flex-shrink: 0;
     width: 20%;
+
     img {
       object-fit: cover;
       font-family: "object-fit: cover;";
     }
   }
+
   &__button {
     @include responsive-embed(square);
     // reset button
@@ -99,16 +111,16 @@ $plyr-range-thumb-height: 16px;
       img {
         // opacity: 0.75;
       }
+
       &:after {
-        background-image: svg-uri(
-          '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><g fill="none" stroke="#fff"><path d="M.5.5h63v63H.5z"/><path d="M48.212 32L20.5 48V16z"/></g></svg>'
-        );
+        background-image: svg-uri('<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64"><g fill="none" stroke="#fff"><path d="M.5.5h63v63H.5z"/><path d="M48.212 32L20.5 48V16z"/></g></svg>'
+          );
         background-color: rgba(black, 0.25);
       }
+
       .c-audioplayer--playing &:after {
-        background-image: svg-uri(
-          '<svg height="64" width="64" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff"><path d="M.5.5h63v63H.5z"/><path d="m24 16v32"/><path d="m40 16v32"/></g></svg>'
-        );
+        background-image: svg-uri('<svg height="64" width="64" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="#fff"><path d="M.5.5h63v63H.5z"/><path d="m24 16v32"/><path d="m40 16v32"/></g></svg>'
+          );
       }
     }
   }

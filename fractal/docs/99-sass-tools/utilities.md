@@ -3,32 +3,6 @@ label: utilities
 ---
 # utilities
 
-## strip-unit
-
-### Description
-
-Removes the unit (e.g. px, em, rem) from a value, returning the number only.
-
-### Parameters
-
-| Name | Description                | Type   | Default Value |
-| ---- | -------------------------- | ------ | ------------- |
-| num  | Number to strip unit from. | Number |               |
-
-### Returns
-
-`Number` — The same number, sans unit.
-
-### Source
-
-```scss
-@function strip-unit($num) { safe: 
-  @return $num / ($num * 0 + 1);
-}
-```
-
----
-
 ## rem
 
 ### Description
@@ -50,29 +24,30 @@ Converts one or more pixel values into matching rem values.
 
 ```scss
 @function rem($values, $base: null) { safe: 
-  $rem-values: ();
-  $count: length($values);
+  $rem-values: (
+  );
+$count: length($values);
 
-  // If no base is defined, defer to the global font size
-  @if $base == null {
-    $base: $base-font-size;
-  }
+// If no base is defined, defer to the global font size
+@if $base ==null {
+  $base: $base-font-size;
+}
 
-  // If the base font size is a %, then multiply it by 16px
-  // This is because 100% font size = 16px in most all browsers
-  @if unit($base) == "%" {
-    $base: ($base / 100%) * 16px;
-  }
+// If the base font size is a %, then multiply it by 16px
+// This is because 100% font size = 16px in most all browsers
+@if unit($base)=="%" {
+  $base: math.div($base, 100%) * 16px;
+}
 
-  @if $count == 1 {
-    @return -zf-to-rem($values, $base);
-  }
+@if $count ==1 {
+  @return -zf-to-rem($values, $base);
+}
 
-  @for $i from 1 through $count {
-    $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
-  }
+@for $i from 1 through $count {
+  $rem-values: append($rem-values, -zf-to-rem(nth($values, $i), $base));
+}
 
-  @return $rem-values;
+@return $rem-values;
 }
 ```
 
@@ -106,31 +81,32 @@ Returns the opposite direction of each direction in a list
 
 ```scss
 @function opposite-direction($directions) { safe: 
-  $opposite-directions: ();
-  $direction-map: (
-    "top": "bottom",
-    "right": "left",
-    "bottom": "top",
-    "left": "right",
-    "center": "center",
-    "ltr": "rtl",
-    "rtl": "ltr"
+  $opposite-directions: (
   );
+$direction-map: (
+  "top": "bottom",
+  "right": "left",
+  "bottom": "top",
+  "left": "right",
+  "center": "center",
+  "ltr": "rtl",
+  "rtl": "ltr"
+);
 
-  @each $direction in $directions {
-    $direction: to-lower-case($direction);
+@each $direction in $directions {
+  $direction: to-lower-case($direction);
 
-    @if map-has-key($direction-map, $direction) {
-      $opposite-directions: append(
-        $opposite-directions,
-        unquote(map-get($direction-map, $direction))
-      );
-    } @else {
-      @warn 'No opposite direction can be found for `#{$direction}`. Direction omitted.';
-    }
+  @if map-has-key($direction-map, $direction) {
+    $opposite-directions: append($opposite-directions,
+        unquote(map-get($direction-map, $direction)));
   }
 
-  @return $opposite-directions;
+  @else {
+    @warn 'No opposite direction can be found for `#{$direction}`. Direction omitted.';
+  }
+}
+
+@return $opposite-directions;
 }
 ```
 
@@ -159,11 +135,12 @@ used in number conversion
   $x1: $x0;
 
   @for $i from 1 through 10 {
-    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
-    $x0: $x1;
-  }
+    $x1: $x0 - math.div($x0 * $x0 - abs($r), 2 * $x0
+    );
+  $x0: $x1;
+}
 
-  @return $x1;
+@return $x1;
 }
 ```
 
@@ -189,18 +166,6 @@ and simply pasting the SVG markup right in the CSS.
 
 `String` — Encoded SVG data uri
 
-### Requires
-
-* [function] `str-replace` 
-
-* [function] `str-replace` 
-
-* [function] `str-replace` 
-
-* [function] `str-replace` 
-
-* [function] `str-replace` 
-
 ### Links
 
 [http://codepen.io/jakob-e/pen/doMoML](http://codepen.io/jakob-e/pen/doMoML>)
@@ -216,7 +181,7 @@ and simply pasting the SVG markup right in the CSS.
   $encoded: "";
   $slice: 2000;
   $index: 0;
-  $loops: ceil(str-length($svg) / $slice);
+  $loops: ceil(math.div(str-length($svg), $slice));
 
   @for $i from 1 through $loops {
     $chunk: str-slice($svg, $index, $index + $slice - 1);
@@ -228,66 +193,8 @@ and simply pasting the SVG markup right in the CSS.
     $encoded: #{$encoded}#{$chunk};
     $index: $index + $slice;
   }
+
   @return url("data:image/svg+xml, #{$encoded}");
-}
-```
-
----
-
-## str-replace
-
-### Description
-
-Replace `$search` with `$replace` in `$string`
-
-### Parameters
-
-| Name    | Description          | Type   | Default Value |
-| ------- | -------------------- | ------ | ------------- |
-| string  | Initial string       | String |               |
-| search  | Substring to replace | String |               |
-| replace | (&#39;&#39;) - New value     | String |               |
-
-### Returns
-
-`String` — Updated string
-
-### Used By
-
-* [function] `svg-uri`
-
-* [function] `svg-uri`
-
-* [function] `svg-uri`
-
-* [function] `svg-uri`
-
-* [function] `svg-uri`
-
-### Links
-
-[http://sassmeister.com/gist/1b4f2da5527830088e4d](http://sassmeister.com/gist/1b4f2da5527830088e4d>)
-
-### Author
-
-* Hugo Giraudel
-
-### Source
-
-```scss
-@function str-replace($string, $search, $replace) { safe: 
-  $index: str-index($string, $search);
-
-  @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace +
-      str-replace(
-        str-slice($string, $index + str-length($search)),
-        $search,
-        $replace
-      );
-  }
-
-  @return $string;
 }
 ```
 
@@ -319,7 +226,74 @@ Calculates the height as a percentage of the width for a given ratio.
 @function ratio-to-percentage($ratio) { safe: 
   $w: nth($ratio, 1);
   $h: nth($ratio, 3);
-  @return $h / $w * 100%;
+  @return math.div($h, $w) * 100%;
+}
+```
+
+---
+
+## clamp-between
+
+### Description
+
+Function to apply a css clamp(), linearly interpolated between the lower and upper values
+Replaces the old sass-between library, only covering our limited uses.
+
+### Parameters
+
+| Name        | Description                      | Type   | Default Value |
+| ----------- | -------------------------------- | ------ | ------------- |
+| lower       | lower/min value to use           | Number |               |
+| upper       | upper/max value to use           | Number |               |
+| lower-width | pass a custom $between-min value | Number | $between-min  |
+| upper-width | pass a custom $between-max value | Number | $between-max  |
+
+### Example
+
+```scss
+font-size: clamp-between(16px, 24px);
+```
+
+### Source
+
+```scss
+@function clamp-between($lower, $upper, $lower-width: $between-min, $upper-width: $between-max) { safe: 
+  /* units:
+    passed-in units and gate sizes could be any unit.
+    in practice, might be px em or rem.
+    suggest preserve whatever was used on input
+    */
+
+  // one of these may be zero, but the other may contain a unit
+  $unit: null;
+
+  @if math.is-unitless($lower)==true {
+    $unit: unit($lower);
+  }
+
+  @else {
+    $unit: unit($upper);
+  }
+
+  // but if they are both blank, assume px
+  @if $unit =="" {
+    $unit: px;
+  }
+
+  // @debug unit is $lower, $upper, $unit;
+
+  // Sass > 3.5, Passing a string to call() is deprecated
+  @if function-exists("get-function") {
+    $unit: get-function($unit);
+  }
+
+  // slope is difference
+  $slope: math.div(call($unit, $lower - $upper), call($unit, $lower-width - $upper-width));
+  $base: call($unit, $upper) - $slope * call($unit, $upper-width);
+
+  $baseandunit: call($unit, $base);
+
+  @return clamp($lower, calc(#{$baseandunit} + #{100vw * $slope}), $upper);
 }
 ```
 
@@ -362,7 +336,7 @@ adds an icon to identify href destination
   content: "";
   background-repeat: no-repeat;
   display: inline-block;
-  margin: 0 ($scale / 10);
+  margin: 0 ($scale * 0.1);
   width: $scale;
   height: $scale;
   background-size: 100%;
@@ -408,12 +382,15 @@ Triangle helper mixin
   z-index: 2;
   border-#{opposite-direction($direction)}: $size solid $color;
 
-  $perpendicular-borders: ($size / 2) solid transparent;
+  $perpendicular-borders: (
+    $size * 0.5) solid transparent;
 
-  @if $direction == top or $direction == bottom {
+  @if $direction ==top or $direction ==bottom {
     border-left: $perpendicular-borders;
     border-right: $perpendicular-borders;
-  } @else if $direction == right or $direction == left {
+  }
+
+  @else if $direction ==right or $direction ==left {
     border-bottom: $perpendicular-borders;
     border-top: $perpendicular-borders;
   }
@@ -444,27 +421,41 @@ Creates a responsive embed container.
 
 ```scss
 @mixin responsive-embed($ratio: default) { safe: 
-  @if type-of($ratio) == "string" {
-    $ratio: map-get($responsive-embed-ratios, $ratio);
-  }
-  position: relative;
-  height: 0;
-  padding-bottom: ratio-to-percentage($ratio);
-  overflow: hidden;
-
-  iframe,
-  object,
-  embed,
-  video,
-  img,
-  svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
+  @if type-of($ratio)=="string" {
+    $ratio: map-get($responsive-embed-ratios, $ratio
+    );
 }
+
+position: relative;
+height: 0;
+padding-bottom: ratio-to-percentage($ratio);
+overflow: hidden;
+
+iframe,
+object,
+embed,
+video,
+img,
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+}
+```
+
+---
+
+## /* prettier-ignore */
+@function str-replace($string, $search, $replace: &quot;&quot;)
+
+### Source
+
+```scss
+@css /* prettier-ignore */
+@function str-replace($string, $search, $replace: &quot;&quot;)() { safe: }
 ```
 
 ---
@@ -499,8 +490,7 @@ Aspect ratios used to determine padding-bottom of responsive embed containers.
 $responsive-embed-ratios: (
   default: 4 by 3,
   widescreen: 16 by 9,
-  square: 1 by 1
-)
+  square: 1 by 1)
 ```
 
 ---

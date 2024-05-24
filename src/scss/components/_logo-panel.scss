@@ -16,18 +16,22 @@ $logo-panel-gradient-animated: true !default;
 $logo-panel-color: white !default;
 
 .c-logo-panel {
-  @if ($logo-panel-gradient and type-of($logo-panel-gradient) == "list") {
+  @if ($logo-panel-gradient and type-of($logo-panel-gradient)=="list") {
     @include sm-gradient($logo-panel-gradient);
   }
+
   @if ($logo-panel-gradient-animated) {
     @if (length($logo-panel-gradient) > 2) {
       @include sm-gradient-animated($layers: 2);
-    } @else {
+    }
+
+    @else {
       @include sm-gradient-animated();
     }
   }
-  @include between(padding-top, 1rem, 3rem);
-  @include between(padding-bottom, 1rem, 3rem);
+
+  padding-top: clamp-between(1rem, 3rem);
+  padding-bottom: clamp-between(1rem, 3rem);
 
   a {
     color: $logo-panel-color;
@@ -45,7 +49,8 @@ $logo-panel-color: white !default;
       justify-content: space-between;
       align-items: top;
     }
-    @include between(margin-top, 0.5rem, 3rem);
+
+    margin-top: clamp-between(0.5rem, 3rem);
   }
 
   &__item {
@@ -62,14 +67,11 @@ $logo-panel-color: white !default;
 
   $logo-min-height: 2rem;
   $logo-max-height: 4rem;
+
   img,
   svg {
     display: none;
-    @include between(
-      height,
-      $logo-min-height,
-      $logo-max-height
-    ); // but change this if number of logos change
+    height: clamp-between($logo-min-height, $logo-max-height); // but change this if number of logos change
     width: auto;
     max-width: none;
 
@@ -81,11 +83,8 @@ $logo-panel-color: white !default;
 
   @each $key, $logo in $logos {
     .c-logo--#{$key} {
-      @include between(
-        width,
-        ($logo-min-height * logo-ratio($key)),
-        ($logo-max-height * logo-ratio($key))
-      );
+      width: clamp-between(($logo-min-height * logo-ratio($key)),
+          ($logo-max-height * logo-ratio($key)));
     }
   }
 }

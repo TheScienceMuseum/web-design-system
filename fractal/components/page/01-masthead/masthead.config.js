@@ -7,12 +7,11 @@ var context = mologos.context.logos.smg;
 context.init =
   "<script>document.addEventListener('DOMContentLoaded', function(event) {smgwds.menu();})</script>";
 
-console.log(context);
 module.exports = {
   status: "ready",
   preview: "@preview-raw",
   notes: "[todo: define linking rules]",
   context: context,
   default: "smg",
-  variants: variants
+  variants: variants,
 };

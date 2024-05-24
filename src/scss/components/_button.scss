@@ -18,22 +18,29 @@ $button-theme: false !default;
 @mixin btn() {
   @if $button-font-size {
     font-size: $button-font-size;
-  } @else {
-    @include between(font-size, $button-font-size-min, $button-font-size-max);
+  }
+
+  @else {
+    font-size: clamp-between($button-font-size-min, $button-font-size-max);
   }
 
   @if (index(map_keys($palettes), $button-theme)) {
     /* yes */
     color: palette($button-theme, text);
     background-color: palette($button-theme);
+
     &:hover,
     &:focus {
       background-color: palette($button-theme, dark);
     }
-  } @else if type-of($button-theme) == color {
+  }
+
+  @else if type-of($button-theme)==color {
     background-color: $button-theme;
     color: choose-contrast-color($button-theme);
-  } @else {
+  }
+
+  @else {
     color: white; //default
     background-color: grey(80); //default
   }
@@ -53,6 +60,7 @@ $button-theme: false !default;
   transition: background-color $transition-default;
 
   @each $button-theme, $props in $palettes {
+
     .t-btn--#{$button-theme} &,
     &#{&}--#{$button-theme} {
       background-color: map-get($props, base);
@@ -75,9 +83,8 @@ $button-theme: false !default;
     &:after {
       content: "";
       // TODO: match  fill/stroke color to theme color
-      background-image: svg-uri(
-        '<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15.8030016 13.665h-11.8030016v-3.33h11.8030016l-4.1576672-4.15766721 2.3546656-2.35466558 8.1773328 8.17733279-8.1773328 8.1773328-2.3546656-2.3546656z" fill="white"/></svg>'
-      );
+      background-image: svg-uri('<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m15.8030016 13.665h-11.8030016v-3.33h11.8030016l-4.1576672-4.15766721 2.3546656-2.35466558 8.1773328 8.17733279-8.1773328 8.1773328-2.3546656-2.3546656z" fill="white"/></svg>'
+        );
       // background-image: url("/assets/icons/3d.svg");
       // fill: white;
       background-repeat: no-repeat;
@@ -102,6 +109,7 @@ $button-theme: false !default;
   .u-icon:last-child {
     margin-left: 1rem;
   }
+
   // Variation:
   // -disabled
   // Grey background and not clickable - when the event is sold out

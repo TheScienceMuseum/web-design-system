@@ -43,7 +43,7 @@ $breakpoints: ('phone': 320px);
 $breakpoints: (
   'phone': 320px,
   'tablet': 768px,
-  'desktop': 1024px
+  'desktop': 1024px,
 )
 ```
 
@@ -102,8 +102,10 @@ $media-expressions: (
   'handheld': 'handheld',
   'landscape': '(orientation: landscape)',
   'portrait': '(orientation: portrait)',
-  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
-  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)'
+  'retina2x':
+    '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)',
+  'retina3x':
+    '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi), (min-resolution: 3dppx)',
 )
 ```
 
@@ -159,7 +161,7 @@ $unit-intervals: (
   'px': 1,
   'em': 0.01,
   'rem': 0.1,
-  '': 0
+  '': 0,
 )
 ```
 
@@ -374,7 +376,7 @@ to detect support.
 
 ```scss
 @function im-log($message) { safe: 
-  @if feature-exists('at-error') {
+  @if meta.feature-exists('at-error') {
     @error $message;
   } @else {
     @warn $message;
@@ -405,7 +407,8 @@ to trigger a compiling error and stop the process.
 ### Source
 
 ```scss
-@function noop() { safe: }
+@function noop() { safe: 
+}
 ```
 
 ---
@@ -458,23 +461,25 @@ Determines whether a list of conditions is intercepted by the static breakpoint.
 
 ```scss
 @function im-intercepts-static-breakpoint($conditions...) { safe: 
-  $no-media-breakpoint-value: map-get($breakpoints, $im-no-media-breakpoint);
+  $no-media-breakpoint-value: map.get($breakpoints, $im-no-media-breakpoint);
 
   @if not $no-media-breakpoint-value {
-    @if im-log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {}
+    @if im-log('`#{$im-no-media-breakpoint}` is not a valid breakpoint.') {
+    }
   }
 
   @each $condition in $conditions {
-    @if not map-has-key($media-expressions, $condition) {
+    @if not map.has-key($media-expressions, $condition) {
       $operator: get-expression-operator($condition);
       $prefix: get-expression-prefix($operator);
       $value: get-expression-value($condition, $operator);
 
       @if ($prefix == 'max' and $value <= $no-media-breakpoint-value) or
-          ($prefix == 'min' and $value > $no-media-breakpoint-value) {
+        ($prefix == 'min' and $value > $no-media-breakpoint-value)
+      {
         @return false;
       }
-    } @else if not index($im-no-media-expressions, $condition) {
+    } @else if not list.index($im-no-media-expressions, $condition) {
       @return false;
     }
   }
@@ -524,7 +529,7 @@ Get operator of an expression
 ```scss
 @function get-expression-operator($expression) { safe: 
   @each $operator in ('>=', '>', '<=', '<', '≥', '≤') {
-    @if str-index($expression, $operator) {
+    @if string.index($expression, $operator) {
       @return $operator;
     }
   }
@@ -569,11 +574,11 @@ Get dimension of an expression, based on a found operator
 
 ```scss
 @function get-expression-dimension($expression, $operator) { safe: 
-  $operator-index: str-index($expression, $operator);
-  $parsed-dimension: str-slice($expression, 0, $operator-index - 1);
+  $operator-index: string.index($expression, $operator);
+  $parsed-dimension: string.slice($expression, 0, $operator-index - 1);
   $dimension: 'width';
 
-  @if str-length($parsed-dimension) > 0 {
+  @if string.length($parsed-dimension) > 0 {
     $dimension: $parsed-dimension;
   }
 
@@ -613,7 +618,7 @@ Get dimension prefix based on an operator
 
 ```scss
 @function get-expression-prefix($operator) { safe: 
-  @return if(index(('<', '<=', '≤'), $operator), 'max', 'min');
+  @return if(list.index(('<', '<=', '≤'), $operator), 'max', 'min');
 }
 ```
 
@@ -666,16 +671,16 @@ Get value of an expression, based on a found operator
 
 ```scss
 @function get-expression-value($expression, $operator) { safe: 
-  $operator-index: str-index($expression, $operator);
-  $value: str-slice($expression, $operator-index + str-length($operator));
+  $operator-index: string.index($expression, $operator);
+  $value: string.slice($expression, $operator-index + string.length($operator));
 
-  @if map-has-key($breakpoints, $value) {
-    $value: map-get($breakpoints, $value);
+  @if map.has-key($breakpoints, $value) {
+    $value: map.get($breakpoints, $value);
   } @else {
     $value: to-number($value);
   }
 
-  $interval: map-get($unit-intervals, unit($value));
+  $interval: map.get($unit-intervals, math.unit($value));
 
   @if not $interval {
     // It is not possible to include a mixin inside a function, so we have to
@@ -683,7 +688,7 @@ Get value of an expression, based on a found operator
     // functions cannot be called anywhere in Sass, we need to hack the call in
     // a dummy variable, such as `$_`. If anybody ever raise a scoping issue with
     // Sass 3.3, change this line in `@if im-log(..) {}` instead.
-    $_: im-log('Unknown unit `#{unit($value)}`.');
+    $_: im-log('Unknown unit `#{math.unit($value)}`.');
   }
 
   @if $operator == '>' {
@@ -744,8 +749,8 @@ Parse an expression to return a valid media-query expression
 @function parse-expression($expression) { safe: 
   // If it is part of $media-expressions, it has no operator
   // then there is no need to go any further, just return the value
-  @if map-has-key($media-expressions, $expression) {
-    @return map-get($media-expressions, $expression);
+  @if map.has-key($media-expressions, $expression) {
+    @return map.get($media-expressions, $expression);
   }
 
   $operator: get-expression-operator($expression);
@@ -793,37 +798,48 @@ Casts a string into a number
 
 ```scss
 @function to-number($value) { safe: 
-  @if type-of($value) == 'number' {
+  @if meta.type-of($value) == 'number' {
     @return $value;
-  } @else if type-of($value) != 'string' {
+  } @else if meta.type-of($value) != 'string' {
     $_: im-log('Value for `to-number` should be a number or a string.');
   }
 
-  $first-character: str-slice($value, 1, 1);
+  $first-character: string.slice($value, 1, 1);
   $result: 0;
   $digits: 0;
   $minus: ($first-character == '-');
-  $numbers: ('0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9);
+  $numbers: (
+    '0': 0,
+    '1': 1,
+    '2': 2,
+    '3': 3,
+    '4': 4,
+    '5': 5,
+    '6': 6,
+    '7': 7,
+    '8': 8,
+    '9': 9,
+  );
 
   // Remove +/- sign if present at first character
   @if ($first-character == '+' or $first-character == '-') {
-    $value: str-slice($value, 2);
+    $value: string.slice($value, 2);
   }
 
-  @for $i from 1 through str-length($value) {
-    $character: str-slice($value, $i, $i);
+  @for $i from 1 through string.length($value) {
+    $character: string.slice($value, $i, $i);
 
-    @if not (index(map-keys($numbers), $character) or $character == '.') {
-      @return to-length(if($minus, -$result, $result), str-slice($value, $i))
+    @if not(list.index(map.keys($numbers), $character) or $character == '.') {
+      @return to-length(if($minus, -$result, $result), string.slice($value, $i));
     }
 
     @if $character == '.' {
       $digits: 1;
     } @else if $digits == 0 {
-      $result: $result * 10 + map-get($numbers, $character);
+      $result: $result * 10 + map.get($numbers, $character);
     } @else {
       $digits: $digits * 10;
-      $result: $result + map-get($numbers, $character) / $digits;
+      $result: $result + math.div(map.get($numbers, $character), $digits);
     }
   }
 
@@ -866,13 +882,29 @@ Add `$unit` to `$value`
 
 ```scss
 @function to-length($value, $unit) { safe: 
-  $units: ('px': 1px, 'cm': 1cm, 'mm': 1mm, '%': 1%, 'ch': 1ch, 'pc': 1pc, 'in': 1in, 'em': 1em, 'rem': 1rem, 'pt': 1pt, 'ex': 1ex, 'vw': 1vw, 'vh': 1vh, 'vmin': 1vmin, 'vmax': 1vmax);
+  $units: (
+    'px': 1px,
+    'cm': 1cm,
+    'mm': 1mm,
+    '%': 1%,
+    'ch': 1ch,
+    'pc': 1pc,
+    'in': 1in,
+    'em': 1em,
+    'rem': 1rem,
+    'pt': 1pt,
+    'ex': 1ex,
+    'vw': 1vw,
+    'vh': 1vh,
+    'vmin': 1vmin,
+    'vmax': 1vmax,
+  );
 
-  @if not index(map-keys($units), $unit) {
+  @if not list.index(map.keys($units), $unit) {
     $_: im-log('Invalid unit `#{$unit}`.');
   }
 
-  @return $value * map-get($units, $unit);
+  @return $value * map.get($units, $unit);
 }
 ```
 
@@ -905,7 +937,8 @@ and use the mixin everywhere else because it's much more elegant.
 
 ```scss
 @mixin log($message) { safe: 
-  @if im-log($message) {}
+  @if im-log($message) {
+  }
 }
 ```
 
@@ -1000,8 +1033,8 @@ Extend both configuration maps
   $global-media-expressions: $media-expressions;
 
   // Update global configuration
-  $breakpoints: map-merge($breakpoints, $tweakpoints) !global;
-  $media-expressions: map-merge($media-expressions, $tweak-media-expressions) !global;
+  $breakpoints: map.merge($breakpoints, $tweakpoints) !global;
+  $media-expressions: map.merge($media-expressions, $tweak-media-expressions) !global;
 
   @content;
 
@@ -1087,11 +1120,12 @@ Mixing everything
 
 ```scss
 @mixin media($conditions...) { safe: 
-  @if ($im-media-support and length($conditions) == 0) or
-      (not $im-media-support and im-intercepts-static-breakpoint($conditions...)) {
+  @if ($im-media-support and list.length($conditions) == 0) or
+    (not $im-media-support and im-intercepts-static-breakpoint($conditions...))
+  {
     @content;
-  } @else if ($im-media-support and length($conditions) > 0) {
-    @media #{unquote(parse-expression(nth($conditions, 1)))} {
+  } @else if ($im-media-support and list.length($conditions) > 0) {
+    @media #{string.unquote(parse-expression(list.nth($conditions, 1)))} {
       // Recursive call
       @include media(slice($conditions, 2)...) {
         @content;

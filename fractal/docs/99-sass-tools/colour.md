@@ -40,12 +40,9 @@ Returns a color simulating Photoshop blend mode - Normal
   $background-opacity: opacity($background);
 
   // calculate opacity
-  $bm-red: red($foreground) * $opacity + red($background) * $background-opacity *
-    (1 - $opacity);
-  $bm-green: green($foreground) * $opacity + green($background) *
-    $background-opacity * (1 - $opacity);
-  $bm-blue: blue($foreground) * $opacity + blue($background) *
-    $background-opacity * (1 - $opacity);
+  $bm-red: red($foreground) * $opacity + red($background) * $background-opacity * (1 - $opacity);
+  $bm-green: green($foreground) * $opacity + green($background) * $background-opacity * (1 - $opacity);
+  $bm-blue: blue($foreground) * $opacity + blue($background) * $background-opacity * (1 - $opacity);
   @return rgb($bm-red, $bm-green, $bm-blue);
 }
 ```
@@ -85,14 +82,12 @@ Returns a color simulating Photoshop blend mode -  Multiply
 
 ```scss
 @function blend-multiply($foreground, $background) { safe: 
-  $bm-red: red($background) * red($foreground) / 255;
-  $bm-green: green($background) * green($foreground) / 255;
-  $bm-blue: blue($background) * blue($foreground) / 255;
+  $bm-red: math.div(red($background) * red($foreground), 255);
+  $bm-green: math.div(green($background) * green($foreground), 255);
+  $bm-blue: math.div(blue($background) * blue($foreground), 255);
 
-  @return blend-normal(
-    rgba($bm-red, $bm-green, $bm-blue, opacity($foreground)),
-    $background
-  );
+  @return blend-normal(rgba($bm-red, $bm-green, $bm-blue, opacity($foreground)),
+    $background );
 }
 ```
 
@@ -189,12 +184,15 @@ Repeats a value. For properties that take comma-separated lists
 
 ```scss
 @function multiple-repeat($value, $repetitions) { safe: 
-  $values: ();
-  @for $i from 1 through $repetitions {
-    $next_value: $value;
-    $values: append($values, $next_value, comma);
-  }
-  @return $values;
+  $values: (
+  );
+
+@for $i from 1 through $repetitions {
+  $next_value: $value;
+  $values: append($values, $next_value, comma);
+}
+
+@return $values;
 }
 ```
 
@@ -237,8 +235,7 @@ Returns the perceived brightness of a colour.
   $red-magic-number: 241;
   $green-magic-number: 691;
   $blue-magic-number: 68;
-  $brightness-divisor: $red-magic-number + $green-magic-number +
-    $blue-magic-number;
+  $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-number;
 
   // Extract color components
   $red-component: red($color);
@@ -246,16 +243,10 @@ Returns the perceived brightness of a colour.
   $blue-component: blue($color);
 
   // Calculate a brightness value in 3d color space between 0 and 255
-  $number: sqrt(
-    (
-        ($red-component * $red-component * $red-magic-number) +
-          ($green-component * $green-component * $green-magic-number) +
-          ($blue-component * $blue-component * $blue-magic-number)
-      ) / $brightness-divisor
-  );
+  $number: sqrt(math.div(($red-component * $red-component * $red-magic-number) + ($green-component * $green-component * $green-magic-number) + ($blue-component * $blue-component * $blue-magic-number), $brightness-divisor));
 
   // Convert to percentage and return
-  @return 100% * $number / 255;
+  @return 100% * math.div($number, 255);
 }
 ```
 
@@ -306,7 +297,9 @@ black
 @function contrasting-text-color($color, $light: white, $dark: dark) { safe: 
   @if (perceivedbrightness($color) > 65) {
     @return $dark;
-  } @else {
+  }
+
+  @else {
     @return $light;
   }
 }
@@ -348,14 +341,18 @@ black
 @function choose-contrast-color($color, $light: white, $dark: dark) { safe: 
   $lightContrast: contrast($color, $light);
   $darkContrast: contrast($color, $dark);
+
   @if (max($lightContrast, $darkContrast) < 4.5) {
-    @debug $color "$darkContrast" $darkContrast;
-    @debug $color "$lightContrast" $lightContrast;
+    @debug $color "$darkContrast"$darkContrast;
+    @debug $color "$lightContrast"$lightContrast;
     @warn "contrast less than 4.5:1 WCAG 2 AA contrast ratio threshold";
   }
+
   @if ($lightContrast > $darkContrast) {
     @return $light;
-  } @else {
+  }
+
+  @else {
     @return $dark;
   }
 }
@@ -394,27 +391,25 @@ with 3 SMG colours
 ```scss
 @mixin sm-gradient($stops) { safe: 
   @each $stop in $stops {
-    @if type-of($stop) != color {
+    @if type-of($stop) !=color {
       @warn '`#{$stop}` is not a color. I wish it was.';
     }
   }
 
-  @if length($stops) == 1 {
+  @if length($stops)==1 {
     background-color: $stops;
   }
-  @if length($stops) == 2 {
-    background-image: linear-gradient(
-      135deg,
-      nth($stops, 1) 0%,
-      nth($stops, 2) 100%
-    );
+
+  @if length($stops)==2 {
+    background-image: linear-gradient(135deg,
+        nth($stops, 1) 0%,
+        nth($stops, 2) 100%);
   }
-  @if length($stops) > 2 {
-    background-image: radial-gradient(
-        ellipse at bottom left,
+
+  @if length($stops)>2 {
+    background-image: radial-gradient(ellipse at bottom left,
         nth($stops, 1),
-        rgba(nth($stops, 1), 0) 50%
-      ),
+        rgba(nth($stops, 1), 0) 50%),
       linear-gradient(to right, nth($stops, 2) 0%, nth($stops, 3) 100%);
   }
 }
@@ -464,6 +459,7 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
   animation-iteration-count: infinite;
+
   @media (prefers-reduced-motion) {
     animation: none;
   }
@@ -473,6 +469,7 @@ Apply to an element that has a static sm-gradient (fallback) to add a subtle mov
       0% {
         background-size: multiple-repeat(100% 100%, $layers);
       }
+
       100% {
         background-size: multiple-repeat(200% 200%, $layers);
       }

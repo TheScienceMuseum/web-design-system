@@ -3,7 +3,7 @@
 .c-panel {
   background-color: black;
   color: white;
-  @include between(padding, 1rem, 2rem);
+  padding: clamp-between(1rem, 2rem);
 
   &,
   #{$text-elements} {
@@ -42,10 +42,12 @@
   a {
     color: white;
     fill: white;
+
     &:hover {
       color: grey(20);
       fill: grey(20);
     }
+
     @each $theme, $props in $palettes {
       .t-btn--#{$theme} &:hover {
         color: map-get($props, light);
@@ -70,8 +72,9 @@
   //  }
 
   &__img--bleed {
-    @include between(margin, -1rem, -2rem);
+    margin: clamp-between(-1rem, -2rem);
   }
+
   img {
     max-width: 100%;
     height: auto;
@@ -92,9 +95,11 @@
   &--lighter {
     background-color: grey(85);
   }
+
   &--lighter + &--lighter {
     background-color: grey(77);
   }
+
   &--lighter + &--lighter + &--lighter {
     background-color: grey(70);
   }
@@ -102,9 +107,11 @@
   &--light {
     color: black;
     background-color: grey(6);
+
     a {
       color: black;
       fill: black;
+
       &:hover {
         color: grey(80);
         fill: grey(80);

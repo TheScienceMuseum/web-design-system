@@ -1,4 +1,5 @@
 .c-formfield {
+
   // background: green;
   &__label {
     display: block;
@@ -18,8 +19,9 @@
   }
 
   & + * {
-    @include between(margin-top, 1rem, 2rem);
+    margin-top: clamp-between(1rem, 2rem);
   }
+
   .c-choices {
     margin-top: 1rem;
   }

@@ -16,10 +16,10 @@
   },
   "homepage": "https://github.com/TheScienceMuseum/web-design-system#readme",
   "dependencies": {
-    "include-media": "^1.4.10",
-    "normalize-scss": "^7.0.1",
-    "plyr": "^3.6.2",
-    "sass-between": "^0.4.1"
+    "include-media": "^2.0.0",
+    "normalize-scss": "^8.0.0",
+    "plyr": "^3.7.8",
+    "unitconversion": "^2.1.13"
   },
   "scripts": {
     "start": "npm run watch",

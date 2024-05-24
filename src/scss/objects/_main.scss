@@ -1,11 +1,11 @@
 // <main> page content styles.
 .o-main {
-  @include between(padding-top, 1rem, 2rem);
-  @include between(padding-bottom, 1rem, 2rem);
+  padding-top: clamp-between(1rem, 2rem);
+  padding-bottom: clamp-between(1rem, 2rem);
 
   & &__standfirst {
-    @include between(padding-top, 1rem, 2rem);
-    @include between(padding-bottom, 0.25rem, 0.75rem);
+    padding-top: clamp-between(1rem, 2rem);
+    padding-bottom: clamp-between(0.25rem, 0.75rem);
     @include type-p1;
 
     #{$text-elements} {
