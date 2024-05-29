@@ -1,0 +1,7 @@
+<div class="u-grad-blue-purple Examplegrid Examplegrid--flex Examplegrid--reversed">
+{{#each logos }}
+  <div class="Examplegrid__item" style="padding: 2rem; flex-basis: calc({{width}}px + 4rem)">
+    <svg style="max-width: 100%; height: auto;" viewBox="0 0 {{ width }} {{ height }}" width="{{ width }}" height="236" preserveAspectRatio="xMinYMin meet"><use xlink:href="/assets/logos/sprite.symbol.svg#{{ @key }}" fill="#fff"></use></svg>
+  </div>
+{{/each}}
+</div>

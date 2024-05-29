@@ -1,0 +1,11 @@
+{{#each icons }}
+  <div class="Examplegrid__item">
+    <svg style="margin: 1rem"  width="24" height="24">
+      <use xlink:href="/assets/icons/sprite.symbol.svg#{{ @this }}" />
+    </svg>
+    <svg style="margin: 1rem"  width="72" height="72">
+      <use xlink:href="/assets/icons/sprite.symbol.svg#{{ @this }}" />
+    </svg>
+    <div><code>{{@this}} </code></div>
+  </div>
+{{/each}}
