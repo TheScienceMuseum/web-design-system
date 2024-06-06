@@ -8,7 +8,7 @@ export default {
   },
   decorators: [
     (story, context) =>
-      `<div class="o-grid o-grid--4-col">
+      `<div class="o-grid o-grid--4cols">
       ${story()}
       </div>`,
   ],

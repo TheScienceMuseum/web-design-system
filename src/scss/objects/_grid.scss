@@ -1,26 +1,21 @@
 @use "sass:math";
+
 $grid-width: 72rem !default;
-$grid-gutter: 2rem !default;
+$grid-gutter: clamp-between(1rem, 2rem) !default;
 $grid-columns: 12 !default;
-$page-gutter: 1rem !default;
+$page-gutter: $grid-gutter !default;
 
 @mixin container {
   max-width: $grid-width;
   position: relative;
-  margin-left: $page-gutter * 0.5;
-  margin-right: $page-gutter * 0.5;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include media(">=#{$grid-width + $page-gutter * 2}") {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  padding-left: $page-gutter * 0.5;
-  padding-right: $page-gutter * 0.5;
+  padding-left: $page-gutter;
+  padding-right: $page-gutter;
 }
 
 .o-container {
-  @include clearfix;
   @include container;
 }
 
@@ -30,68 +25,92 @@ $page-gutter: 1rem !default;
 }
 
 .o-grid {
-  display: flex;
-  margin-left: $grid-gutter * -0.5;
-  margin-right: $grid-gutter * -0.5;
-  flex-direction: column;
 
-  @include media(">=small") {
-    flex-flow: row wrap;
 
-    &--reverse {
-      flex-direction: row-reverse;
-    }
-
-    @for $i from 2 through 6 {
-      &--#{$i}-col &__item {
-        width: math.div(100%, $i);
-      }
-
-      &--medium-#{$i}-col &__item {
-        width: math.div(100%, $i);
-      }
-    }
-  }
-
-  @include media(">=small", "<=medium") {
-    @for $i from 2 through 6 {
-      &--medium-#{$i}-col &__item {
-        width: math.div(100%, $i);
-      }
-    }
-  }
-
-  &__item {
-    @include clearfix;
+  & > * {
     width: 100%;
-    padding-left: $grid-gutter * 0.5;
-    padding-right: $grid-gutter * 0.5;
-    margin-bottom: $grid-gutter * 0.5;
+    min-width: 0; // default is min-content, which is usually a good thing but unexpected here.
+  }
 
-    @include media(">=medium") {
-      margin-bottom: $grid-gutter;
+  @for $i from 1 through 12 {
+    &--#{$i}cols {
+      display: grid;
+      gap: $grid-gutter;
+      grid-template-columns: repeat($i, 1fr);
+    }
+
+    &__span#{$i} {
+      grid-column: span $i;
     }
   }
+
+  // separate loops to keep order in output
+  @for $i from 1 through 12 {
+    @include media(">=small") {
+      &--#{$i}cols\@s {
+        display: grid;
+        gap: $grid-gutter;
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @for $i from 1 through 12 {
+    @include media(">=medium") {
+      &--#{$i}cols\@m {
+        display: grid;
+        gap: $grid-gutter;
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
+  @for $i from 1 through 12 {
+    @include media(">=large") {
+      &--#{$i}cols\@l {
+        display: grid;
+        gap: $grid-gutter;
+        grid-template-columns: repeat($i, 1fr);
+      }
+    }
+  }
+
 
   @include media(">=medium") {
+
+    &--page {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas: "article sidebar";
+    }
+
     &__sidebar {
-      width: calc(100% / 3);
+      // width: calc(100% / 3);
+      grid-area: sidebar;
     }
 
     &__article {
-      width: calc(2 * 100% / 3);
+      // width: calc(2 * 100% / 3);
+      grid-area: article;
     }
+  }
+
+  // flipped order grid for learning resources results
+  &--reverse {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "results filters";
   }
 
   &__filters {
     @include media(">=small") {
-      width: calc(100% / 3);
+      grid-area: filters;
     }
   }
 
   &__results {
     @include media(">=small") {
-      width: calc(2 * 100% / 3);
+      grid-area: results;
     }
   }
 }

@@ -1,6 +1,6 @@
 export default {};
 
-export const Default = {
+export const Examples = {
   render: (args) => `
 <div class="c-panel ">
   <h2>A panel</h2><p>Generally used in the sidebar</p><p>Various html elements might go in here</p>

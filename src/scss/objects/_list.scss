@@ -52,8 +52,11 @@
 
 .o-dl {
   margin: 0;
+  padding: 0;
 
   dt {
+    margin: 0;
+    padding: 0;
     @include type-metasmall;
   }
 
@@ -69,7 +72,8 @@
   }
 }
 
-.o-dl--inline {
+.o-dl--inline,
+.o-dl.--inline {
 
   dt,
   dd {

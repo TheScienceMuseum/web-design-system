@@ -4,7 +4,7 @@ export default {
   render: (args) => template(args),
 };
 
-export const Default = {
+export const Fonts = {
   args: {
     fonts: [
       { name: "Thin", weight: "100", style: "normal" },

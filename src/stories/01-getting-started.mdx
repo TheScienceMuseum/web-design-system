@@ -1,0 +1,61 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting started" />
+
+## To import source Scss and js into another project:
+
+If your project already makes use of node modules, and you are building your own assetbundles for production, you'll probaly want to do this:
+
+```
+npm install smg-web-design-system
+```
+
+### Javascript
+
+Then you can add the necessary javascript like so:
+
+```
+import * as smgwds from "smg-web-design-system";
+
+// then use the namespaced modules, e.g.
+document.addEventListener("DOMContentLoaded", function(event) {
+  smgwds.illuminate();
+});
+
+// or to import a single component:
+import illuminate from "smg-web-design-system/js/components/illuminate.js";
+document.addEventListener("DOMContentLoaded", function(event) {
+  illuminate();
+});
+
+```
+
+### Sass
+
+### using CLI:
+
+You may need `--include-path node_modules` to your compilation options.
+
+> WARN: No longer supports dart-sass.
+
+```
+@import "smg-web-design-system";
+// to import everything, or
+
+@import "smg-web-design-system/src/scss/lib";
+//for just the functions, and then add just the bits you want, e.g.
+@import "smg-web-design-system/src/scss/components/loading";
+```
+
+> TODO: Clarify which modules are optional.
+> TODO: check complete bundle size:
+> TODO: Explain which components need calling via their settings mixin
+
+## To use the pre-compiled css/js
+
+This will mean you can't customise e.g. theme colours, but it might be adequate in some circumstances, or for simpler uses
+
+```
+<link rel="stylesheet" src="https://unpkg.com/smg-web-design-system@0.1.0/dist/css/main.css">
+<script src="https://unpkg.com/smg-web-design-system@0.1.0/dist/js/index.js></script>
+```

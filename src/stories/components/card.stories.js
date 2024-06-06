@@ -1,4 +1,3 @@
-import { griditem } from "../../../fractal/components/card/card.config";
 import template from "./card.hbs";
 
 export default {

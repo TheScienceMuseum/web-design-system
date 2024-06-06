@@ -1,8 +1,8 @@
-<div class="Examplegrid Examplegrid--flex">
+<div class="Examplegrid Examplegrid--flex {{#if reversed}}u-grad-blue-purple Examplegrid--reversed{{/if}}">
 {{#each logos }}
   <div class="Examplegrid__item " style="padding: 2rem; flex-basis: calc({{width}}px + 4rem)">
-    <svg style="max-width: 100%; height: auto;"  width="{{ this.width }}" height="236">
-      <use xlink:href="/assets/logos/sprite.symbol.svg#{{ @key }}" />
+    <svg style="max-width: 100%; height: auto;"  width="{{ this.width }}" height="236" {{#if ../alignTop}}viewBox="0 0 {{ width }} {{ height }}" preserveAspectRatio="xMinYMin meet"{{/if}}>
+      <use xlink:href="/assets/logos/sprite.symbol.svg#{{ @key }}" {{#if ../reversed}}fill="#fff"{{/if}} />
     </svg>
   </div>
 {{/each}}

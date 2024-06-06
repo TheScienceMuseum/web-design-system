@@ -1,0 +1,45 @@
+.c-truncated {
+  summary {
+    //remove standard triangle
+    list-style: none;
+    background-color: black;
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    width: min-content;
+    padding: 0.25em 0.75em 0.25em 0.5em;
+    border-radius: 1em;
+    font-size: 0.75em;
+    text-transform: uppercase;
+    font-weight: 400;
+    line-height: 1;
+    cursor: pointer;
+
+    &::-webkit-details-marker {
+      /* Safari */
+      display: none;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      transform-origin: center;
+      transition: transform $transition-default;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><path d="M20 10L40 30L20 50" stroke="white" stroke-width="6"/></svg>'); // stroke matches font-weight: 400
+      background-size: cover;
+      width: 1em;
+      height: 1em;
+    }
+  }
+
+  &[open] {
+    summary:before {
+      transform: rotate(90deg);
+    }
+  }
+
+  summary + * {
+    margin-top: 1rem;
+  }
+}

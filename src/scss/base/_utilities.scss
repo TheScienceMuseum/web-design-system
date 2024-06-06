@@ -32,6 +32,11 @@
   }
 }
 
+// shouldn't be needed for clearing floats any more, but it can also be used to prevent margin collapse
+.u-clearfix {
+  @include clearfix;
+}
+
 // if parent display isn't flex etc, for inline baseline alignment:
 .u-icon--inline {
   svg {
@@ -110,4 +115,8 @@ html {
 .u-responsive-embed {
   @include responsive-embed(16 by 9);
   // override to other ratios by setting padding-bottom % inline?
+}
+
+.u-zip {
+  @include underline-zip;
 }
