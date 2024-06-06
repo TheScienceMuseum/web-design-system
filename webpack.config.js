@@ -11,7 +11,6 @@ module.exports = (env, argv) => {
     },
     entry: {
       index: path.resolve(__dirname, "src/js/index.js"),
-      fractal: path.resolve(__dirname, "src/js/fractal.js"),
       accordion: path.resolve(__dirname, "src/js/components/accordion.js"),
       illuminate: path.resolve(__dirname, "src/js/components/illuminate.js"),
       audioplayer: path.resolve(__dirname, "src/js/components/audioplayer.js"),
@@ -19,10 +18,9 @@ module.exports = (env, argv) => {
       main: "./src/scss/main.scss",
     },
     output: {
-      // path: devMode
-      //   ? path.resolve(__dirname, "public")
-      //   : path.resolve(__dirname, "dist"),
-      path: path.resolve(__dirname, "public"),
+      path: devMode
+        ? path.resolve(__dirname, "public")
+        : path.resolve(__dirname, "dist"),
       publicPath: devMode ? "/" : "",
       filename: "js/[name].js",
       library: "smgwds",
@@ -68,7 +66,6 @@ module.exports = (env, argv) => {
             {
               loader: "sass-loader",
               options: {
-                implementation: require("sass"),
                 sassOptions: {
                   includePaths: ["./node_modules"],
                 },
@@ -87,15 +84,5 @@ module.exports = (env, argv) => {
         filename: "css/[name].css",
       }),
     ],
-    devServer: {
-      hot: true,
-      allowedHosts: "all",
-      historyApiFallback: true,
-      compress: true,
-      proxy: {
-        "**": "http://localhost:4000",
-      },
-      port: 3000,
-    },
   };
 };

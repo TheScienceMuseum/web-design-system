@@ -1,0 +1,19 @@
+{{# with site}}
+<header class="c-masthead">
+  <div class="o-flex-container">
+    <a href="{{link}}" class="c-masthead__logo">
+      <svg viewBox="0 0 {{width}} {{height}}" width="{{width}}" height="{{aligned-height}}"
+        preserveAspectRatio="xMinYMid meet" class="c-logo--{{slug}}">
+        <use xlink:href="/assets/logos/sprite.symbol.svg#{{slug}}" fill="#fff"></use>
+      </svg>
+    </a>
+    <div class="c-masthead__right c-menu">
+      <button class="c-menu__button" aria-controls="global-menu" aria-expanded="false">Site name</button>
+      <nav class="c-menu__nav" id="global-menu" aria-expanded="false">
+        {{!-- {{ render '@menu--blog' }} --}}
+      </nav>
+      {{!-- {{ render '@searchmenu' }} --}}
+    </div>
+  </div>
+</header>
+{{/with}}

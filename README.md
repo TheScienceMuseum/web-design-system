@@ -12,8 +12,8 @@ If you want to contribute to this, you will need to:
 
 - Clone this repository
 - `npm install` to get dependencies
-- `npm run watch` to start a development server and watch for your changes on http://localhost:3000 (n.b. Fractal is running on :4000 but is proxied by webpack dev server on :3000 for hot reloading)
-- `npm run dist` to make a production-ready copy (you'll need to serve that yourself)
+- `npm start` to start a development server and watch for your changes on http://localhost:6009
+- `npm run build` to make a production-ready copy (you'll need to serve that yourself)
 - `npm run deploy` to update the `gh-pages` branch the public documentation is on.
 
 ## Contribution guideline
@@ -23,17 +23,14 @@ TBC - https://github.com/TheScienceMuseum/collectionsonline/wiki/Collaborator-co
 ## Structure
 
 ```
-├── dist            // built version of fractal, and select files for npm
-├── fractal         // all the stuff for the fractal styleguide
-│   ├── components
-│   ├── docs
-│   └── theme       // subtheme of Mandelbrot, with its own deps for recompiling
-├── public          // static directory for serving fractal - all generated
-├── src             // gets included in pkg
-│   ├── assets
-│   ├── js
-│   └── scss
-├── fractal.js      // Fractal setup
+├── dist            // built version of storybook, and select files for npm
+├── public          // static directory for serving storybook - all generated
+├── src             
+│   ├── assets      // gets included in pkg
+│   ├── js          // gets included in pkg
+│   ├── scss        // gets included in pkg
+│   └── stories     // storybook stories   
+├── storybook       // storybook config
 └── package.json
 ```
 

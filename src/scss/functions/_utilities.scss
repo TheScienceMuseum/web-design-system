@@ -98,6 +98,37 @@ $count: length($values);
   vertical-align: middle;
 }
 
+/// Does the zippy underline thing
+/// Applies to display: inline elements only, so may require an inner span or similar.
+/// @param {Number} $thickness - of underline
+/// @param {String} $transition
+@mixin underline-zip($thickness: 2px, $transition: $transition-default) {
+
+  text-decoration: none !important;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% $thickness;
+  transition: background-size $transition;
+
+  &:hover,
+  &:active,
+  &:focus,
+  &:focus-visible {
+    background-size: 100% $thickness;
+  }
+}
+
+/// Removes default styling from a button or input element
+@mixin button-reset {
+  appearance: none;
+  border: 0;
+  background-color: transparent;
+  padding: 0;
+  align-items: unset;
+  text-align: unset;
+}
+
 /// Returns the opposite direction of each direction in a list
 /// @author Hugo Giraudel
 /// @param {List} $directions - List of initial directions

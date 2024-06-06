@@ -13,6 +13,7 @@
 @import "base/utilities";
 
 // Then all objects, alphabetical
+@import "objects/blocks";
 @import "objects/grid";
 @import "objects/list";
 @import "objects/main";
@@ -44,6 +45,7 @@
 @import "components/nav";
 @import "components/pagination";
 @import "components/panel";
+@import "components/property-list";
 // @import "components/post";
 @import "components/searchmenu";
 // @import "components/searchresult";
@@ -51,5 +53,6 @@
 // @import "components/smg-map";
 // @import "components/tags";
 @import "components/textinput";
+@import "components/truncated";
 // reference:
 // BEMIT naming:  https://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces/

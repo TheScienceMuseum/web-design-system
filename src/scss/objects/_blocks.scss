@@ -1,0 +1,29 @@
+:root {
+  --smg-block-size: #{clamp-between(1rem, 2rem)};
+}
+
+.o-blocks {}
+
+.o-blocks.--rem {
+  --smg-block-size: 1rem;
+}
+
+/**
+Add default spacing to all direct children
+*/
+.o-blocks > * + * {
+  margin-top: var(--smg-block-size);
+}
+
+.o-blocks,
+.o-blocks.--rem {
+
+  & > [type="hidden"],
+  & > [hidden],
+  & > .--not + *,
+  & > * + .--not,
+  & > .--notbelow + *,
+  & > * + .--notabove {
+    margin-top: 0;
+  }
+}

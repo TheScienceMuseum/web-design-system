@@ -1,0 +1,32 @@
+.Examplegrid {
+  // border: 1px black solid;
+  display: flex;
+  flex-flow: row nowrap;
+
+  // but better:
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+
+  //unless we really mean it
+  &--flex {
+    display: flex;
+  }
+
+  &__item {
+    border: 1px solid currentColor;
+    margin: 0 -1px -1px 0;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+  }
+
+  &--reversed {
+    color: white;
+  }
+
+  &--wrap {
+    flex-wrap: wrap;
+  }
+}

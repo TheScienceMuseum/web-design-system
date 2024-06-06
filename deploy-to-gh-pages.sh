@@ -4,7 +4,7 @@
 set -e
 
 # build
-npm run dist
+npm run build
 
 # add readme
 cp gh-pages.md dist/readme.md

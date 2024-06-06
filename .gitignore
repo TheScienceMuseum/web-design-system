@@ -6,3 +6,5 @@ public/css/*.css.map
 public/js/*.js
 public/**/*.svg
 public/**/*.png
+
+*storybook.log

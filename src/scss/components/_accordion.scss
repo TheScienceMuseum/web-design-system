@@ -53,7 +53,8 @@
     border-top: 0;
   }
 
-  &__tab {
+  &__tab,
+  summary {
     font-size: rem(18);
     text-decoration: none;
     font-weight: bold;
@@ -77,28 +78,49 @@
       top: 50%;
     }
 
-    &[aria-expanded="true"] {
-      background: black;
-      color: white;
-      &:focus:not(:focus-visible) {
-        outline: 0;
-      }
-    }
+  }
+}
 
-    &[aria-expanded="true"]:after {
-      transform: rotate(180deg) translateY(50%);
-    }
+.c-accordion__tab[aria-expanded="true"],
+.c-accordion[open] summary {
+  background: black;
+  color: white;
 
-    &:not([aria-expanded="true"]):hover,
-    &:not([aria-expanded="true"]):focus:not(:focus-visible) {
-      outline: 0;
-      text-decoration: none;
-      background: grey(6);
+  .c-accordion__tab:focus:not(:focus-visible) {
+    outline: 0;
+  }
+}
 
-      // @include theme() {
-      //   background-color: getThemeColor('defaultAccordionHover');
-      //   color: getThemeColor('invertedColor');
-      // }
+.c-accordion__tab[aria-expanded="true"]:after,
+.c-accordion[open] summary:after {
+  transform: rotate(180deg) translateY(50%);
+}
+
+.c-accordion__tab:not([aria-expanded="true"]):hover,
+.c-accordion__tab:not([aria-expanded="true"]):focus:not(:focus-visible),
+.c-accordion:not([open]) summary:hover,
+.c-accordion:not([open]) summary:focus:not(:focus-visible) {
+  outline: 0;
+  text-decoration: none;
+  background: grey(6);
+}
+
+details.c-accordion {
+
+  margin: 0;
+
+  summary {
+    border: 1px solid black;
+    //remove standard triangle
+    list-style: none;
+
+    &::-webkit-details-marker {
+      /* Safari */
+      display: none;
     }
+  }
+
+  & + & {
+    margin-top: -1px;
   }
 }
