@@ -1,5 +1,3 @@
-import { render } from "sass";
-
 export default {
   args: {},
   parameters: {
@@ -29,13 +27,9 @@ export const Example = {
       <div class="c-panel">Grid item o-grid--4cols@s</div>
       <div class="c-panel">Grid item o-grid--4cols@s</div>
   </div>
-  <p>All grids stack on small screen, different breakpoints can be defined for medium sizes</p>
-  <div class="o-grid o-grid--6-col o-grid--medium-3-col">
-      <div class="c-panel">Grid item</div>
-      <div class="c-panel">Grid item</div>
-      <div class="c-panel">Grid item</div>
-      <div class="c-panel">Grid item</div>
-      <div class="c-panel">Grid item</div>
+  <p>The default grid stacks on small screen, unless cols have been specified.You can spec different cols above s,m,l breakpoints</p>
+  <div class="o-grid o-grid--3cols@m o-grid--4cols@l">
+  <div class="c-panel o-grid__span2@m o-grid__span3@l">spanny item</div>
       <div class="c-panel">Grid item</div>
   </div>
 </div>
@@ -82,8 +76,8 @@ export const Span = {
       <div class="c-panel">Grid item o-grid--4cols@s</div>
       <div class="c-panel">Grid item o-grid--4cols@s</div>
   </div>
-  <div class="o-grid o-grid--3cols">
-  <div class="c-panel o-grid__span2">Grid item</div>
+  <div class="o-grid o-grid--3cols@m">
+  <div class="c-panel o-grid__span2@m">Grid item. You don't want to span more than the available columns, hence span classes applying to the breakpoint grids as well.</div>
   <div class="c-panel">Grid item</div>
 </div>
 </div>

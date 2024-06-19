@@ -25,7 +25,9 @@ $page-gutter: $grid-gutter !default;
 }
 
 .o-grid {
-
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $grid-gutter;
 
   & > * {
     width: 100%;
@@ -34,8 +36,6 @@ $page-gutter: $grid-gutter !default;
 
   @for $i from 1 through 12 {
     &--#{$i}cols {
-      display: grid;
-      gap: $grid-gutter;
       grid-template-columns: repeat($i, 1fr);
     }
 
@@ -45,32 +45,38 @@ $page-gutter: $grid-gutter !default;
   }
 
   // separate loops to keep order in output
-  @for $i from 1 through 12 {
-    @include media(">=small") {
+  @include media(">=small") {
+    @for $i from 1 through 12 {
       &--#{$i}cols\@s {
-        display: grid;
-        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
+      }
+
+      &__span#{$i}\@s {
+        grid-column: span $i;
       }
     }
   }
 
-  @for $i from 1 through 12 {
-    @include media(">=medium") {
+  @include media(">=medium") {
+    @for $i from 1 through 12 {
       &--#{$i}cols\@m {
-        display: grid;
-        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
+      }
+
+      &__span#{$i}\@m {
+        grid-column: span $i;
       }
     }
   }
 
-  @for $i from 1 through 12 {
-    @include media(">=large") {
+  @include media(">=large") {
+    @for $i from 1 through 12 {
       &--#{$i}cols\@l {
-        display: grid;
-        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
+      }
+
+      &__span#{$i}\@l {
+        grid-column: span $i;
       }
     }
   }
