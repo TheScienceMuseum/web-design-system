@@ -26,8 +26,8 @@ $page-gutter: $grid-gutter !default;
 
 .o-grid {
   display: grid;
-  grid-template-columns: 1fr;
   gap: $grid-gutter;
+  grid-template-columns: 1fr;
 
   & > * {
     width: 100%;
@@ -36,6 +36,8 @@ $page-gutter: $grid-gutter !default;
 
   @for $i from 1 through 12 {
     &--#{$i}cols {
+      display: grid;
+      gap: $grid-gutter;
       grid-template-columns: repeat($i, 1fr);
     }
 
@@ -48,6 +50,8 @@ $page-gutter: $grid-gutter !default;
   @include media(">=small") {
     @for $i from 1 through 12 {
       &--#{$i}cols\@s {
+        display: grid;
+        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
       }
 
@@ -60,6 +64,8 @@ $page-gutter: $grid-gutter !default;
   @include media(">=medium") {
     @for $i from 1 through 12 {
       &--#{$i}cols\@m {
+        display: grid;
+        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
       }
 
@@ -72,6 +78,8 @@ $page-gutter: $grid-gutter !default;
   @include media(">=large") {
     @for $i from 1 through 12 {
       &--#{$i}cols\@l {
+        display: grid;
+        gap: $grid-gutter;
         grid-template-columns: repeat($i, 1fr);
       }
 
