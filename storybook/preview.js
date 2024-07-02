@@ -3,6 +3,7 @@ import "../src/scss/main.scss";
 import { DocsTheme } from "./themes";
 
 const preview = {
+  // tags: ["autodocs"]
   parameters: {
     controls: {
       matchers: {
@@ -15,7 +16,7 @@ const preview = {
     },
   },
 
-  // tags: ["autodocs"]
+  tags: ["autodocs"]
 };
 
 export default preview;
