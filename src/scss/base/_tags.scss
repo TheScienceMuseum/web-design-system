@@ -36,7 +36,7 @@ figure {
   margin: 0;
 }
 
-a {
+a:not([class]) {
   color: inherit;
 
   &:visited {

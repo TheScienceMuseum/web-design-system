@@ -1,8 +1,8 @@
-<button class="c-btn {{class}} c-btn--{{theme}} {{#if disabled}}c-btn--disabled{{/if}}">
+<{{tag}} class="c-btn {{class}} c-btn--{{theme}} {{#if disabled}}c-btn--disabled{{/if}}" {{#ifCond tag '==' 'a'}}href="#"{{/ifCond}}>
   {{label}}
   {{#if icon}}<span class="u-icon">
     <svg>
       <use xlink:href="/assets/icons/sprite.symbol.svg#{{icon}}" />
       </svg>
   {{/if}}
-</button>
+</{{tag}}>

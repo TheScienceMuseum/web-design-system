@@ -1,5 +1,4 @@
 import template from "./button.hbs";
-import React from "react";
 
 export default {
   render: (args) => template(args),
@@ -9,14 +8,21 @@ export default {
   },
   argTypes: {
     theme: {
-      control: { type: "select" },
+      control: { type: "select" }, // 'select', if options are specified
       options: ["red", "orange", "yellow", "green", "teal", "blue", "purple"],
     },
     parentTheme: {
       control: { type: "select" },
       options: ["red", "orange", "yellow", "green", "teal", "blue", "purple"],
     },
-    disabled: { control: "boolean", defaultValue: false },
+    tag: {
+      options: ["button", "a"],
+    },
+    disabled: { control: "boolean" },
+  },
+  args: {
+    tag: "button",
+    disabled: false,
   },
 };
 
@@ -45,6 +51,13 @@ export const WithIcon = {
     label: "Orange button with icon",
     theme: "orange",
     icon: "arrow-right-bold",
+  },
+};
+
+export const OnHrefElement = {
+  args: {
+    tag: "a",
+    label: "buttons don't have to be button tag",
   },
 };
 
