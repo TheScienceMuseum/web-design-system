@@ -12,6 +12,7 @@ export default {
       ${story()}
       </div>`,
   ],
+  tags: ['!autodocs'],
 };
 
 export const TwoColour = {

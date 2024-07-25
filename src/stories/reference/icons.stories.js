@@ -6,7 +6,7 @@ export default {
   render: (args) => template(args),
   args: {
     icons: Object.keys(icons),
-  },
+  }, tags: ['!autodocs'],
 };
 
 // console.log({ ...icons });

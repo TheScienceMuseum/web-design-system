@@ -21,7 +21,7 @@ export default {
         type: "boolean",
       },
     },
-  },
+  }, tags: ['!autodocs'],
 };
 
 export const Logos = {
