@@ -8,6 +8,7 @@ but kept the same class names so css can be re-used without much change.
 */
 
 export default function menu() {
+
   var menuContainers = document.querySelectorAll(".c-menu");
   var toggleExpanded = function (el) {
     el.setAttribute(
@@ -43,6 +44,17 @@ export default function menu() {
         e.preventDefault();
       });
     });
+
+    menuContainer.querySelectorAll(".c-menu__item--has-children").forEach(function (el) {
+      el.addEventListener('mouseenter', (event) => {
+        el.querySelector('.c-menu__toggle')?.setAttribute('aria-expanded', 'true');
+        el.querySelector('.c-menu__submenu')?.setAttribute('aria-expanded', 'true');
+      });
+      el.addEventListener('mouseleave', (event) => {
+        el.querySelector('.c-menu__toggle')?.setAttribute('aria-expanded', 'false');
+        el.querySelector('.c-menu__submenu')?.setAttribute('aria-expanded', 'false');
+      });
+    })
 
     // Toggles the sub-menu when dropdown toggle button clicked
     menuContainer.querySelectorAll(".c-menu__toggle").forEach(function (el) {
@@ -86,4 +98,5 @@ export default function menu() {
     },
     false,
   );
+
 }
