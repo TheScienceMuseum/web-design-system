@@ -27,7 +27,7 @@
     "deploy": "./deploy-to-gh-pages.sh",
     "build": "run-p build:*",
     "build:storybook": "storybook build --config-dir storybook --output-dir dist",
-    "build:js": "NODE_ENV=production webpack",
+    "build:js": "webpack --mode=production",
     "build:svg": "run-p build:svg:*",
     "build:svg:sprite": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/logos src/assets/logos/**/*.svg",
     "build:svg:spriteicons": "svg-sprite --symbol --symbol-dest=. --symbol-sprite=sprite.symbol.svg --dest=public/assets/icons src/assets/icons/**/*.svg",
