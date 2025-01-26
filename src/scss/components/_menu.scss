@@ -20,6 +20,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     text-transform: uppercase;
     font-weight: bold;
     position: relative;
+
     @if $underline {
       &:before {
         content: "";
@@ -47,9 +48,8 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     content: "";
     width: 0.75em;
     height: 0.75em;
-    background-image: svg-uri(
-      '<svg height="10" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m5 9.33-5-8.66h10z" fill="#fff" fill-opacity=".6"/></svg>'
-    );
+    background-image: svg-uri('<svg height="10" width="10" xmlns="http://www.w3.org/2000/svg"><path d="m5 9.33-5-8.66h10z" fill="#fff" fill-opacity=".6"/></svg>'
+      );
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -98,6 +98,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
 
   &__nav {
     height: 100%;
+
     @include media($menu-width) {
       display: flex;
       justify-content: flex-end;
@@ -133,6 +134,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     }
 
     display: none;
+
     [aria-expanded="true"] & {
       display: block;
     }
@@ -167,6 +169,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
 
         & > a {
           @include toplink;
+
           &[aria-current="true"]:before {
             visibility: visible;
             transform: scaleX(1);
@@ -187,6 +190,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
     margin: 0.5rem 0;
     padding: 0.5rem 0;
     display: none;
+
     &[aria-expanded="true"] {
       display: block;
     }
@@ -205,6 +209,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
       transition: transform $transition-default;
       width: 16rem;
     }
+
     li:last-of-type.c-menu__item & {
       left: auto;
       right: -1rem;
@@ -212,6 +217,7 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
 
     a {
       font-size: 16px;
+
       &:hover {
         text-decoration: underline;
       }
@@ -244,7 +250,6 @@ $menu-width: ">=" + (600px + 50px + 130px) !default; // width of expected group 
   }
 
   @include media($menu-width) {
-    .c-menu__item:hover > .c-menu__submenu,
     [aria-expanded="true"] + .c-menu__submenu {
       transform: scaleY(1);
       transform: none; // FF won't combine background-attach with transform

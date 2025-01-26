@@ -9,7 +9,7 @@ but kept the same class names so css can be re-used without much change.
 
 export default function menu() {
   var menuContainers = document.querySelectorAll(".c-menu");
-  var toggleExpanded = function(el) {
+  var toggleExpanded = function (el) {
     el.setAttribute(
       "aria-expanded",
       el.getAttribute("aria-expanded") === "false" ? "true" : "false"
@@ -17,7 +17,7 @@ export default function menu() {
   };
   var mobileNav = document.querySelector(".c-nav-mobile");
 
-  menuContainers.forEach(function(menuContainer) {
+  menuContainers.forEach(function (menuContainer) {
     var menuToggle = menuContainer.querySelector(".c-menu__button");
 
     var screenReaderText = {
@@ -30,28 +30,28 @@ export default function menu() {
       var menu = document.querySelector(
         "#" + menuToggle.getAttribute("aria-controls")
       );
-      menuToggle.addEventListener("click", function() {
+      menuToggle.addEventListener("click", function () {
         toggleExpanded(this);
         toggleExpanded(menu);
       });
     }
 
     // If a dropdown has no top-level link (it's dummied to act as group, then skip it from tab order)
-    menuContainer.querySelectorAll('[href="#"]').forEach(function(el) {
+    menuContainer.querySelectorAll('[href="#"]').forEach(function (el) {
       el.setAttribute("tabindex", -1);
-      el.addEventListener("click", function(e) {
+      el.addEventListener("click", function (e) {
         e.preventDefault();
       });
     });
 
     // Toggles the sub-menu when dropdown toggle button clicked
-    menuContainer.querySelectorAll(".c-menu__toggle").forEach(function(el) {
-      el.addEventListener("click", function(e) {
+    menuContainer.querySelectorAll(".c-menu__toggle").forEach(function (el) {
+      el.addEventListener("click", function (e) {
         var screenReaderSpan = this.querySelectorAll(".screen-readers");
         e.preventDefault();
         toggleExpanded(this.nextElementSibling);
         toggleExpanded(this);
-        screenReaderSpan.forEach(function(el) {
+        screenReaderSpan.forEach(function (el) {
           el.textContent = screenReaderText.expand
             ? screenReaderText.collapse
             : screenReaderText.expand;
@@ -61,14 +61,29 @@ export default function menu() {
   });
   // in mobile view, remove #links completely and uplevel children. could be done server-side ideally
   if (mobileNav) {
-    mobileNav.querySelectorAll('[href="#"]').forEach(function(el) {
+    mobileNav.querySelectorAll('[href="#"]').forEach(function (el) {
       var parentLi = el.parentNode;
       var menu = el.parentNode.parentNode;
       var kids = parentLi.querySelectorAll(".c-menu__submenu li");
-      kids.forEach(function(li) {
+      kids.forEach(function (li) {
         menu.appendChild(li);
       });
       menu.removeChild(parentLi);
     });
   }
+
+  document.addEventListener(
+    "keyup", (event) => {
+      const keyName = event.key;
+      if (keyName === "Escape") {
+        // WCAG 1.4.13 Content on Hover or Focus
+        // A user can get rid of the additional content without moving their pointer or tabbing onto something else (e.g., by hitting the ESC key). This implies you cannot use css :hover alone to show/hide content.
+        const menu = document.querySelector('.c-menu__item--has-children:focus-within, .c-menu__item--has-children:hover');
+        if (menu) {
+          menu.querySelector('.c-menu__toggle').click();
+        }
+      }
+    },
+    false,
+  );
 }
