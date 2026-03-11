@@ -15,7 +15,7 @@ $fonts: (
   ('Fat', 900, normal)
 );
 
-$font-path: "//smgco-images.s3.amazonaws.com/fonts"; // replace with proper CDN!!
+$font-path: "https://coimages.sciencemuseumgroup.org.uk/fonts"; 
 
 @each $f in $fonts {
   @font-face {
